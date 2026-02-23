@@ -1,0 +1,7 @@
+C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/main.c:79:6:setup	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/main.c:118:5:main	544	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/main.c:139:6:isrBotoeira	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/main.c:149:6:isrFlow	24	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/main.c:166:6:isrTimer0	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/main.c:174:6:isrSysTick	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/main.c:180:6:getTemp	16	static
