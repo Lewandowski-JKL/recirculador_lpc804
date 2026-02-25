@@ -1,5 +1,0 @@
-c:\users\jackson.lewandowski\documents\vs code\nxp\core\cmsis\core\include\core_cm0plus.h:779:22:__NVIC_DisableIRQ	16	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/myLib/myI2c/myI2c.c:27:6:i2cBeginSlave	24	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/myLib/myI2c/myI2c.c:48:5:WaitI2cSlaveState	16	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/myLib/myI2c/myI2c.c:60:5:readI2c_slave	24	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/lpcxpresso802_Recirculador/myLib/myI2c/myI2c.c:75:5:sendI2c_slave	80	dynamic

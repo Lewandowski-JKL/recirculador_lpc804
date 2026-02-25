@@ -1,0 +1,15 @@
+{
+  "version": "25.3",
+  "toolchainPath": "C:/NXP/MCUXpressoIDE_24.12.148/ide/tools",
+  "linkedProjects": [],
+  "trustZoneType": "none",
+  "multicoreType": "none",
+  "projectType": "sdk-freestanding",
+  "sdk": {
+    "version": "2.15.0",
+    "path": "c:\\Users\\jackson.lewandowski\\Documents\\VS Code\\NXP",
+    "boardId": "lpcxpresso804",
+    "deviceId": "LPC804",
+    "coreId": "core0_LPC804"
+  }
+}

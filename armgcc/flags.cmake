@@ -29,8 +29,8 @@ SET(CMAKE_ASM_FLAGS_RELEASE " \
 SET(CMAKE_C_FLAGS_DEBUG " \
     ${CMAKE_C_FLAGS_DEBUG} \
     -DDEBUG \
-    -DCPU_LPC802 \
-    -DCPU_LPC802M001JDH20 \
+    -DCPU_LPC804 \
+    -DCPU_LPC804M101JDH24 \
     -DMCUXPRESSO_SDK \
     -g \
     -O0 \
@@ -52,8 +52,8 @@ SET(CMAKE_C_FLAGS_DEBUG " \
 SET(CMAKE_C_FLAGS_RELEASE " \
     ${CMAKE_C_FLAGS_RELEASE} \
     -DNDEBUG \
-    -DCPU_LPC802 \
-    -DCPU_LPC802M001JDH20 \
+    -DCPU_LPC804 \
+    -DCPU_LPC804M101JDH24 \
     -DMCUXPRESSO_SDK \
     -Os \
     -mcpu=cortex-m0plus \
@@ -139,7 +139,7 @@ SET(CMAKE_EXE_LINKER_FLAGS_DEBUG " \
     -Wl,--print-memory-usage \
     ${FPU} \
     ${SPECS} \
-    -T\"${ProjDirPath}/LPC802_flash.ld\" -static \
+    -T\"${ProjDirPath}/LPC804_flash.ld\" -static \
 ")
 SET(CMAKE_EXE_LINKER_FLAGS_RELEASE " \
     ${CMAKE_EXE_LINKER_FLAGS_RELEASE} \
@@ -165,5 +165,5 @@ SET(CMAKE_EXE_LINKER_FLAGS_RELEASE " \
     -Wl,--print-memory-usage \
     ${FPU} \
     ${SPECS} \
-    -T\"${ProjDirPath}/LPC802_flash.ld\" -static \
+    -T\"${ProjDirPath}/LPC804_flash.ld\" -static \
 ")

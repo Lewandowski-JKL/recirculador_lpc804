@@ -25,58 +25,115 @@ SET(CMAKE_EXECUTABLE_LIBRARY_SUFFIX)
 
 # CURRENT DIRECTORY
 SET(ProjDirPath ${CMAKE_CURRENT_SOURCE_DIR})
+SET(APP_SRC_DIR "${ProjDirPath}/../src")
+SET(LIB_DIR "${ProjDirPath}/../lib")
 
-if (DEFINED ENV{SdkRootDirPath})
-    SET(SdkRootDirPath "$ENV{SdkRootDirPath}")
-else()
-    SET(SdkRootDirPath "${ProjDirPath}/../../../../..")
-endif()
+# if (DEFINED ENV{SdkRootDirPath})
+#    SET(SdkRootDirPath "$ENV{SdkRootDirPath}")
+# else()
+#    SET(SdkRootDirPath "${ProjDirPath}/../../../../..")
+# endif()
 
 SET(EXECUTABLE_OUTPUT_PATH ${ProjDirPath}/${CMAKE_BUILD_TYPE})
 SET(LIBRARY_OUTPUT_PATH ${ProjDirPath}/${CMAKE_BUILD_TYPE})
 
 
-project(new_project)
+project(Recirculador)
 
 set(MCUX_BUILD_TYPES debug release)
 
-set(MCUX_SDK_PROJECT_NAME new_project.elf)
+set(MCUX_SDK_PROJECT_NAME Recirculador.elf)
 
-if (NOT DEFINED SdkRootDirPath)
-    SET(SdkRootDirPath ${SdkRootDirPath})
-endif()
+# no topo (após project/sets), ou antes do configure
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+
+# if (NOT DEFINED SdkRootDirPath)
+#    SET(SdkRootDirPath ${SdkRootDirPath})
+# endif()
 
 include(${ProjDirPath}/flags.cmake)
 
 include(${ProjDirPath}/config.cmake)
 
+# add_executable(${MCUX_SDK_PROJECT_NAME} 
+# "${APP_SRC_DIR}/app/main.c"
+# "${APP_SRC_DIR}/app/system.c"
+# "${APP_SRC_DIR}/services/calendar/calendar.c"
+# "${APP_SRC_DIR}/drivers/flash_memory/flash_memory.c"
+# "${APP_SRC_DIR}/drivers/peripheral/adc/adc.c"
+# "${APP_SRC_DIR}/stubs/peripheral/adc/adc.c"
+# #"${SdkRootDirPath}/core/boards/lpcxpresso804/board.c"
+# #"${SdkRootDirPath}/core/boards/lpcxpresso804/board.h"
+# #"${SdkRootDirPath}/core/boards/lpcxpresso804/clock_config.c"
+# #"${SdkRootDirPath}/core/boards/lpcxpresso804/clock_config.h"
+# )
 
-file(GLOB_RECURSE HEADER "${ProjDirPath}/../myLib/*/*.h")
-file(GLOB_RECURSE SOURCE "${ProjDirPath}/../myLib/*/*.c")
 
-add_executable(${MCUX_SDK_PROJECT_NAME} 
-"${ProjDirPath}/../main.c"
-"${SdkRootDirPath}/core/boards/lpcxpresso802/board.c"
-"${SdkRootDirPath}/core/boards/lpcxpresso802/board.h"
-"${SdkRootDirPath}/core/boards/lpcxpresso802/clock_config.c"
-"${SdkRootDirPath}/core/boards/lpcxpresso802/clock_config.h"
-"${SdkRootDirPath}/core/drivers/iap/fsl_iap.c"
-"${SdkRootDirPath}/core/drivers/iap/fsl_iap.h"
-${SOURCE}
-${HEADER}
+
+# Cria o executável vazio
+add_executable(${MCUX_SDK_PROJECT_NAME})
+
+# Coleta TODOS os .c dentro de src/ recursivamente
+file(GLOB_RECURSE APP_C CONFIGURE_DEPENDS
+    "${APP_SRC_DIR}/*.c"
 )
 
-source_group("Header include" FILES ${HEADER})
-source_group("Source src"     FILES ${SOURCE})
+# Adiciona todas as sources ao executável
+target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE ${APP_C})
+
+
+
+# Adiciona fontes ao target (nome gerado pelo MCUX: ${MCUX_SDK_PROJECT_NAME})
+target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE ${APP_C})
+
+# Inclui todos os .c do seu src/ (recursivo)
+file(GLOB_RECURSE APP_C CONFIGURE_DEPENDS
+    "${APP_SRC_DIR}/*.c"
+    "${APP_SRC_DIR}/*/*.c"
+    "${APP_SRC_DIR}/*/*/*.c"
+)
+
 
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    ${ProjDirPath}/..
-    ${SdkRootDirPath}/examples/lpcxpresso802/project_template
-    ${SdkRootDirPath}/core/boards/lpcxpresso802
+    ${APP_SRC_DIR}
+    ${APP_SRC_DIR}/app
+    ${APP_SRC_DIR}/drivers
+    ${APP_SRC_DIR}/drivers/flash_memory
+    ${APP_SRC_DIR}/drivers/gpio
+    ${APP_SRC_DIR}/drivers/interrupt
+    ${APP_SRC_DIR}/drivers/peripheral
+    ${APP_SRC_DIR}/drivers/peripheral/adc
+    ${APP_SRC_DIR}/drivers/peripheral/i2c
+    ${APP_SRC_DIR}/drivers/pin_mux
+    ${APP_SRC_DIR}/services
+    ${APP_SRC_DIR}/services/calendar
+    ${APP_SRC_DIR}/services/checksum
+    ${APP_SRC_DIR}/services/led_control
+    ${APP_SRC_DIR}/services/log_lpc804
+    ${APP_SRC_DIR}/services/message_manager
+    ${APP_SRC_DIR}/services/ntc_thermistor
+    ${APP_SRC_DIR}/services/register_manager
+    ${APP_SRC_DIR}/services/task
+    ${APP_SRC_DIR}/stubs
+    ${ProjDirPath}/../include
+    ${LIB_DIR}/repo/core/boards/lpcxpresso804
+    ${LIB_DIR}/repo/core/CMSIS/core/include
+    ${LIB_DIR}/repo/core/CMSIS/core/include
+    ${LIB_DIR}/repo/core/devices/LPC804
+    ${LIB_DIR}/repo/core/drivers/iap
+    ${LIB_DIR}/repo/core/drivers/common
 )
 
+# include(${SdkRootDirPath}/core/devices/LPC804/all_lib_device.cmake)
+include(${LIB_DIR}/repo/core/devices/LPC804/all_lib_device.cmake)
 
-include(${SdkRootDirPath}/core/devices/LPC802/all_lib_device.cmake)
+
+# Ajuste o caminho se necessário: use o mesmo prefixo visto no log (lib/repo/core/...)
+target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
+    "${LIB_DIR}/repo/core/drivers/iap/fsl_iap.c"
+)
+
 
 IF(NOT DEFINED TARGET_LINK_SYSTEM_LIBRARIES)  
     SET(TARGET_LINK_SYSTEM_LIBRARIES "-lm -lc -lgcc -lnosys")  
@@ -89,5 +146,3 @@ target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE ${TARGET_LINK_SYSTEM_LIBR
 TARGET_LINK_LIBRARIES(${MCUX_SDK_PROJECT_NAME} PRIVATE -Wl,--end-group)
 
 set_target_properties(${MCUX_SDK_PROJECT_NAME} PROPERTIES ADDITIONAL_CLEAN_FILES "output.map")
-
-

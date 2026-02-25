@@ -1,0 +1,4 @@
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_clock.h:368:20:CLOCK_EnableClock	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/lpc_gpio/fsl_gpio.c:42:13:GPIO_EnablePortClock	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/lpc_gpio/fsl_gpio.c:60:6:GPIO_PortInit	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/lpc_gpio/fsl_gpio.c:97:6:GPIO_PinInit	24	static

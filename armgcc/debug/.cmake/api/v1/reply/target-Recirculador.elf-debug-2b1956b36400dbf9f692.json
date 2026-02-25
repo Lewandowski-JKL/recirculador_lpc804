@@ -1,0 +1,1017 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "Recirculador.elf"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"add_link_options",
+			"include",
+			"ENABLE_LANGUAGE",
+			"TARGET_LINK_LIBRARIES",
+			"target_link_libraries",
+			"target_include_directories",
+			"target_sources",
+			"add_config_file"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"C:/Users/jackson.lewandowski/Documents/VS Code/NXP/core/tools/cmake_toolchain_files/armgcc.cmake",
+			"debug/CMakeFiles/3.28.1/CMakeSystem.cmake",
+			"C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/CMSIS/set_CMSIS.cmake",
+			"C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/all_lib_device.cmake",
+			"C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/set_device_LPC804.cmake",
+			"C:/Users/jackson.lewandowski/Documents/VS Code/NXP/core/tools/cmake_toolchain_files/mcux_config.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 75,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 18,
+				"parent" : 0
+			},
+			{
+				"file" : 2,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 6,
+				"parent" : 3
+			},
+			{
+				"file" : 1,
+				"parent" : 4
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 58,
+				"parent" : 5
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 142,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 144,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 146,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 98,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 129,
+				"parent" : 0
+			},
+			{
+				"file" : 4,
+				"parent" : 11
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 243,
+				"parent" : 12
+			},
+			{
+				"file" : 3,
+				"parent" : 13
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 9,
+				"parent" : 14
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 244,
+				"parent" : 12
+			},
+			{
+				"file" : 5,
+				"parent" : 16
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 97,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 121,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 146,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 261,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 309,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 645,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 837,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 881,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 929,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 1049,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 1073,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 83,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 28,
+				"parent" : 17
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 73,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 128,
+				"parent" : 31
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 117,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 141,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 227,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 251,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 256,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 281,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 305,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 641,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 833,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 925,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 1021,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 1045,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 1069,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 133,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "   -fstack-usage  -D__NEWLIB__       -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g     -DDEBUG     -DCPU_LPC804     -DCPU_LPC804M101JDH24     -DMCUXPRESSO_SDK     -g     -O0     -mcpu=cortex-m0plus     -Wall     -mthumb     -MMD     -MP     -fno-common     -ffunction-sections     -fdata-sections     -ffreestanding     -fno-builtin     -mapcs     -std=gnu99     -mfloat-abi=soft     -DSDK_DEBUGCONSOLE=1 "
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/app"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/flash_memory"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/gpio"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/interrupt"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/adc"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/i2c"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/pin_mux"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/calendar"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/checksum"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/led_control"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/log_lpc804"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/message_manager"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/stubs"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../include"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/boards/lpcxpresso804"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/CMSIS/core/include"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/devices/LPC804"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/drivers/iap"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/drivers/common"
+				},
+				{
+					"backtrace" : 15,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/CMSIS/Core/Include/."
+				},
+				{
+					"backtrace" : 18,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/./."
+				},
+				{
+					"backtrace" : 19,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/."
+				},
+				{
+					"backtrace" : 20,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../utilities/str"
+				},
+				{
+					"backtrace" : 20,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../utilities/debug_console_lite"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/common/."
+				},
+				{
+					"backtrace" : 22,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../utilities/assert/."
+				},
+				{
+					"backtrace" : 23,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../components/uart/."
+				},
+				{
+					"backtrace" : 24,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/lpc_gpio/."
+				},
+				{
+					"backtrace" : 25,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/lpc_iocon_lite/."
+				},
+				{
+					"backtrace" : 26,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/lpc_miniusart/."
+				},
+				{
+					"backtrace" : 27,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/swm/."
+				},
+				{
+					"backtrace" : 28,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/syscon/."
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "   -fstack-usage  -D__NEWLIB__       -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g     -DDEBUG     -D__STARTUP_CLEAR_BSS     -mcpu=cortex-m0plus     -mthumb     -mfloat-abi=soft "
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/app"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/flash_memory"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/gpio"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/interrupt"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/adc"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/i2c"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/pin_mux"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/calendar"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/checksum"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/led_control"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/log_lpc804"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/message_manager"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/stubs"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../include"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/boards/lpcxpresso804"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/CMSIS/core/include"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/devices/LPC804"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/drivers/iap"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../lib/repo/core/drivers/common"
+				},
+				{
+					"backtrace" : 15,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/CMSIS/Core/Include/."
+				},
+				{
+					"backtrace" : 18,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/./."
+				},
+				{
+					"backtrace" : 19,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/."
+				},
+				{
+					"backtrace" : 20,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../utilities/str"
+				},
+				{
+					"backtrace" : 20,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../utilities/debug_console_lite"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/common/."
+				},
+				{
+					"backtrace" : 22,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../utilities/assert/."
+				},
+				{
+					"backtrace" : 23,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../components/uart/."
+				},
+				{
+					"backtrace" : 24,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/lpc_gpio/."
+				},
+				{
+					"backtrace" : 25,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/lpc_iocon_lite/."
+				},
+				{
+					"backtrace" : 26,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/lpc_miniusart/."
+				},
+				{
+					"backtrace" : 27,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/swm/."
+				},
+				{
+					"backtrace" : 28,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/../../drivers/syscon/."
+				}
+			],
+			"language" : "ASM",
+			"sourceIndexes" : 
+			[
+				22
+			]
+		}
+	],
+	"id" : "Recirculador.elf::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-fstack-usage  -D__NEWLIB__       -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g     -DDEBUG     -DCPU_LPC804     -DCPU_LPC804M101JDH24     -DMCUXPRESSO_SDK     -g     -O0     -mcpu=cortex-m0plus     -Wall     -mthumb     -MMD     -MP     -fno-common     -ffunction-sections     -fdata-sections     -ffreestanding     -fno-builtin     -mapcs     -std=gnu99     -mfloat-abi=soft     -DSDK_DEBUGCONSOLE=1",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-g     -mcpu=cortex-m0plus     -Wall     -fno-common     -ffunction-sections     -fdata-sections     -ffreestanding     -fno-builtin     -mthumb     -mapcs     -Xlinker     --gc-sections     -Xlinker     -static     -Xlinker     -z     -Xlinker     muldefs     -Xlinker     -Map=output.map     -Wl,--print-memory-usage     -mfloat-abi=soft     --specs=nano.specs --specs=nosys.specs     -T\"C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/LPC804_flash.ld\" -static",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-Wl,--no-warn-rwx-segments",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "-Wl,--start-group",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "-lgcc -lc -lm -lcr_newlib_nohost",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "-Wl,--end-group",
+				"role" : "libraries"
+			}
+		],
+		"language" : "C"
+	},
+	"name" : "Recirculador.elf",
+	"nameOnDisk" : "Recirculador.elf",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				22
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/app_config.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/board.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/log.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/main.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/system.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/flash_memory/flash_memory.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/gpio/gpio.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/adc/adc.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/calendar/calendar.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/checksum/checksum.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/led_control/led_control.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/log_lpc804/log_lpc804.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/message_manager/message_manager.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/register_manager/register_manager.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/stubs/stubs.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 30,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_sbrk.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 30,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_syscall_stub.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 32,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 33,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_clock.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 34,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/utilities/str/fsl_str.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 34,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/utilities/debug_console_lite/fsl_debug_console.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 35,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_power.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 36,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/common/fsl_common.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 37,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/common/fsl_common_arm.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 38,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 39,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/utilities/assert/fsl_assert.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 40,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/components/uart/fsl_adapter_miniusart.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 41,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/lpc_gpio/fsl_gpio.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 42,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 43,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_reset.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 44,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/swm/fsl_swm.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 45,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/syscon/fsl_syscon.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 46,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/lib/repo/core/drivers/iap/fsl_iap.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

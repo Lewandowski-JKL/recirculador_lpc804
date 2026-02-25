@@ -1,0 +1,4 @@
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/log_lpc804/log_lpc804.c:15:6:initDebug	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/log_lpc804/log_lpc804.c:93:6:endDebug	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/log_lpc804/log_lpc804.c:97:6:SerialPrint	24	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/log_lpc804/log_lpc804.c:110:6:SerialPrintln	24	static

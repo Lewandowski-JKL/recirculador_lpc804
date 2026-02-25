@@ -1,0 +1,4 @@
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/message_manager/message_manager.c:30:5:addNewMessage	32	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/message_manager/message_manager.c:57:6:deleteMessage	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/message_manager/message_manager.c:94:5:lenQueue	24	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/message_manager/message_manager.c:113:5:sizeQueue	32	static
