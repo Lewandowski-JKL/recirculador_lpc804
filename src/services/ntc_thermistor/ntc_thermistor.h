@@ -11,7 +11,7 @@ typedef struct NTC_Thermistor
     int _max;
 }NTC_Thermistor;
 
-void newThermistor(NTC_Thermistor *ptrAux, int parallelResistance, int refResistance, 
+void thermistor_new(NTC_Thermistor *ptrAux, int parallelResistance, int refResistance, 
                         short voltageRef, int offset, int max, const int *NTC);
 short convert_mV_to_celcius(NTC_Thermistor *ptrThermistor, short measuredValue);
 

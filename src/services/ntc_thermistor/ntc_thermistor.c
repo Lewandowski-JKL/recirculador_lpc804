@@ -46,7 +46,7 @@
  * @param max Temperatura máxima presente no vetor.
  * @param NTC Vetor de resistências para cada temperatura, utilizado na conversão de resistência para temperatura.
  */
-void newThermistor(NTC_Thermistor *ptrAux, int parallelResistance, int refResistance, 
+void thermistor_new(NTC_Thermistor *ptrAux, int parallelResistance, int refResistance, 
                         short voltageRef, int offset, int max,  const int *NTC)
 {
     ptrAux->_NTC = NTC; 

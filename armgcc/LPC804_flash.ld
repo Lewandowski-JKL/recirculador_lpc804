@@ -39,13 +39,30 @@ MEMORY
 {
   m_interrupts          (RX)  : ORIGIN = 0x00000000, LENGTH = 0x00000200
   m_crp                 (RX)  : ORIGIN = 0x000002FC, LENGTH = 0x00000004
-  m_text                (RX)  : ORIGIN = 0x00000300, LENGTH = 0x00007C00
+  m_text                (RX)  : ORIGIN = 0x00000300, LENGTH = 0x00007500
+  m_eeprom              (RX)  : ORIGIN = 0x00007800, LENGTH = 0x00000800 
   m_data                (RW)  : ORIGIN = 0x10000000, LENGTH = 0x00000FE0
 }
 
 /* Define output sections */
 SECTIONS
 {
+  
+  /* EEPROM simulada em Flash:
+     - NOLOAD para não ir no .hex pelo linker
+     - Alinhada a 64B (tamanho de página do LPC804)
+     - Colocada na região m_eeprom (0x7800..0x7FFF)
+     - Posicionada explicitamente em 0x00007C00 (backup/ativos), opcional
+  */
+  .eeprom_storage 0x00007C00 (NOLOAD) :
+  {
+      . = ALIGN(64);
+      __eeprom_storage_start__ = .;
+      KEEP(*(.eeprom_storage*))   /* ex.: uint8_t eeprom_area[...] */
+      . = ALIGN(64);
+      __eeprom_storage_end__   = .;
+  } > m_eeprom
+
   /* The startup code goes first into internal flash */
   .interrupts :
   {
@@ -88,6 +105,7 @@ SECTIONS
     *(.ARM.exidx*)
     __exidx_end = .;
   } > m_text
+
 
  .ctors :
   {
@@ -207,5 +225,15 @@ SECTIONS
   .ARM.attributes 0 : { *(.ARM.attributes) }
 
   ASSERT(__StackLimit >= __HeapLimit, "region m_data overflowed with stack and heap")
+
 }
+
+__app1_start      = 0x00000300;
+__app1_end        = 0x00003D80;
+__app2_start      = 0x00003D81;
+__app2_end        = 0x00007800;
+__eeprom_start    = 0x00007800;
+__reg_backup_addr = 0x00007C00;
+__flash_end       = 0x00008000;
+
 

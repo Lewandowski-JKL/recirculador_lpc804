@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 
-typedef void (*ISR_FUNCTION)(void *arg);
+typedef void (*ISR_FUNCTION)(volatile void *arg);
 
 enum INTERRUPT_TRIGGER
 {

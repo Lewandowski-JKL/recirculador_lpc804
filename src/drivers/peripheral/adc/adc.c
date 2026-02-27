@@ -6,7 +6,7 @@ unsigned char adcOn = 0;
  * @brief Inicialização do periferico do ADC
  * 
  */
-void adcBegin()
+void adc_Begin()
 {
     //inicia o ADC
     SYSCON->PDRUNCFG &=	~(SYSCON_PDRUNCFG_ADC_PD_MASK);
@@ -28,7 +28,7 @@ void adcBegin()
  * @param adc 
  * @return int 
  */
-int adcRead(adc_t *adc)
+int adc_Read(adc_t *adc)
 {
     if (!adcOn)//Verifica se o periférico do ADC ja foi iniciado
         return -1;
@@ -53,9 +53,9 @@ int adcRead(adc_t *adc)
  * @param adc 
  * @return short 
  */
-short adcReadMiliVolts(adc_t *adc)
+short adc_ReadMiliVolts(adc_t *adc)
 {
-    int value = (adc->_convertTo_mv * adcRead(adc))/1000;//converte a leitura em mV
+    int value = (adc->_convertTo_mv * adc_Read(adc))/1000;//converte a leitura em mV
     return (short)((972*value)/1000);//retorna o valor em mV
     //ajuste temporário para testes
 }
@@ -67,10 +67,10 @@ short adcReadMiliVolts(adc_t *adc)
  * @param channel Canal do adc
  * @param measureLength Numero de leituras utilizados na media
  */
-void adcConfig(adc_t *adc, unsigned char channel, unsigned short measureLength)
+void adc_Config(adc_t *adc, unsigned char channel, unsigned short measureLength)
 {
     if (~adcOn)//Verifica se o periférico ja foi iniciado
-        adcBegin();
+        adc_Begin();
     //myADC *ADCaux = (myADC*)malloc(sizeof(myADC));
     adc->_channel = channel;
     adc->_measureLength = (measureLength ? measureLength : 1);       

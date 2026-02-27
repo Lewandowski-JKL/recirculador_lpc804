@@ -14,8 +14,6 @@
 #define __LPC804__
 #define __RECIRCULADOR__
 
-
-
 #ifdef __RECIRCULADOR__
 /*******************************************************************************
  * TIME definitions
@@ -38,23 +36,32 @@
 
 
 /*******************************************************************************
- * Communication Definitions
+ * Communication Definitions (I2C)
  *****************************************************************************/
-#define SysI2CBaudRate      (400000)//400 KHz
-#define SysI2CBufferSize    (255)
-#define SysI2CADDR          (0x01)
+#define SysI2CBaudRate          (400000)//400 KHz
+#define SysI2CBufferSize        (255)
+#define SysI2CADDR_WiFi         (0x01)
+#define SysI2CADDR_Recirculador (0x02)
 
 /*******************************************************************************
  * EEPROM Definitions (Flash)
  *****************************************************************************/
-#define SysEepromSize       (0x70)
+#define SysEepromSize       (0x800)
+/*é utilizado uint8_t pq estamos nos referenciando a um endereço de memória*/
+extern unsigned char __flash_end;
+extern unsigned char __eeprom_start;
+extern unsigned char __app1_start;
+extern unsigned char __app1_end;
+extern unsigned char __app2_start;
+extern unsigned char __app2_end;
 
 /*******************************************************************************
  * ADC Definitions
  *****************************************************************************/
 #define SysADCTicksToRead   (SysTicks10_ms)
 #define SysADCMeasureLenght (5U)
-#define SysADC_TempMeasure  (10)// pin 13 adc channel 10
+#define SysADC_TempS1       (3)// pin 16 adc channel 3
+#define SysADC_TempS2       (10)// pin 13 adc channel 10
 #define SysADC_VRef         (1)// pin 1 adc channel 1
 
 
@@ -69,14 +76,12 @@
 #define Syspin_UART_RX         (20)
 #define Syspin_nReady          (2)
 #define Syspin_nLink           (11)
-#define Syspin_TempMeasure     (13)// pin 13 adc channel 10
+#define Syspin_TempS1          (16)// pin 16 adc channel 3
+#define Syspin_TempS2          (13)// pin 13 adc channel 10
 #define Syspin_Botoeira        (9)
 #define Syspin_SensorDeFluxo   (8)
 #define Syspin_Pump            (17)
 #define Syspin_VRef            (1)// pin 1 adc channel 1
-
-
-
 
 
 

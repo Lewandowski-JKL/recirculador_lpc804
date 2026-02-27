@@ -19,13 +19,14 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/i2c/i2c.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/calendar/calendar.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/checksum/checksum.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/fota/fota.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/led_control/led_control.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/log_lpc804/log_lpc804.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/message_manager/message_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
-  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager/register_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager copy/register_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
-  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/stubs/stubs.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -48,13 +49,14 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/i2c/i2c.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/calendar/calendar.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/checksum/checksum.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/fota/fota.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/led_control/led_control.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/log_lpc804/log_lpc804.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/message_manager/message_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
-  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager/register_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager copy/register_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
-  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/stubs/stubs.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -71,11 +73,13 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/i2c/i2c.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/calendar/calendar.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/checksum/checksum.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/fota/fota.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/led_control/led_control.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/log_lpc804/log_lpc804.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/message_manager/message_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
-  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager/register_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager copy/register_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

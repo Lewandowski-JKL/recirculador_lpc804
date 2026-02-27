@@ -70,19 +70,19 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 142,
+				"line" : 143,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 144,
+				"line" : 145,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 146,
+				"line" : 147,
 				"parent" : 0
 			},
 			{
@@ -94,7 +94,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 129,
+				"line" : 130,
 				"parent" : 0
 			},
 			{
@@ -298,7 +298,7 @@
 			{
 				"command" : 7,
 				"file" : 0,
-				"line" : 133,
+				"line" : 134,
 				"parent" : 0
 			}
 		]
@@ -309,7 +309,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "   -fstack-usage  -D__NEWLIB__       -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g     -DDEBUG     -DCPU_LPC804     -DCPU_LPC804M101JDH24     -DMCUXPRESSO_SDK     -g     -O0     -mcpu=cortex-m0plus     -Wall     -mthumb     -MMD     -MP     -fno-common     -ffunction-sections     -fdata-sections     -ffreestanding     -fno-builtin     -mapcs     -std=gnu99     -mfloat-abi=soft     -DSDK_DEBUGCONSOLE=1 "
+					"fragment" : "   -fstack-usage  -D__NEWLIB__       -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g     -DDEBUG     -DCPU_LPC804     -DCPU_LPC804M101JDH24     -DMCUXPRESSO_SDK     -g     -O0     -mcpu=cortex-m0plus     -Wall     -mthumb     -MMD     -MP     -fno-common     -ffunction-sections     -fdata-sections     -ffreestanding     -fno-builtin     -mapcs     -std=gnu99     -mfloat-abi=soft     -DSDK_DEBUGCONSOLE=1 "
 				}
 			],
 			"includes" : 
@@ -384,11 +384,15 @@
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager"
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager"
 				},
 				{
 					"backtrace" : 10,
 					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/fota"
 				},
 				{
 					"backtrace" : 10,
@@ -496,7 +500,7 @@
 				19,
 				20,
 				21,
-				23,
+				22,
 				24,
 				25,
 				26,
@@ -510,14 +514,15 @@
 				34,
 				35,
 				36,
-				37
+				37,
+				38
 			]
 		},
 		{
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "   -fstack-usage  -D__NEWLIB__       -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g     -DDEBUG     -D__STARTUP_CLEAR_BSS     -mcpu=cortex-m0plus     -mthumb     -mfloat-abi=soft "
+					"fragment" : "   -fstack-usage  -D__NEWLIB__       -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g -g     -DDEBUG     -D__STARTUP_CLEAR_BSS     -mcpu=cortex-m0plus     -mthumb     -mfloat-abi=soft "
 				}
 			],
 			"includes" : 
@@ -592,11 +597,15 @@
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/register_manager"
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager"
 				},
 				{
 					"backtrace" : 10,
 					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/fota"
 				},
 				{
 					"backtrace" : 10,
@@ -682,7 +691,7 @@
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				22
+				23
 			]
 		}
 	],
@@ -692,7 +701,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-fstack-usage  -D__NEWLIB__       -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g     -DDEBUG     -DCPU_LPC804     -DCPU_LPC804M101JDH24     -DMCUXPRESSO_SDK     -g     -O0     -mcpu=cortex-m0plus     -Wall     -mthumb     -MMD     -MP     -fno-common     -ffunction-sections     -fdata-sections     -ffreestanding     -fno-builtin     -mapcs     -std=gnu99     -mfloat-abi=soft     -DSDK_DEBUGCONSOLE=1",
+				"fragment" : "-fstack-usage  -D__NEWLIB__       -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g     -DDEBUG     -DCPU_LPC804     -DCPU_LPC804M101JDH24     -DMCUXPRESSO_SDK     -g     -O0     -mcpu=cortex-m0plus     -Wall     -mthumb     -MMD     -MP     -fno-common     -ffunction-sections     -fdata-sections     -ffreestanding     -fno-builtin     -mapcs     -std=gnu99     -mfloat-abi=soft     -DSDK_DEBUGCONSOLE=1",
 				"role" : "flags"
 			},
 			{
@@ -757,7 +766,7 @@
 				19,
 				20,
 				21,
-				23,
+				22,
 				24,
 				25,
 				26,
@@ -771,14 +780,15 @@
 				34,
 				35,
 				36,
-				37
+				37,
+				38
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				22
+				23
 			]
 		}
 	],
@@ -865,6 +875,12 @@
 		{
 			"backtrace" : 29,
 			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/fota/fota.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
 			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/led_control/led_control.c",
 			"sourceGroupIndex" : 0
 		},
@@ -889,19 +905,19 @@
 		{
 			"backtrace" : 29,
 			"compileGroupIndex" : 0,
-			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/register_manager/register_manager.c",
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/register_manager copy/register_manager.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/registers_manager/registers_manager.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 29,
 			"compileGroupIndex" : 0,
 			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 29,
-			"compileGroupIndex" : 0,
-			"path" : "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/stubs/stubs.c",
 			"sourceGroupIndex" : 0
 		},
 		{

@@ -20,12 +20,12 @@ typedef struct adc_t
     long int _convertTo_mv; //Conversão para mili volts
 }adc_t;
 //Leitura do adc
-int adcRead(adc_t *adc);
+int adc_Read(adc_t *adc);
 //Leitura em MiliVolts
-short adcReadMiliVolts(adc_t *adc);
+short adc_ReadMiliVolts(adc_t *adc);
 //Inicialização do periférico do ADC
-void adcBegin();
+void adc_Begin();
 //Configuração do ADC
-void adcConfig(adc_t *adc, unsigned char channel, unsigned short measureLength);
+void adc_Config(adc_t *adc, unsigned char channel, unsigned short measureLength);
 
 #endif

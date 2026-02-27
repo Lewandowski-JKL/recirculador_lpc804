@@ -11,7 +11,7 @@
 #include "calendar.h"
 #include "app_config.h"
 #include <time.h>
-#include "register_manager.h"
+#include "registers_manager.h"
 
 #define secMin 60 //segundos por minuto
 #define secHr 3600 //segundos por hora
@@ -25,7 +25,7 @@ unsigned char dayToMouth[12] = {31,28,31,30,31,30,31,31,30,31,30,31}; //dias de 
 void _attMyTime();
 
 //Ponteiro para auxiliar no controle do timestamp
-volatile int *ptrTimestamp = &IntRegisters[regMapTimestamp-regMapIntOffset-1];
+volatile int *ptrTimestamp = 10;//&IntRegisters[regMapTimestamp-regMapIntOffset-1];
 unsigned char seg;      //variavel que guarda os segundos
 unsigned char min;      //variavel que guarda os minutos
 unsigned char hr;       //variavel que guarda as horas       
@@ -58,7 +58,7 @@ bool schedulingTest()
     unsigned short addrAux = 0;//Endereço auxiliar
     for (unsigned char i = 0; i < 10; i++)//Percorre todos os agendamento -> até 10
     {
-        addrAux = regMapAgendamentosInit+i;//Endereço do registrador que está o agendamento
+        addrAux = 10;//regMapAgendamentosInit+i;//Endereço do registrador que está o agendamento
         shedule = getIntWithAddr(addrAux);//Recolheo valor presente no registrador
         if ((shedule & FlagSheduleOn) == FlagSheduleOn) //Verifica se é um agendamento ativo
         {
