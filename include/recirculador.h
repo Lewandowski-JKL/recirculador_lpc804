@@ -13,20 +13,21 @@ void isrFlow(volatile void *arg);
 void isrTimer0(volatile void *arg);
 void isrSysTick(volatile void *arg);
 
-// void getTemp();
-// void processFunc();
-// void initMyEEPROM();
-// void _writeRegistersInEEPROM();
-// void _writeEEPROMvaluesInRegisters();
-// int myLog2(unsigned int value);
-// /************************************************/
-// void initQueue();
-// void ControlMessageFunc(myMessage **ptrMessage, unsigned char *ptrRX, unsigned char *MessageStateControl, unsigned int *ptrTime);
-// void receiveType(unsigned char *data);
-// void checkBoolReg(unsigned char *data);
-// void checkShortReg(unsigned char *data);
-// void checkIntReg(unsigned char *data);
-// void checkFloatReg(unsigned char *data);
+void getTemp();
+void processFunc();
+void initMyEEPROM();
+void _writeRegistersInEEPROM();
+void _writeEEPROMvaluesInRegisters();
+int myLog2(unsigned int value);
+/************************************************/
+void initQueue();
+void ControlMessageFunc(myMessage **ptrMessage, unsigned char *ptrRX, unsigned char *MessageStateControl, unsigned int *ptrTime);
+void receiveType(unsigned char *data);
+void checkBoolReg(unsigned char *data);
+void checkShortReg(unsigned char *data);
+void checkIntReg(unsigned char *data);
+void checkFloatReg(unsigned char *data);
+
 /*******************************************************************************
  * Global Variables
  ******************************************************************************/
@@ -35,16 +36,16 @@ NTC_Thermistor temp_S2;
 adc_t adc_S1;
 adc_t adc_S2;
 adc_t adc_Vref;
-// unsigned long timeDebounceBotoeira = 0;
-// unsigned long timeDebounceFlow = 0;
-// unsigned long timeAuxPumpOn = 0;
-// //unsigned char flagReceiveMessage = 0;
-// unsigned int FlowCounter = 0;
-// myMessage messageQueue[LengthMessageQueue];
-// myMessage *ptrMessage = NULL;// = messageQueue;
-// myMessage *ptrPriorityMessage = NULL;
-// myMessage priorityMessage;
-// unsigned short wifiTypeReg = 0;
+unsigned long timeDebounceBotoeira = 0;
+unsigned long timeDebounceFlow = 0;
+unsigned long timeAuxPumpOn = 0;
+//unsigned char flagReceiveMessage = 0;
+unsigned int FlowCounter = 0;
+myMessage messageQueue[LengthMessageQueue];
+myMessage *ptrMessage = NULL;// = messageQueue;
+myMessage *ptrPriorityMessage = NULL;
+myMessage priorityMessage;
+unsigned short wifiTypeReg = 0;
 
 /*******************************************************************************
  * Constants

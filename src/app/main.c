@@ -20,6 +20,7 @@
 #include "message_manager.h"
 #include "registers_manager.h"
 #include "recirculador.h"
+#include "task.h"
 
 //#define TESTE
 /*******************************************************************************
@@ -43,16 +44,16 @@ void setup()
     gpio_ClearPin(Syspin_Pump);//Coloca ele em estado '0' | Desligado
     gpio_ConfigPinInput(Syspin_Botoeira);//Define o pino como entrada para leitura da botoeira
     gpio_ConfigPinInput(Syspin_SensorDeFluxo);//Define o pino como entrada para leitura do sensor de fluxo
-
     //Inicia o adc
-    adc_Config(&temp_S1, SysADC_TempS1, SysADCMeasureLenght);
-    adc_Config(&temp_S2, SysADC_TempS2, SysADCMeasureLenght);
+    adc_Config(&adc_S1, SysADC_TempS1, SysADCMeasureLenght);
+    adc_Config(&adc_S2, SysADC_TempS2, SysADCMeasureLenght);
     adc_Config(&adc_Vref, SysADC_VRef, SysADCMeasureLenght);
 
     //inicia iap flash ("eeprom")
     iap_Begin();
     // //Inicia valores dos registradores
     reg_Begin();//Fazer a inicialização depois
+    
 
     // //inicia valores de acordo com a eeprom
     //initMyEEPROM();
@@ -61,25 +62,32 @@ void setup()
     //Configura o termistor e o circuito de medidas
     thermistor_new(&temp_S1, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
     thermistor_new(&temp_S2, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
-    
-    // SysTickBeginISR(SysTickFrequency, isrSysTick);//Cria a interrupção para contagem de tempo e controle do sistema
+
+    SysTickBeginISR(SysTickFrequency, isrSysTick);//Cria a interrupção para contagem de tempo e controle do sistema
     // //inicia interrupções
     // newExternInterrupt(Syspin_Botoeira,isrBotoeira,FALLING);//Cria a interrupção para leitura da botoeira
     // newExternInterrupt(Syspin_SensorDeFluxo,isrFlow,FALLING);//Cria a interrpção para leitura do fluxo
-    //initQueue();//Inicia a fila de mensagens
 
+    //initQueue();//Inicia a fila de mensagens
     //inicia I2C
     i2cBegin(SysI2CADDR_Recirculador, Syspin_SDA, Syspin_SCL, SysI2CBaudRate, i2cModeMaster);
+
 }
 /**
  * @brief 
  * 
  * @return int 
  */
+unsigned char getIntMessage[] = {0x03, 0xEC, 0x13, 0x0B, 0x00}; 
 int main(void)
 {
+    i2cSend_master(SysI2CADDR_WiFi, getIntMessage, 5);
+    task_delay_ms(1000);
+    i2cSend_master(SysI2CADDR_WiFi, getIntMessage, 5);
     while (1)
-    {}
+    {
+        
+    }
 }
 
 

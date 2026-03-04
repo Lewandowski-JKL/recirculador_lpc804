@@ -9,7 +9,7 @@
         "elf": ""
       },
       "stopAtSymbol": "main",
-      "probeSerialNumber": "XX3YJAVOFQO54",
+      "probeSerialNumber": "",
       "isAttach": false,
       "skipBuildBeforeDebug": false,
       "gdbInitCommands": [

@@ -103,8 +103,6 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .rodata.NTC_10K_3380_VET
-                0x00000000      0x2d4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .rodata.FlagSheduleOn
                 0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .bss.TaskRunFlag
@@ -127,18 +125,6 @@ Discarded input sections
                 0x00000000       0xb0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .text.copyPCharToFloat
                 0x00000000       0xc0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .debug_info    0x00000000      0x72d CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .debug_abbrev  0x00000000      0x15b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .debug_aranges
-                0x00000000       0x58 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .debug_rnglists
-                0x00000000       0x41 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .debug_line    0x00000000      0x4ae CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .debug_str     0x00000000     0x103f CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .comment       0x00000000       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .debug_frame   0x00000000      0x114 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
- .ARM.attributes
-                0x00000000       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/board.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/board.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/board.c.obj
@@ -166,16 +152,11 @@ Discarded input sections
                 0x00000000      0x2d4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
  .rodata.FlagSheduleOn
                 0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
- .bss.temp_S1   0x00000000       0x18 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
- .bss.temp_S2   0x00000000       0x18 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
- .bss.VrefADC   0x00000000        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
  .bss.timeDebounceBotoeira
                 0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
  .bss.timeDebounceFlow
                 0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
  .bss.timeAuxPumpOn
-                0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
- .bss.FlowCounter
                 0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
  .bss.messageQueue
                 0x00000000      0x190 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
@@ -196,9 +177,9 @@ Discarded input sections
                 0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .bss.temp_S1   0x00000000       0x18 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .bss.temp_S2   0x00000000       0x18 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .bss.temperatureADC
-                0x00000000        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .bss.VrefADC   0x00000000        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .bss.adc_S1    0x00000000        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .bss.adc_S2    0x00000000        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .bss.adc_Vref  0x00000000        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .bss.timeDebounceBotoeira
                 0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .bss.timeDebounceFlow
@@ -217,15 +198,32 @@ Discarded input sections
                 0x00000000       0x64 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .bss.wifiTypeReg
                 0x00000000        0x2 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .debug_info    0x00000000      0x5f2 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .debug_abbrev  0x00000000       0xe3 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .debug_aranges
-                0x00000000       0x18 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .debug_line    0x00000000      0x372 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .debug_str     0x00000000     0x10e0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .comment       0x00000000       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
- .ARM.attributes
-                0x00000000       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.isrBotoeira
+                0x00000000       0x10 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.isrFlow  0x00000000       0x10 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.isrTimer0
+                0x00000000       0x10 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text._writeRegistersInEEPROM
+                0x00000000        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text._writeEEPROMvaluesInRegisters
+                0x00000000        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.initMyEEPROM
+                0x00000000        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.initQueue
+                0x00000000        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.ControlMessageFunc
+                0x00000000       0x16 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.receiveType
+                0x00000000       0x10 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.checkBoolReg
+                0x00000000       0x10 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.checkShortReg
+                0x00000000       0x10 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.checkIntReg
+                0x00000000       0x10 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.checkFloatReg
+                0x00000000       0x10 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .text.myLog2   0x00000000       0x2a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
@@ -282,14 +280,6 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .text.__NVIC_EnableIRQ
-                0x00000000       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .text.__NVIC_DisableIRQ
-                0x00000000       0x44 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .text.__NVIC_SetPriority
-                0x00000000       0xdc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .text.SysTick_Config
-                0x00000000       0x48 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .bss.intCount  0x00000000        0x1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .text.newExternInterrupt
                 0x00000000      0x1ac CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
@@ -299,20 +289,9 @@ Discarded input sections
                 0x00000000       0x50 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .text.newTimerIntOneShot
                 0x00000000       0x58 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .bss.SysTickFrequency
-                0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .bss.dT_us     0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .bss.dT_ms     0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .text.SysTickBegin
-                0x00000000       0x98 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .text.SysTickBeginISR
-                0x00000000       0x50 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .text.SysTickGetTicks
-                0x00000000       0x14 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .text.SysTickGetTime_us
                 0x00000000       0x1c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .text.SysTickGetTime_ms
-                0x00000000       0x28 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .text.SysTickGetTime_seconds
                 0x00000000       0x1c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
@@ -335,16 +314,12 @@ Discarded input sections
                 0x00000000      0x160 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .text.i2cBeginMaster
                 0x00000000       0xd4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
- .text.WaitI2cMasterState
-                0x00000000       0x74 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .text.WaitI2cMasterRXRDY
                 0x00000000       0x48 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .text.i2cReadLenght_master
                 0x00000000       0xf0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .text.i2cRead_master
                 0x00000000       0xa8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
- .text.i2cSend_master
-                0x00000000      0x1a4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
@@ -354,8 +329,6 @@ Discarded input sections
                 0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .data.dayToMouth
                 0x00000000        0xc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .data.ptrTimestamp
-                0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .bss.seg       0x00000000        0x1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .bss.min       0x00000000        0x1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .bss.hr        0x00000000        0x1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
@@ -376,43 +349,11 @@ Discarded input sections
                 0x00000000       0x48 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .text._attMyTime
                 0x00000000      0x138 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .text.setTimestamp
-                0x00000000       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .text.tickTimestamp
-                0x00000000       0x24 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .debug_info    0x00000000      0x636 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .debug_abbrev  0x00000000      0x16e CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .debug_aranges
-                0x00000000       0x70 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .debug_rnglists
-                0x00000000       0x51 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .debug_line    0x00000000      0x493 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .debug_str     0x00000000     0x1076 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .comment       0x00000000       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .debug_frame   0x00000000      0x158 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
- .ARM.attributes
-                0x00000000       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .text.MODBUS_CRC16
-                0x00000000       0x70 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
  .text.CHECK_CRC16
                 0x00000000       0x5c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .rodata.table.0
-                0x00000000      0x200 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .debug_info    0x00000000      0x10d CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .debug_abbrev  0x00000000       0xb0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .debug_aranges
-                0x00000000       0x28 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .debug_rnglists
-                0x00000000       0x19 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .debug_line    0x00000000       0xec CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .debug_str     0x00000000      0x53d CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .comment       0x00000000       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .debug_frame   0x00000000       0x50 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
- .ARM.attributes
-                0x00000000       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj
@@ -487,24 +428,10 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .text.thermistor_new
-                0x00000000       0x40 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
  .text._findTemp
                 0x00000000      0x140 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
  .text.convert_mV_to_celcius
                 0x00000000       0x82 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .debug_info    0x00000000      0x229 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .debug_abbrev  0x00000000       0xf6 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .debug_aranges
-                0x00000000       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .debug_rnglists
-                0x00000000       0x21 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .debug_line    0x00000000      0x197 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .debug_str     0x00000000      0x687 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .comment       0x00000000       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .debug_frame   0x00000000       0x70 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
- .ARM.attributes
-                0x00000000       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/register_manager_copy/register_manager.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/register_manager_copy/register_manager.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/register_manager_copy/register_manager.c.obj
@@ -608,10 +535,13 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
- .debug_line    0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
- .debug_str     0x00000000      0x4e2 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
- .comment       0x00000000       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
- .ARM.attributes
+ .bss.scheduler_on
+                0x00000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .text.task_schedulerInit
+                0x00000000       0x14 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .text.task_new
+                0x00000000       0x1a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .text.task_delay_ticks
                 0x00000000       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
  .text          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_sbrk.c.obj
  .data          0x00000000        0x0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_sbrk.c.obj
@@ -1576,10 +1506,6 @@ Discarded input sections
  .text          0x00000000        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
  .data          0x00000000        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
  .bss           0x00000000        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
- .text.memcpy   0x00000000       0x12 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
- .debug_frame   0x00000000       0x28 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
- .ARM.attributes
-                0x00000000       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
  .text          0x00000000        0xe C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-strlen.o)
  .data          0x00000000        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-strlen.o)
  .bss           0x00000000        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-strlen.o)
@@ -1719,7 +1645,7 @@ LOAD C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.
  .crp           0x000002fc        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
                 0x00000300                        . = ALIGN (0x4)
 
-.text           0x00000300      0xcf0
+.text           0x00000300     0x1900
                 0x00000300                        . = ALIGN (0x4)
  *(.text)
  .text          0x00000300       0x80 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crt0.o
@@ -1802,279 +1728,357 @@ LOAD C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.
                 0x0000065c       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .text.frame_dummy
                 0x00000688       0x24 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
- .text.setup    0x000006ac       0x7c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+ .text.setup    0x000006ac       0xf8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
                 0x000006ac                setup
- .text.main     0x00000728        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
-                0x00000728                main
+ .text.main     0x000007a4       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x000007a4                main
+ .text.isrSysTick
+                0x000007d4       0x60 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+                0x000007d4                isrSysTick
+ .text.getTemp  0x00000834        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+                0x00000834                getTemp
+ .text.processFunc
+                0x0000083e        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+                0x0000083e                processFunc
+ *fill*         0x00000848        0x8 
  .text.SysConfigClock30M
-                0x00000730       0x3c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
-                0x00000730                SysConfigClock30M
+                0x00000850       0x3c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+                0x00000850                SysConfigClock30M
  .text.iap_Begin
-                0x0000076c       0x40 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
-                0x0000076c                iap_Begin
+                0x0000088c       0x40 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+                0x0000088c                iap_Begin
  .text.iap_ReadChar
-                0x000007ac       0x1c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
-                0x000007ac                iap_ReadChar
+                0x000008cc       0x1c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+                0x000008cc                iap_ReadChar
  .text.gpio_enableClock
-                0x000007c8       0x48 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
-                0x000007c8                gpio_enableClock
+                0x000008e8       0x48 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x000008e8                gpio_enableClock
  .text.gpio_ConfigPinInput
-                0x00000810       0x74 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
-                0x00000810                gpio_ConfigPinInput
+                0x00000930       0x74 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x00000930                gpio_ConfigPinInput
  .text.gpio_ConfigPinOutput
-                0x00000884       0x74 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
-                0x00000884                gpio_ConfigPinOutput
+                0x000009a4       0x74 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x000009a4                gpio_ConfigPinOutput
  .text.gpio_ClearPin
-                0x000008f8       0x3c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
-                0x000008f8                gpio_ClearPin
- .text.PIN_INT0_IRQHandler
-                0x00000934       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x00000934                PIN_INT0_IRQHandler
- .text.PIN_INT1_IRQHandler
-                0x00000968       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x00000968                PIN_INT1_IRQHandler
- .text.PIN_INT2_IRQHandler
-                0x0000099c       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x0000099c                PIN_INT2_IRQHandler
- .text.PIN_INT3_IRQHandler
-                0x000009d0       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x000009d0                PIN_INT3_IRQHandler
- .text.PIN_INT4_IRQHandler
-                0x00000a04       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x00000a04                PIN_INT4_IRQHandler
- .text.PIN_INT5_IRQHandler
-                0x00000a38       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x00000a38                PIN_INT5_IRQHandler
- .text.PIN_INT6_IRQHandler
-                0x00000a6c       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x00000a6c                PIN_INT6_IRQHandler
- .text.PIN_INT7_IRQHandler
-                0x00000aa0       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x00000aa0                PIN_INT7_IRQHandler
- .text.MRT0_IRQHandler
-                0x00000ad4       0x58 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x00000ad4                MRT0_IRQHandler
- .text.SysTick_Handler
-                0x00000b2c       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x00000b2c                SysTick_Handler
- .text.adc_Begin
-                0x00000b5c       0x7c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
-                0x00000b5c                adc_Begin
- .text.adc_Config
-                0x00000bd8       0xb0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
-                0x00000bd8                adc_Config
+                0x00000a18       0x3c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x00000a18                gpio_ClearPin
  .text.__NVIC_EnableIRQ
-                0x00000c88       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x00000a54       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .text.__NVIC_DisableIRQ
-                0x00000cbc       0x44 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x00000a88       0x44 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+ .text.__NVIC_SetPriority
+                0x00000acc       0xdc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+ .text.SysTick_Config
+                0x00000ba8       0x48 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+ .text.PIN_INT0_IRQHandler
+                0x00000bf0       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000bf0                PIN_INT0_IRQHandler
+ .text.PIN_INT1_IRQHandler
+                0x00000c24       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000c24                PIN_INT1_IRQHandler
+ .text.PIN_INT2_IRQHandler
+                0x00000c58       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000c58                PIN_INT2_IRQHandler
+ .text.PIN_INT3_IRQHandler
+                0x00000c8c       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000c8c                PIN_INT3_IRQHandler
+ .text.PIN_INT4_IRQHandler
+                0x00000cc0       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000cc0                PIN_INT4_IRQHandler
+ .text.PIN_INT5_IRQHandler
+                0x00000cf4       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000cf4                PIN_INT5_IRQHandler
+ .text.PIN_INT6_IRQHandler
+                0x00000d28       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000d28                PIN_INT6_IRQHandler
+ .text.PIN_INT7_IRQHandler
+                0x00000d5c       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000d5c                PIN_INT7_IRQHandler
+ .text.MRT0_IRQHandler
+                0x00000d90       0x58 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000d90                MRT0_IRQHandler
+ .text.SysTickBegin
+                0x00000de8       0x98 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000de8                SysTickBegin
+ .text.SysTickBeginISR
+                0x00000e80       0x50 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000e80                SysTickBeginISR
+ .text.SysTickGetTicks
+                0x00000ed0       0x14 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000ed0                SysTickGetTicks
+ .text.SysTick_Handler
+                0x00000ee4       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000ee4                SysTick_Handler
+ .text.SysTickGetTime_ms
+                0x00000f14       0x28 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000f14                SysTickGetTime_ms
+ .text.adc_Begin
+                0x00000f3c       0x7c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+                0x00000f3c                adc_Begin
+ .text.adc_Config
+                0x00000fb8       0xb0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+                0x00000fb8                adc_Config
+ .text.__NVIC_EnableIRQ
+                0x00001068       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+ .text.__NVIC_DisableIRQ
+                0x0000109c       0x44 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .text.i2cBegin
-                0x00000d00      0x114 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
-                0x00000d00                i2cBegin
+                0x000010e0      0x114 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x000010e0                i2cBegin
  .text._I2C_PrimarySetBaudRate
-                0x00000e14       0xb4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
-                0x00000e14                _I2C_PrimarySetBaudRate
+                0x000011f4       0xb4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x000011f4                _I2C_PrimarySetBaudRate
+ .text.WaitI2cMasterState
+                0x000012a8       0x74 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x000012a8                WaitI2cMasterState
+ .text.i2cSend_master
+                0x0000131c      0x1a4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x0000131c                i2cSend_master
+ .text.setTimestamp
+                0x000014c0       0x34 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+                0x000014c0                setTimestamp
+ .text.tickTimestamp
+                0x000014f4       0x24 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+                0x000014f4                tickTimestamp
+ .text.MODBUS_CRC16
+                0x00001518       0x70 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
+                0x00001518                MODBUS_CRC16
+ .text.thermistor_new
+                0x00001588       0x40 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
+                0x00001588                thermistor_new
  .text.reg_Begin
-                0x00000ec8        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
-                0x00000ec8                reg_Begin
- *fill*         0x00000ed2        0x2 
+                0x000015c8        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+                0x000015c8                reg_Begin
+ .text.task_delay_ms
+                0x000015d2       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+                0x000015d2                task_delay_ms
+ *fill*         0x000015fe        0x2 
  .text.SystemInit
-                0x00000ed4       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
-                0x00000ed4                SystemInit
+                0x00001600       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+                0x00001600                SystemInit
  .text.SystemInitHook
-                0x00000f00        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
-                0x00000f00                SystemInitHook
- *fill*         0x00000f0a        0x2 
+                0x0000162c        0xa CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+                0x0000162c                SystemInitHook
+ *fill*         0x00001636        0x2 
  .text.USART0_DriverIRQHandler
-                0x00000f0c       0x24 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
-                0x00000f0c                USART0_DriverIRQHandler
+                0x00001638       0x24 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+                0x00001638                USART0_DriverIRQHandler
  .text.USART1_DriverIRQHandler
-                0x00000f30       0x24 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
-                0x00000f30                USART1_DriverIRQHandler
- .text.exit     0x00000f54       0x28 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
-                0x00000f54                exit
- .text.memset   0x00000f7c       0x10 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
-                0x00000f7c                memset
+                0x0000165c       0x24 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+                0x0000165c                USART1_DriverIRQHandler
+ .text.exit     0x00001680       0x28 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
+                0x00001680                exit
+ .text.memset   0x000016a8       0x10 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
+                0x000016a8                memset
  .text.__libc_init_array
-                0x00000f8c       0x48 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
-                0x00000f8c                __libc_init_array
- .text._exit    0x00000fd4        0x2 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
-                0x00000fd4                _exit
+                0x000016b8       0x48 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
+                0x000016b8                __libc_init_array
+ .text.memcpy   0x00001700       0x12 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
+                0x00001700                memcpy
+ .text._exit    0x00001712        0x2 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+                0x00001712                _exit
  *(.rodata)
  *(.rodata*)
+ .rodata.NTC_10K_3380_VET
+                0x00001714      0x2d4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
+                0x00001714                NTC_10K_3380_VET
+ .rodata.table.0
+                0x000019e8      0x200 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
  *(.glue_7)
- .glue_7        0x00000fd6        0x0 linker stubs
+ .glue_7        0x00001be8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000fd6        0x0 linker stubs
+ .glue_7t       0x00001be8        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x00000fd6        0x2 
- .eh_frame      0x00000fd8        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+ .eh_frame      0x00001be8        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  *(.init)
- .init          0x00000fd8        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
-                0x00000fd8                _init
- .init          0x00000fdc        0x8 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtn.o
+ .init          0x00001be8        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
+                0x00001be8                _init
+ .init          0x00001bec        0x8 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtn.o
  *(.fini)
- .fini          0x00000fe4        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
-                0x00000fe4                _fini
- .fini          0x00000fe8        0x8 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtn.o
-                0x00000ff0                        . = ALIGN (0x4)
+ .fini          0x00001bf4        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
+                0x00001bf4                _fini
+ .fini          0x00001bf8        0x8 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtn.o
+                0x00001c00                        . = ALIGN (0x4)
 
-.vfp11_veneer   0x00000ff0        0x0
- .vfp11_veneer  0x00000ff0        0x0 linker stubs
+.vfp11_veneer   0x00001c00        0x0
+ .vfp11_veneer  0x00001c00        0x0 linker stubs
 
-.v4_bx          0x00000ff0        0x0
- .v4_bx         0x00000ff0        0x0 linker stubs
+.v4_bx          0x00001c00        0x0
+ .v4_bx         0x00001c00        0x0 linker stubs
 
-.iplt           0x00000ff0        0x0
- .iplt          0x00000ff0        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x00001c00        0x0
+ .iplt          0x00001c00        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x00000ff0        0x8
-                0x00000ff0                        __exidx_start = .
+.ARM            0x00001c00        0x8
+                0x00001c00                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x00000ff0        0x8 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crt0.o
+ .ARM.exidx     0x00001c00        0x8 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crt0.o
                                  0x10 (size before relaxing)
-                0x00000ff8                        __exidx_end = .
+                0x00001c08                        __exidx_end = .
 
-.rel.dyn        0x00000ff8        0x0
- .rel.iplt      0x00000ff8        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x00001c08        0x0
+ .rel.iplt      0x00001c08        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.ctors          0x00000ff8        0x0
-                0x00000ff8                        __CTOR_LIST__ = .
+.ctors          0x00001c08        0x0
+                0x00001c08                        __CTOR_LIST__ = .
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
-                0x00000ff8                        __CTOR_END__ = .
+                0x00001c08                        __CTOR_END__ = .
 
-.dtors          0x00000ff8        0x0
-                0x00000ff8                        __DTOR_LIST__ = .
+.dtors          0x00001c08        0x0
+                0x00001c08                        __DTOR_LIST__ = .
  *crtbegin.o(.dtors)
  *crtbegin?.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
-                0x00000ff8                        __DTOR_END__ = .
+                0x00001c08                        __DTOR_END__ = .
 
-.preinit_array  0x00000ff8        0x0
-                0x00000ff8                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x00001c08        0x0
+                0x00001c08                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000ff8                        PROVIDE (__preinit_array_end = .)
+                0x00001c08                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x00000ff8        0x8
-                0x00000ff8                        PROVIDE (__init_array_start = .)
+.init_array     0x00001c08        0x8
+                0x00001c08                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000ff8        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
- .init_array    0x00000ffc        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
-                0x00001000                        PROVIDE (__init_array_end = .)
+ .init_array    0x00001c08        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+ .init_array    0x00001c0c        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x00001c10                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x00001000        0x4
+.fini_array     0x00001c10        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00001000        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+ .fini_array    0x00001c10        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00001004                        __etext = .
-                0x00001004                        __DATA_ROM = .
+                0x00001c14                        __etext = .
+                0x00001c14                        __DATA_ROM = .
 
-.data           0x10000000        0x4 load address 0x00001004
+.data           0x10000000       0x10 load address 0x00001c14
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        __DATA_RAM = .
                 0x10000000                        __data_start__ = .
  *(.ramfunc*)
  *(.data)
  *(.data*)
+ .data.getIntMessage
+                0x10000000        0x5 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x10000000                getIntMessage
+ *fill*         0x10000005        0x3 
+ .data.ptrTimestamp
+                0x10000008        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+                0x10000008                ptrTimestamp
  .data.SystemCoreClock
-                0x10000000        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
-                0x10000000                SystemCoreClock
+                0x1000000c        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+                0x1000000c                SystemCoreClock
  *(.jcr*)
-                0x10000004                        . = ALIGN (0x4)
-                0x10000004                        __data_end__ = .
-                0x00001008                        __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
+                0x10000010                        . = ALIGN (0x4)
+                0x10000010                        __data_end__ = .
+                0x00001c24                        __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
                 0x00007800                        text_end = (ORIGIN (m_text) + LENGTH (m_text))
                 0x00000001                        ASSERT ((__DATA_END <= text_end), region m_text overflowed with text and data)
 
 .tm_clone_table
-                0x10000004        0x0 load address 0x00001008
+                0x10000010        0x0 load address 0x00001c24
  .tm_clone_table
-                0x10000004        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10000010        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
-                0x10000004        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
+                0x10000010        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x10000004        0x0 load address 0x00001008
- .igot.plt      0x10000004        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.igot.plt       0x10000010        0x0 load address 0x00001c24
+ .igot.plt      0x10000010        0x0 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.bss            0x10000004      0x878 load address 0x00001008
-                0x10000004                        . = ALIGN (0x4)
-                0x10000004                        __START_BSS = .
-                0x10000004                        __bss_start__ = .
+.bss            0x10000010      0x8c4 load address 0x00001c24
+                0x10000010                        . = ALIGN (0x4)
+                0x10000010                        __START_BSS = .
+                0x10000010                        __bss_start__ = .
  *(.bss)
  *(.bss*)
  .bss.completed.1
-                0x10000004        0x1 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
- *fill*         0x10000005        0x3 
- .bss.object.0  0x10000008       0x18 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
- .bss.temperatureADC
-                0x10000020        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
-                0x10000020                temperatureADC
+                0x10000010        0x1 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+ *fill*         0x10000011        0x3 
+ .bss.object.0  0x10000014       0x18 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+ .bss.temp_S1   0x1000002c       0x18 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x1000002c                temp_S1
+ .bss.temp_S2   0x10000044       0x18 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x10000044                temp_S2
+ .bss.adc_S1    0x1000005c        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x1000005c                adc_S1
+ .bss.adc_S2    0x10000064        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x10000064                adc_S2
+ .bss.adc_Vref  0x1000006c        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x1000006c                adc_Vref
+ .bss.FlowCounter
+                0x10000074        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x10000074                FlowCounter
  .bss.iap_flash_Vet
-                0x10000028      0x800 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
- .bss.gpioOn    0x10000828        0x1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
-                0x10000828                gpioOn
- *fill*         0x10000829        0x3 
+                0x10000078      0x800 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+ .bss.gpioOn    0x10000878        0x1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x10000878                gpioOn
+ *fill*         0x10000879        0x3 
  .bss.inputRefPin
-                0x1000082c        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
-                0x1000082c                inputRefPin
+                0x1000087c        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x1000087c                inputRefPin
  .bss.outputRefPin
-                0x10000830        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
-                0x10000830                outputRefPin
+                0x10000880        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x10000880                outputRefPin
  .bss.ptrIsrFunc
-                0x10000834       0x20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x10000834                ptrIsrFunc
+                0x10000884       0x20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x10000884                ptrIsrFunc
  .bss.ptrIsrTimer
-                0x10000854        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x10000854                ptrIsrTimer
+                0x100008a4        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x100008a4                ptrIsrTimer
  .bss.ptrSysTickISR
-                0x1000085c        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x1000085c                ptrSysTickISR
+                0x100008ac        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x100008ac                ptrSysTickISR
  .bss.SysTickCount
-                0x10000860        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
-                0x10000860                SysTickCount
- .bss.adcOn     0x10000864        0x1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
-                0x10000864                adcOn
- *fill*         0x10000865        0x3 
- .bss.I2C_mode  0x10000868        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
-                0x10000868                I2C_mode
+                0x100008b0        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x100008b0                SysTickCount
+ .bss.SysTickFrequency
+                0x100008b4        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x100008b4                SysTickFrequency
+ .bss.dT_us     0x100008b8        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x100008b8                dT_us
+ .bss.adcOn     0x100008bc        0x1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+                0x100008bc                adcOn
+ *fill*         0x100008bd        0x3 
+ .bss.I2C_mode  0x100008c0        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x100008c0                I2C_mode
  .bss.s_usartHandle
-                0x1000086c        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+                0x100008c4        0x8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
  .bss.s_usartIsr
-                0x10000874        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+                0x100008cc        0x4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
  .bss.__stdio_exit_handler
-                0x10000878        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-findfp.o)
-                0x10000878                __stdio_exit_handler
+                0x100008d0        0x4 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-findfp.o)
+                0x100008d0                __stdio_exit_handler
  *(COMMON)
-                0x1000087c                        . = ALIGN (0x4)
-                0x1000087c                        __bss_end__ = .
-                0x1000087c                        __END_BSS = .
+                0x100008d4                        . = ALIGN (0x4)
+                0x100008d4                        __bss_end__ = .
+                0x100008d4                        __END_BSS = .
 
-.heap           0x1000087c       0x44 load address 0x00001880
-                0x10000880                        . = ALIGN (0x8)
- *fill*         0x1000087c        0x4 
-                0x10000880                        __end__ = .
-                0x10000880                        PROVIDE (end = .)
-                0x10000880                        __HeapBase = .
-                0x100008c0                        . = (. + HEAP_SIZE)
- *fill*         0x10000880       0x40 
-                0x100008c0                        __HeapLimit = .
-                0x100008c0                        __heap_limit = .
+.heap           0x100008d4       0x44 load address 0x000024e8
+                0x100008d8                        . = ALIGN (0x8)
+ *fill*         0x100008d4        0x4 
+                0x100008d8                        __end__ = .
+                0x100008d8                        PROVIDE (end = .)
+                0x100008d8                        __HeapBase = .
+                0x10000918                        . = (. + HEAP_SIZE)
+ *fill*         0x100008d8       0x40 
+                0x10000918                        __HeapLimit = .
+                0x10000918                        __heap_limit = .
 
-.stack          0x100008c0       0x40 load address 0x000018c4
-                0x100008c0                        . = ALIGN (0x8)
-                0x10000900                        . = (. + STACK_SIZE)
- *fill*         0x100008c0       0x40 
+.stack          0x10000918       0x40 load address 0x0000252c
+                0x10000918                        . = ALIGN (0x8)
+                0x10000958                        . = (. + STACK_SIZE)
+ *fill*         0x10000918       0x40 
                 0x10000fe0                        __StackTop = (ORIGIN (m_data) + LENGTH (m_data))
                 0x10000fa0                        __StackLimit = (__StackTop - STACK_SIZE)
                 0x10000fe0                        PROVIDE (__stack = __StackTop)
@@ -2089,45 +2093,59 @@ LOAD C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.
  .ARM.attributes
                 0x0000004a       0x1b C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crt0.o
  .ARM.attributes
-                0x00000065       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x00000065       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .ARM.attributes
-                0x00000091       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+                0x00000091       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
  .ARM.attributes
-                0x000000bd       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+                0x000000bd       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .ARM.attributes
-                0x000000e9       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x000000e9       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
  .ARM.attributes
-                0x00000115       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000115       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
  .ARM.attributes
-                0x00000141       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+                0x00000141       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
  .ARM.attributes
-                0x0000016d       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x0000016d       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .ARM.attributes
-                0x00000199       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+                0x00000199       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
  .ARM.attributes
-                0x000001c5       0x1b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
+                0x000001c5       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .ARM.attributes
-                0x000001e0       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+                0x000001f1       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .ARM.attributes
-                0x0000020c       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+                0x0000021d       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
  .ARM.attributes
-                0x00000238       0x1e C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+                0x00000249       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
  .ARM.attributes
-                0x00000256       0x1e C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+                0x00000275       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
  .ARM.attributes
-                0x00000274       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
+                0x000002a1       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
  .ARM.attributes
-                0x000002a0       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-findfp.o)
+                0x000002cd       0x1b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
  .ARM.attributes
-                0x000002cc       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
+                0x000002e8       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
  .ARM.attributes
-                0x000002f8       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
+                0x00000314       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
  .ARM.attributes
-                0x00000324       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+                0x00000340       0x1e C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
  .ARM.attributes
-                0x00000350       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
+                0x0000035e       0x1e C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x0000037c       0x1e C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtn.o
+                0x0000037c       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
+ .ARM.attributes
+                0x000003a8       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-findfp.o)
+ .ARM.attributes
+                0x000003d4       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
+ .ARM.attributes
+                0x00000400       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
+ .ARM.attributes
+                0x0000042c       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000458       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+ .ARM.attributes
+                0x00000484       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
+ .ARM.attributes
+                0x000004b0       0x1e C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtn.o
                 0x00000001                        ASSERT ((__StackLimit >= __HeapLimit), region m_data overflowed with stack and heap)
                 0x00000300                        __app1_start = 0x300
                 0x00003d80                        __app1_end = 0x3d80
@@ -2151,143 +2169,204 @@ LOAD linker stubs
  .debug_line_str
                 0x0000025c       0xc9 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
 
-.debug_info     0x00000000     0x715d
- .debug_info    0x00000000      0x6e8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
- .debug_info    0x000006e8       0xbc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
- .debug_info    0x000007a4      0x75e CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
- .debug_info    0x00000f02      0xb77 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
- .debug_info    0x00001a79     0x1103 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .debug_info    0x00002b7c      0xa9d CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
- .debug_info    0x00003619     0x11d7 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
- .debug_info    0x000047f0      0x3d6 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
- .debug_info    0x00004bc6      0x37b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
- .debug_info    0x00004f41      0x559 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
- .debug_info    0x0000549a     0x1c20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
- .debug_info    0x000070ba       0xa3 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+.debug_info     0x00000000     0x8ce4
+ .debug_info    0x00000000      0x72d CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
+ .debug_info    0x0000072d      0x7ca CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+ .debug_info    0x00000ef7      0x873 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .debug_info    0x0000176a       0xbc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+ .debug_info    0x00001826      0x75e CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+ .debug_info    0x00001f84      0xb77 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+ .debug_info    0x00002afb     0x1103 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+ .debug_info    0x00003bfe      0xa9d CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+ .debug_info    0x0000469b     0x11d7 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+ .debug_info    0x00005872      0x636 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+ .debug_info    0x00005ea8      0x10d CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
+ .debug_info    0x00005fb5      0x229 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
+ .debug_info    0x000061de      0x3d6 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+ .debug_info    0x000065b4      0x199 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .debug_info    0x0000674d      0x37b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
+ .debug_info    0x00006ac8      0x559 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+ .debug_info    0x00007021     0x1c20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+ .debug_info    0x00008c41       0xa3 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
 
-.debug_abbrev   0x00000000     0x12ac
- .debug_abbrev  0x00000000      0x14b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
- .debug_abbrev  0x0000014b       0x65 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
- .debug_abbrev  0x000001b0      0x1b1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
- .debug_abbrev  0x00000361      0x1a2 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
- .debug_abbrev  0x00000503      0x2d0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .debug_abbrev  0x000007d3      0x1ef CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
- .debug_abbrev  0x000009c2      0x318 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
- .debug_abbrev  0x00000cda       0x9a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
- .debug_abbrev  0x00000d74       0x26 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
- .debug_abbrev  0x00000d9a      0x13b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
- .debug_abbrev  0x00000ed5      0x370 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
- .debug_abbrev  0x00001245       0x67 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+.debug_abbrev   0x00000000     0x1a5c
+ .debug_abbrev  0x00000000      0x15b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
+ .debug_abbrev  0x0000015b      0x167 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+ .debug_abbrev  0x000002c2      0x217 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .debug_abbrev  0x000004d9       0x65 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+ .debug_abbrev  0x0000053e      0x1b1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+ .debug_abbrev  0x000006ef      0x1a2 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+ .debug_abbrev  0x00000891      0x2d0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+ .debug_abbrev  0x00000b61      0x1ef CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+ .debug_abbrev  0x00000d50      0x318 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+ .debug_abbrev  0x00001068      0x16e CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+ .debug_abbrev  0x000011d6       0xb0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
+ .debug_abbrev  0x00001286       0xf6 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
+ .debug_abbrev  0x0000137c       0x9a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+ .debug_abbrev  0x00001416      0x10e CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .debug_abbrev  0x00001524       0x26 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
+ .debug_abbrev  0x0000154a      0x13b CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+ .debug_abbrev  0x00001685      0x370 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+ .debug_abbrev  0x000019f5       0x67 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
 
-.debug_aranges  0x00000000      0x490
+.debug_aranges  0x00000000      0x688
  .debug_aranges
-                0x00000000       0x28 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x00000000       0x58 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .debug_aranges
-                0x00000028       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+                0x00000058       0x28 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
  .debug_aranges
-                0x00000058       0x70 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+                0x00000080       0xa0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .debug_aranges
-                0x000000c8       0x90 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x00000120       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
  .debug_aranges
-                0x00000158       0xd8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x00000150       0x70 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
  .debug_aranges
-                0x00000230       0x38 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+                0x000001c0       0x90 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
  .debug_aranges
-                0x00000268       0x88 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x00000250       0xd8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .debug_aranges
-                0x000002f0       0x20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+                0x00000328       0x38 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
  .debug_aranges
-                0x00000310       0x20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
+                0x00000360       0x88 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .debug_aranges
-                0x00000330       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+                0x000003e8       0x70 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
  .debug_aranges
-                0x00000360      0x110 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+                0x00000458       0x28 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
  .debug_aranges
-                0x00000470       0x20 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+                0x00000480       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
+ .debug_aranges
+                0x000004b0       0x20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+ .debug_aranges
+                0x000004d0       0x38 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .debug_aranges
+                0x00000508       0x20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
+ .debug_aranges
+                0x00000528       0x30 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+ .debug_aranges
+                0x00000558      0x110 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+ .debug_aranges
+                0x00000668       0x20 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
 
 .debug_rnglists
-                0x00000000      0x323
+                0x00000000      0x488
  .debug_rnglists
-                0x00000000       0x19 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+                0x00000000       0x41 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
  .debug_rnglists
-                0x00000019       0x1f CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+                0x00000041       0x1a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
  .debug_rnglists
-                0x00000038       0x50 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+                0x0000005b       0x73 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .debug_rnglists
-                0x00000088       0x67 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+                0x000000ce       0x1f CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
  .debug_rnglists
-                0x000000ef       0xa1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+                0x000000ed       0x50 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
  .debug_rnglists
-                0x00000190       0x27 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+                0x0000013d       0x67 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
  .debug_rnglists
-                0x000001b7       0x69 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+                0x000001a4       0xa1 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .debug_rnglists
-                0x00000220       0x13 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+                0x00000245       0x27 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
  .debug_rnglists
-                0x00000233       0x20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+                0x0000026c       0x69 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
  .debug_rnglists
-                0x00000253       0xd0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+                0x000002d5       0x51 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+ .debug_rnglists
+                0x00000326       0x19 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
+ .debug_rnglists
+                0x0000033f       0x21 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
+ .debug_rnglists
+                0x00000360       0x13 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+ .debug_rnglists
+                0x00000373       0x25 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .debug_rnglists
+                0x00000398       0x20 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+ .debug_rnglists
+                0x000003b8       0xd0 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
 
-.debug_line     0x00000000     0x3721
- .debug_line    0x00000000      0x556 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
- .debug_line    0x00000556      0x199 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
- .debug_line    0x000006ef      0x4ba CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
- .debug_line    0x00000ba9      0x40e CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
- .debug_line    0x00000fb7      0x84a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .debug_line    0x00001801      0x31a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
- .debug_line    0x00001b1b      0x983 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
- .debug_line    0x0000249e      0x245 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
- .debug_line    0x000026e3      0x136 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
- .debug_line    0x00002819      0x200 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
- .debug_line    0x00002a19      0xcc4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
- .debug_line    0x000036dd       0x44 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+.debug_line     0x00000000     0x4ade
+ .debug_line    0x00000000      0x4ae CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
+ .debug_line    0x000004ae      0x621 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+ .debug_line    0x00000acf      0x5bd CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .debug_line    0x0000108c      0x199 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+ .debug_line    0x00001225      0x4ba CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+ .debug_line    0x000016df      0x40e CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+ .debug_line    0x00001aed      0x84a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+ .debug_line    0x00002337      0x31a CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+ .debug_line    0x00002651      0x983 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+ .debug_line    0x00002fd4      0x493 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+ .debug_line    0x00003467       0xec CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
+ .debug_line    0x00003553      0x197 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
+ .debug_line    0x000036ea      0x245 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+ .debug_line    0x0000392f      0x171 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .debug_line    0x00003aa0      0x136 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
+ .debug_line    0x00003bd6      0x200 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+ .debug_line    0x00003dd6      0xcc4 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+ .debug_line    0x00004a9a       0x44 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
 
-.debug_str      0x00000000     0x3957
- .debug_str     0x00000000     0x3957 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
-                               0x1184 (size before relaxing)
- .debug_str     0x00003957      0x5b2 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
- .debug_str     0x00003957     0x1157 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
- .debug_str     0x00003957     0x12ea CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
- .debug_str     0x00003957     0x17c7 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .debug_str     0x00003957     0x1334 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
- .debug_str     0x00003957     0x175c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
- .debug_str     0x00003957      0xfac CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
- .debug_str     0x00003957      0x6b7 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
- .debug_str     0x00003957      0x83c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
- .debug_str     0x00003957     0x24ea CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
- .debug_str     0x00003957      0x1b8 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+.debug_str      0x00000000     0x3f38
+ .debug_str     0x00000000     0x3f38 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
+                               0x103f (size before relaxing)
+ .debug_str     0x00003f38     0x11e6 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+ .debug_str     0x00003f38     0x121f CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .debug_str     0x00003f38      0x5b2 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+ .debug_str     0x00003f38     0x1157 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+ .debug_str     0x00003f38     0x12ea CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+ .debug_str     0x00003f38     0x17c7 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+ .debug_str     0x00003f38     0x1334 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+ .debug_str     0x00003f38     0x175c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+ .debug_str     0x00003f38     0x1076 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+ .debug_str     0x00003f38      0x53d CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
+ .debug_str     0x00003f38      0x687 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
+ .debug_str     0x00003f38      0xfac CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+ .debug_str     0x00003f38      0x626 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .debug_str     0x00003f38      0x6b7 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj
+ .debug_str     0x00003f38      0x83c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+ .debug_str     0x00003f38     0x24ea CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+ .debug_str     0x00003f38      0x1b8 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
 
 .comment        0x00000000       0x44
- .comment       0x00000000       0x44 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+ .comment       0x00000000       0x44 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
                                  0x45 (size before relaxing)
+ .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+ .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+ .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+ .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
+ .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+ .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
  .comment       0x00000044       0x45 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
  .comment       0x00000044       0x45 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
 
-.debug_frame    0x00000000      0xfb4
- .debug_frame   0x00000000       0x4c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
- .debug_frame   0x0000004c       0x64 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
- .debug_frame   0x000000b0      0x170 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
- .debug_frame   0x00000220      0x1ec CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
- .debug_frame   0x0000040c      0x2dc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
- .debug_frame   0x000006e8       0x8c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
- .debug_frame   0x00000774      0x1dc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
- .debug_frame   0x00000950       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
- .debug_frame   0x0000097c       0x64 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
- .debug_frame   0x000009e0      0x3e8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
- .debug_frame   0x00000dc8       0x20 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
- .debug_frame   0x00000de8       0x28 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
- .debug_frame   0x00000e10      0x138 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-findfp.o)
- .debug_frame   0x00000f48       0x20 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
- .debug_frame   0x00000f68       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
- .debug_frame   0x00000f94       0x20 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
+.debug_frame    0x00000000     0x15ac
+ .debug_frame   0x00000000      0x114 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj
+ .debug_frame   0x00000114       0x4c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj
+ .debug_frame   0x00000160      0x218 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj
+ .debug_frame   0x00000378       0x64 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj
+ .debug_frame   0x000003dc      0x170 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj
+ .debug_frame   0x0000054c      0x1ec CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj
+ .debug_frame   0x00000738      0x2dc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj
+ .debug_frame   0x00000a14       0x8c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj
+ .debug_frame   0x00000aa0      0x1dc CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj
+ .debug_frame   0x00000c7c      0x158 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj
+ .debug_frame   0x00000dd4       0x50 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj
+ .debug_frame   0x00000e24       0x70 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj
+ .debug_frame   0x00000e94       0x2c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj
+ .debug_frame   0x00000ec0       0x8c CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj
+ .debug_frame   0x00000f4c       0x64 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj
+ .debug_frame   0x00000fb0      0x3e8 CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj
+ .debug_frame   0x00001398       0x20 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .debug_frame   0x000013b8       0x28 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
+ .debug_frame   0x000013e0      0x138 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-findfp.o)
+ .debug_frame   0x00001518       0x20 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x00001538       0x2c C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
+ .debug_frame   0x00001564       0x28 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
+ .debug_frame   0x0000158c       0x20 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)
 
 .debug_loc      0x00000000       0x15
  .debug_loc     0x00000000       0x15 C:/NXP/MCUXpressoIDE_24.12.148/ide/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libcr_newlib_nohost.a(_exit.o)

@@ -1,0 +1,4 @@
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:28:6:task_schedulerInit	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:34:6:task_new	24	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:38:6:task_delay_ms	24	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:43:6:task_delay_ticks	24	static
