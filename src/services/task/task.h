@@ -2,7 +2,6 @@
 #define TASK_H
 
 typedef void task_func_t(void *arg);
-
 void task_schedulerInit();
 void task_new(task_func_t *ptrFunc, char *taskName, unsigned int frequency, unsigned char priority, void *arg);
 void task_delay_ms(unsigned long time_ms);

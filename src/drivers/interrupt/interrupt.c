@@ -324,9 +324,9 @@ void MRT0_IRQHandler(void)
  ******************************************************************************/
 ISR_FUNCTION ptrSysTickISR = NULL;
 volatile unsigned long SysTickCount = 0;
-unsigned int SysTickFrequency = 0;
-unsigned int dT_us = 0;
-unsigned int dT_ms = 0;
+volatile unsigned long SysTickFrequency = 0;
+volatile unsigned long dT_us = 0;
+volatile unsigned long dT_ms = 0;
 /**
  * @brief Configura uma interrupção continua para controle do sistema
  * 

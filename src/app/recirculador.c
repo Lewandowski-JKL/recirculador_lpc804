@@ -62,20 +62,20 @@ void isrSysTick(volatile void *arg)
 {
     /*if (flagReceiveMessage)
         return;*/
-    unsigned int SysTicksGetAux = SysTickGetTicks();
+    // unsigned int SysTicksGetAux = SysTickGetTicks();
     /*if(SysTicksGetAux % SysTicksToProcess)
         return;*/
-    if(!(SysTicksGetAux % SysTicks100_ms))//Faz a leitura da temperatura a cada 100ms
-        getTemp();
-    if(!(SysTicksGetAux % SysTicks1000_ms))//Faz a leitura do fluxo a ca 1s
-    {
-        tickTimestamp();
-        //FlowCounter *= getFloatWithAddr(regMapCalibFluxo);
-        //setFloatValue(FlowCounter, regMapCalibFluxo);
-        FlowCounter = 0;
-    }
-    if(!(SysTicksGetAux % SysTicks10_ms))//Processa possíveis alterações do sistema a cada 10ms
-        processFunc();
+    // if(!(SysTicksGetAux % SysTicks100_ms))//Faz a leitura da temperatura a cada 100ms
+    //     getTemp();
+    // if(!(SysTicksGetAux % SysTicks1000_ms))//Faz a leitura do fluxo a ca 1s
+    // {
+    //     tickTimestamp();
+    //     //FlowCounter *= getFloatWithAddr(regMapCalibFluxo);
+    //     //setFloatValue(FlowCounter, regMapCalibFluxo);
+    //     FlowCounter = 0;
+    // }
+    // if(!(SysTicksGetAux % SysTicks10_ms))//Processa possíveis alterações do sistema a cada 10ms
+    //     processFunc();
     /*if(!(SysTicksGetAux % SysTicks100_ms))
         _writeRegistersInEEPROM();//atualiza eeprom (so faz commit se teve alguma alteração)*/
 }

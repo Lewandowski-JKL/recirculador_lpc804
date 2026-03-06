@@ -22,6 +22,55 @@
 #include "recirculador.h"
 #include "task.h"
 
+
+unsigned char getIntMessage[] =     {0x03, 0xEC, 0x13, 0x0B, 0x00};
+unsigned char getFloatMessage[] =   {0x03, 0xBC, 0x1B, 0x07, 0x00};
+unsigned char setPumpMessage[] =    {0x10, 0x49, 0x04, 0x01, 0x00, 0x01, 0xFF}; 
+
+typedef struct blink1_s
+{
+    int i;
+    int x;
+}blink1_s;
+blink1_s blink1_var = 
+{
+    .i = 0,
+    .x = 0
+};
+void blink1_task(void *arg)
+{
+    blink1_s *_var = (blink1_s*)arg;
+
+    _var->x = ((_var->i%5) == 0) ?  (~_var->x) : _var->x;
+    unsigned char _getIntMessage[] =     {0x03, 0xFF, 0xFF, 0xFF, 0xFF};
+
+    if (_var->x)
+        i2cSend_master(SysI2CADDR_WiFi, _getIntMessage, 5);
+}
+
+
+typedef struct blink2_s
+{
+    int i;
+    int x;
+}blink2_s;
+blink2_s blink2_var = 
+{
+    .i = 0,
+    .x = 1
+};
+void blink2_task(void *arg)
+{
+    blink2_s *_var = (blink2_s*)arg;
+
+    _var->x = ((_var->i%5) == 0) ?  (~_var->x) : _var->x;
+
+    if (_var->x)
+        i2cSend_master(SysI2CADDR_WiFi, setPumpMessage, 7);
+    
+}
+
+
 //#define TESTE
 /*******************************************************************************
  * Prototypes
@@ -52,7 +101,9 @@ void setup()
     //inicia iap flash ("eeprom")
     iap_Begin();
     // //Inicia valores dos registradores
-    reg_Begin();//Fazer a inicialização depois
+    //reg_Begin();//Fazer a inicialização depois
+    task_new(blink1_task, "blink_1_task", 2, 0, (void*)&blink1_var);
+    //task_new(blink2_task, "blink_2_task", 4, 0, (void*)&blink2_var);
     
 
     // //inicia valores de acordo com a eeprom
@@ -63,7 +114,7 @@ void setup()
     thermistor_new(&temp_S1, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
     thermistor_new(&temp_S2, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
 
-    SysTickBeginISR(SysTickFrequency, isrSysTick);//Cria a interrupção para contagem de tempo e controle do sistema
+    //SysTickBeginISR(SysTickFrequency, isrSysTick);//Cria a interrupção para contagem de tempo e controle do sistema
     // //inicia interrupções
     // newExternInterrupt(Syspin_Botoeira,isrBotoeira,FALLING);//Cria a interrupção para leitura da botoeira
     // newExternInterrupt(Syspin_SensorDeFluxo,isrFlow,FALLING);//Cria a interrpção para leitura do fluxo
@@ -78,15 +129,17 @@ void setup()
  * 
  * @return int 
  */
-unsigned char getIntMessage[] = {0x03, 0xEC, 0x13, 0x0B, 0x00}; 
 int main(void)
 {
-    i2cSend_master(SysI2CADDR_WiFi, getIntMessage, 5);
-    task_delay_ms(1000);
-    i2cSend_master(SysI2CADDR_WiFi, getIntMessage, 5);
+    unsigned int counter = 0;
     while (1)
     {
-        
+        getIntMessage[4] = counter%0xFF;
+        getIntMessage[3] = (counter%0xFFFF)/0xFF;
+        getIntMessage[2] = counter/0xFFFF;
+        counter ++;
+        i2cSend_master(SysI2CADDR_WiFi, getIntMessage, 5);
+        task_delay_ms(2000);
     }
 }
 
