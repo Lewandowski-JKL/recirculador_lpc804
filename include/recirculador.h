@@ -36,16 +36,16 @@ NTC_Thermistor temp_S2;
 adc_t adc_S1;
 adc_t adc_S2;
 adc_t adc_Vref;
-unsigned long timeDebounceBotoeira = 0;
-unsigned long timeDebounceFlow = 0;
-unsigned long timeAuxPumpOn = 0;
-//unsigned char flagReceiveMessage = 0;
-unsigned int FlowCounter = 0;
-myMessage messageQueue[LengthMessageQueue];
-myMessage *ptrMessage = NULL;// = messageQueue;
-myMessage *ptrPriorityMessage = NULL;
-myMessage priorityMessage;
-unsigned short wifiTypeReg = 0;
+// unsigned long timeDebounceBotoeira = 0;
+// unsigned long timeDebounceFlow = 0;
+// unsigned long timeAuxPumpOn = 0;
+// //unsigned char flagReceiveMessage = 0;
+// unsigned int FlowCounter = 0;
+// myMessage messageQueue[LengthMessageQueue];
+// myMessage *ptrMessage = NULL;// = messageQueue;
+// myMessage *ptrPriorityMessage = NULL;
+// myMessage priorityMessage;
+// unsigned short wifiTypeReg = 0;
 
 /*******************************************************************************
  * Constants

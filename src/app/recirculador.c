@@ -6,18 +6,8 @@
 #include "message_manager.h"
 #include "registers_manager.h"
 
-// #ifdef SysEepromSize
-//     #define IAP_FLASH_SIZE SysEepromSize
-// #else
-//     #define IAP_FLASH_SIZE 128
-// #endif
 
-/**
- * @brief Função com o tratamento da interrupção da botoeira
- * 
- * @param arg 
- */
-void isrBotoeira(volatile void *arg)
+void rec_isrBotoeira(volatile void *arg)
 {
     // if ((SysTickGetTime_ms() - timeDebounceBotoeira) < (20*SysTicksButtonDebounce))//faz o teste de debounce para evitar ruido 100ms
     //     return;
@@ -26,6 +16,7 @@ void isrBotoeira(volatile void *arg)
     // timeDebounceBotoeira = SysTickGetTime_ms();//Salva tempo atual para uso no proximo teste de debounce
     // setBoolValue(!getBoolWithAddr(regMapBotoeira),regMapBotoeira);//Altera o valor da botoeira
 }
+
 /**
  * @brief Tratamento da interrupção da entrada de sensor de fluxo
  * 
@@ -82,11 +73,11 @@ void isrSysTick(volatile void *arg)
 
 
 
-
-/**
- * @brief Faz a leitura da temperatura atual
- * 
- */
+// typedef struct getTemp_s
+// {
+//     /* data */
+// }getTemp_s;
+// getTemp_s getTemp_var;
 void getTemp()
 {
     //Faz a leitura do adc, converte em mV apos isso converte em °C
@@ -94,10 +85,6 @@ void getTemp()
     //setFloatValue((readMiliVolts(&temperatureADC)/10), regMapFluxo);
     //setFloatValue(2000, regMapTemperaturaMedida);
 }
-/**
- * @brief Faz o processamento do sistema
- * 
- */
 void processFunc()
 {
     // short tempSup = getFloatWithAddr(regMapTemperaturaRef) + 100;//Temperatura referencia + 1°C

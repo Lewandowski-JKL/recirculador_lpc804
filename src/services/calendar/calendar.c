@@ -1,5 +1,5 @@
 /**
- * @file myCalendar.c
+ * @file Calendar.c
  * @author Jackson Kenedi Lewandowski (jackson.lewandowski@komlog.com/jacksonlewandowski.work@komlog.com)
  * @brief Essa biblioteca faz a gestão de um calendário interno e de agendamentos
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 #include "calendar.h"
-#include "app_config.h"
+#include "board_defs.h"
 #include <time.h>
 #include "registers_manager.h"
 
@@ -18,14 +18,24 @@
 #define secDay 86400 //segundos por dia
 #define daysYear ((short)365) //dias por ano
 #define daysYearB ((short)366) //dias por ano bissexto
+
+#define MinTimestamp 1704067200
+
+//#define scheduleReturnMode(v)        ((v) & 0b00000000000000000000000000000111)
+#define scheduleReturnWeekday(v)     (((v) & 0b11111110000000000000000000000000) >> 25)
+#define scheduleReturnTimeStart(v)   (((v) & 0b00000001111111111100000000000000) >> 14)
+#define scheduleReturnTimeEnd(v)     (((v) & 0b00000000000000000011111111111000) >> 3)
+
+
 //29
 unsigned char dayToMouth[12] = {31,28,31,30,31,30,31,31,30,31,30,31}; //dias de cada mes
+//const unsigned int FlagSheduleOn = 0b10000000100000000000100000000000;
 
 //Header de função
-void _attMyTime();
+void _attTime();
 
 //Ponteiro para auxiliar no controle do timestamp
-volatile int *ptrTimestamp = 10;//&IntRegisters[regMapTimestamp-regMapIntOffset-1];
+volatile int *ptrTimestamp = NULL;//&IntRegisters[regMapTimestamp-regMapIntOffset-1];
 unsigned char seg;      //variavel que guarda os segundos
 unsigned char min;      //variavel que guarda os minutos
 unsigned char hr;       //variavel que guarda as horas       
@@ -40,38 +50,39 @@ unsigned short year;    //variavel que guarda o ano
  */
 bool schedulingTest()
 {
-    unsigned char mask = (0b01 << (7-getWeekDay()));//Carrega o valor da mascara semanal
-    unsigned short timeNow = min + getHour()*60;//Carrega o tempo atual em minutos
+    // unsigned char mask = (0b01 << (7-getWeekDay()));//Carrega o valor da mascara semanal
+    // unsigned short timeNow = min + getHour()*60;//Carrega o tempo atual em minutos
     
-    unsigned int shedule = 0;//Agendamento
-    /*
-        O agendamento fica guardado em um registrador de 32 bits e é distribuido como visto abaixo
-        0b0000 0000 0000 0000 0000 0000 0000 0000
-         |  semana | Tempo Inicial| Tempo Final  |
-        - Semana: Os primeiros 8 bits mais significativos é a mascara referente ao dia da semana,
-                sendo distribuido dessa forma -> | x | seg | ter | qua | qui | sex | sab | dom |
-        - Tempo Inicial: Se refere ao tempo inicial em que o agendamento passara a funcionar. O tempo
-                é dado em minutos.
-        -Tempo Final: Se refere ao tempo em que o agendamento vai parar de funcionar. O tempo é dado
-                em minutos.
-     */
-    unsigned short addrAux = 0;//Endereço auxiliar
-    for (unsigned char i = 0; i < 10; i++)//Percorre todos os agendamento -> até 10
-    {
-        addrAux = 10;//regMapAgendamentosInit+i;//Endereço do registrador que está o agendamento
-        shedule = getIntWithAddr(addrAux);//Recolheo valor presente no registrador
-        if ((shedule & FlagSheduleOn) == FlagSheduleOn) //Verifica se é um agendamento ativo
-        {
-            //Verifica se tem um agendamento na data atual da semana
-            if ((shedule >> 24)&mask)
-            {
-                unsigned short timeInit = ((shedule >> 12) & 0x7FF); //Carrega o tempo em que o agendamento tem inicio
-                unsigned short timeEnd = (shedule & 0x7FF); //Carrega o tempo em que o agendamento finaliza
-                if ((timeNow>timeInit)&&(timeNow<timeEnd)) //Se o tempo atual estiver entre os dois retorna true
-                   return true;
-            }
-        }
-    }
+    // unsigned int shedule = 0;//Agendamento
+    // /*
+    //     O agendamento fica guardado em um registrador de 32 bits e é distribuido como visto abaixo
+    //     0b0000 0000 0000 0000 0000 0000 0000 0000
+    //      |  semana | Tempo Inicial| Tempo Final  |
+    //     - Semana: Os primeiros 8 bits mais significativos é a mascara referente ao dia da semana,
+    //             sendo distribuido dessa forma -> | x | seg | ter | qua | qui | sex | sab | dom |
+    //     - Tempo Inicial: Se refere ao tempo inicial em que o agendamento passara a funcionar. O tempo
+    //             é dado em minutos.
+    //     -Tempo Final: Se refere ao tempo em que o agendamento vai parar de funcionar. O tempo é dado
+    //             em minutos.
+    //  */
+    // unsigned short addrAux = 0;//Endereço auxiliar
+    // for (unsigned char i = 0; i < 10; i++)//Percorre todos os agendamento -> até 10
+    // {
+    //     //addrAux = regMapAgendamentosInit+i;//Endereço do registrador que está o agendamento
+
+    //     // shedule = getIntWithAddr(addrAux);//Recolheo valor presente no registrador
+    //     // if ((shedule & FlagSheduleOn) == FlagSheduleOn) //Verifica se é um agendamento ativo
+    //     // {
+    //     //     //Verifica se tem um agendamento na data atual da semana
+    //     //     if ((shedule >> 24)&mask)
+    //     //     {
+    //     //         unsigned short timeInit = ((shedule >> 12) & 0x7FF); //Carrega o tempo em que o agendamento tem inicio
+    //     //         unsigned short timeEnd = (shedule & 0x7FF); //Carrega o tempo em que o agendamento finaliza
+    //     //         if ((timeNow>timeInit)&&(timeNow<timeEnd)) //Se o tempo atual estiver entre os dois retorna true
+    //     //            return true;
+    //     //     }
+    //     // }
+    // }
     return false; //Não tem agendamento para esse momento
 }
 /**
@@ -111,7 +122,7 @@ unsigned char getHour()
  */
 unsigned char getDay()
 {
-    _attMyTime();
+    _attTime();
     day++;
     return day;
 }
@@ -122,7 +133,7 @@ unsigned char getDay()
  */
 unsigned char getMount()
 {
-    _attMyTime();
+    _attTime();
     month++;
     return month;
 }
@@ -133,7 +144,7 @@ unsigned char getMount()
  */
 unsigned short getYear()
 {
-    _attMyTime();
+    _attTime();
     return year;
 }
 /**
@@ -151,7 +162,7 @@ unsigned char getWeekDay()
  * @brief Atualiza a data atual 
  * 
  */
-void _attMyTime()
+void _attTime()
 {
     if (*ptrTimestamp < MinTimestamp)//Define o valor minimo de timestamp que é no inicio de 2024
         *ptrTimestamp = MinTimestamp;

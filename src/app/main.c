@@ -27,49 +27,6 @@ unsigned char getIntMessage[] =     {0x03, 0xEC, 0x13, 0x0B, 0x00};
 unsigned char getFloatMessage[] =   {0x03, 0xBC, 0x1B, 0x07, 0x00};
 unsigned char setPumpMessage[] =    {0x10, 0x49, 0x04, 0x01, 0x00, 0x01, 0xFF}; 
 
-typedef struct blink1_s
-{
-    int i;
-    int x;
-}blink1_s;
-blink1_s blink1_var = 
-{
-    .i = 0,
-    .x = 0
-};
-void blink1_task(void *arg)
-{
-    blink1_s *_var = (blink1_s*)arg;
-
-    _var->x = ((_var->i%5) == 0) ?  (~_var->x) : _var->x;
-    unsigned char _getIntMessage[] =     {0x03, 0xFF, 0xFF, 0xFF, 0xFF};
-
-    if (_var->x)
-        i2cSend_master(SysI2CADDR_WiFi, _getIntMessage, 5);
-}
-
-
-typedef struct blink2_s
-{
-    int i;
-    int x;
-}blink2_s;
-blink2_s blink2_var = 
-{
-    .i = 0,
-    .x = 1
-};
-void blink2_task(void *arg)
-{
-    blink2_s *_var = (blink2_s*)arg;
-
-    _var->x = ((_var->i%5) == 0) ?  (~_var->x) : _var->x;
-
-    if (_var->x)
-        i2cSend_master(SysI2CADDR_WiFi, setPumpMessage, 7);
-    
-}
-
 
 //#define TESTE
 /*******************************************************************************
@@ -102,8 +59,6 @@ void setup()
     iap_Begin();
     // //Inicia valores dos registradores
     //reg_Begin();//Fazer a inicialização depois
-    task_new(blink1_task, "blink_1_task", 2, 0, (void*)&blink1_var);
-    //task_new(blink2_task, "blink_2_task", 4, 0, (void*)&blink2_var);
     
 
     // //inicia valores de acordo com a eeprom
