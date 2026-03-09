@@ -21,6 +21,7 @@
 #include "registers_manager.h"
 #include "recirculador.h"
 #include "task.h"
+#include "flash_map.h"
 
 
 unsigned char getIntMessage[] =     {0x03, 0xEC, 0x13, 0x0B, 0x00};
@@ -58,9 +59,8 @@ void setup()
     //inicia iap flash ("eeprom")
     iap_Begin();
     // //Inicia valores dos registradores
-    //reg_Begin();//Fazer a inicialização depois
+    reg_Begin();//Fazer a inicialização depois
     
-
     // //inicia valores de acordo com a eeprom
     //initMyEEPROM();
 
@@ -87,6 +87,7 @@ void setup()
 int main(void)
 {
     unsigned int counter = 0;
+
     while (1)
     {
         getIntMessage[4] = counter%0xFF;

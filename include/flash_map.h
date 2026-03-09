@@ -33,7 +33,7 @@ extern "C" {
 /* ========= TIPOS ========= */
 
 typedef struct __attribute__((packed, aligned(4))) {
-    uint8_t  bools[Sys_RegMap_Nreg_Bool_tot/sizeof(uint8_t)];     /* bool salvo como 1 byte */
+    uint8_t  bools[Sys_RegMap_Nreg_Bool_tot/8];     /* bool salvo como 1 byte */
     int16_t  shorts[Sys_RegMap_Nreg_Short_tot];
     int32_t  ints[Sys_RegMap_Nreg_Int_tot];
     float    floats[Sys_RegMap_Nreg_Float_tot];   /* 32 bits IEEE-754 */

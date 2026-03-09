@@ -30,23 +30,28 @@ const nv_image_t nv_defaults = {
     .data = {
         /* bools[]: 1 byte cada (0/1). */
         .bools = {
-            /* Exemplo: 16 valores */
-            1,0,1,0,  1,1,0,0,  1,0,0,1,  0,1,0,1
+            /* valores utilizados no registrador     restante dos valores de fábrica é zero*/
+            0b00000000,                              
         },
         /* shorts[]: int16_t */
         .shorts = {
-            100, 200, -50, 0,   10, 20, 30, 40,
-            50,  60,  70, 80,   90, 100, -200, 300
+            Sys_equip_code, //Codigo do equipamento 
+            Sys_firmware_version_major, Sys_firmware_version_minor, Sys_firmware_version_patch  //Versão do firmware    
         },
         /* ints[]: int32_t */
         .ints = {
-            12345, -54321, 0, 111, 222, 333, 444, 555,
-            666, 777, 888, 999, 1000, -1000, 42, -42
+            Sys_timestamp_min, 
+            Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 
+            Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 
+            0, 0, 0, 
+            0, //litros totais
+            35u, 35u, //Referencia de temperatura S1 e S2
+            100u,   //Valor do pulso contador de fluxo
+            1,1,1,  //Valor de calibração do sensor de temperatura T1
+            1,1,1   //Valor de calibração do sensor de temperatura T2
         },
         /* floats[]: float (32 bits) */
         .floats = {
-            0.0f, 1.0f, -1.5f, 3.14f, 2.71f, 10.0f, -2.0f, 100.5f,
-            0.25f, 0.5f, 0.75f, -0.25f, 5.5f, 6.5f, 7.5f, 8.5f
         }
     }
 };
@@ -89,7 +94,7 @@ uintptr_t nv_flash_addr_floats(void)
 }
 
 /* Tamanhos úteis (bytes) */
-size_t nv_size_bools(void)  { return sizeof(nv.bools);  }
+size_t nv_size_bools(void)  { return (sizeof(nv.bools)/8);  }
 size_t nv_size_shorts(void) { return sizeof(nv.shorts); }
 size_t nv_size_ints(void)   { return sizeof(nv.ints);   }
 size_t nv_size_floats(void) { return sizeof(nv.floats); }

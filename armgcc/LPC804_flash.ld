@@ -40,14 +40,24 @@ MEMORY
   m_interrupts          (RX)  : ORIGIN = 0x00000000, LENGTH = 0x00000200
   m_crp                 (RX)  : ORIGIN = 0x000002FC, LENGTH = 0x00000004
   m_text                (RX)  : ORIGIN = 0x00000300, LENGTH = 0x00007500
-  m_eeprom              (RX)  : ORIGIN = 0x00007800, LENGTH = 0x00000800 
+  m_eeprom              (RX)  : ORIGIN = 0x00007800, LENGTH = 0x00000400 
+  m_reg_factory         (RX)  : ORIGIN = 0x00007C00, LENGTH = 0x00000400
   m_data                (RW)  : ORIGIN = 0x10000000, LENGTH = 0x00000FE0
 }
 
 /* Define output sections */
 SECTIONS
-{
-  
+{ 
+  /* Factory defaults (const): será incluído no .hex e gravado pelo programador */
+  .nv_defaults :
+  {
+    . = ALIGN(4);
+    __nv_defaults_start__ = .;
+    KEEP(*(.nv_defaults))     /* mantém mesmo se não-referenciado */
+    . = ALIGN(4);
+    __nv_defaults_end__ = .;
+  } > m_reg_factory
+
   /* EEPROM simulada em Flash:
      - NOLOAD para não ir no .hex pelo linker
      - Alinhada a 64B (tamanho de página do LPC804)
@@ -229,11 +239,11 @@ SECTIONS
 }
 
 __app1_start      = 0x00000300;
-__app1_end        = 0x00003D80;
-__app2_start      = 0x00003D81;
-__app2_end        = 0x00007800;
+__app1_end        = 0x00003D7F;
+__app2_start      = 0x00003D80;
+__app2_end        = 0x000077FF;
 __eeprom_start    = 0x00007800;
-__reg_backup_addr = 0x00007C00;
+__reg_factory     = 0x00007C00;
 __flash_end       = 0x00008000;
 
 

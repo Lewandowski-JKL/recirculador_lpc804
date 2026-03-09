@@ -8,12 +8,25 @@
 #else
     #define IAP_FLASH_SIZE 128
 #endif
+
+#ifdef SysEepromADDR
+    #define iap_flash_sector        (SysEepromADDR/FSL_FEATURE_SYSCON_FLASH_SECTOR_SIZE_BYTES)
+#else
+    #define iap_flash_sector        ((FSL_FEATURE_SYSCON_FLASH_SIZE_BYTES-IAP_FLASH_SIZE)/FSL_FEATURE_SYSCON_FLASH_SECTOR_SIZE_BYTES)
+#endif
+
+#ifdef SysEepromADDR
+    #define iap_flash_page          (SysEepromADDR/FSL_FEATURE_SYSCON_FLASH_PAGE_SIZE_BYTES)
+#else
+    #define iap_flash_page          ((FSL_FEATURE_SYSCON_FLASH_SIZE_BYTES-IAP_FLASH_SIZE)/FSL_FEATURE_SYSCON_FLASH_PAGE_SIZE_BYTES)
+#endif
+
 #define iap_flash_end_sector    (FSL_FEATURE_SYSCON_FLASH_PAGE_SIZE_BYTES/FSL_FEATURE_SYSCON_FLASH_SECTOR_SIZE_BYTES)
 #define iap_flash_end_page      (FSL_FEATURE_SYSCON_FLASH_PAGE_SIZE_BYTES/FSL_FEATURE_SYSCON_FLASH_PAGE_SIZE_BYTES)
-#define iap_flash_sector        ((FSL_FEATURE_SYSCON_FLASH_SIZE_BYTES-IAP_FLASH_SIZE)/FSL_FEATURE_SYSCON_FLASH_SECTOR_SIZE_BYTES)
 #define iap_flash_page_num      (IAP_FLASH_SIZE/FSL_FEATURE_SYSCON_FLASH_PAGE_SIZE_BYTES)
-#define iap_flash_page          ((FSL_FEATURE_SYSCON_FLASH_SIZE_BYTES-IAP_FLASH_SIZE)/FSL_FEATURE_SYSCON_FLASH_PAGE_SIZE_BYTES)
 #define iap_flash_first_addr    (iap_flash_page*FSL_FEATURE_SYSCON_FLASH_PAGE_SIZE_BYTES)
+
+unsigned char iap_on = 0;
 
 //vetor temporario para alocação dos valores que devem ser salvos na eeprom
 static unsigned char iap_flash_Vet[IAP_FLASH_SIZE];
@@ -23,8 +36,11 @@ static unsigned char iap_flash_Vet[IAP_FLASH_SIZE];
  */
 void iap_Begin()
 {
+    if(iap_on)  
+        return;
     for (int i = 0; i < IAP_FLASH_SIZE; i++)
         iap_flash_Vet[i] = iap_ReadChar(i);
+    iap_on = 1;
 }
 /**
  * @brief lê o valor presente no endereço de memória 
