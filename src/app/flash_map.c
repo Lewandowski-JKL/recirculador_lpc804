@@ -31,7 +31,7 @@ const nv_image_t nv_defaults = {
         /* bools[]: 1 byte cada (0/1). */
         .bools = {
             /* valores utilizados no registrador     restante dos valores de fábrica é zero*/
-            0b00000000,                              
+            0b00000000                             
         },
         /* shorts[]: int16_t */
         .shorts = {
@@ -40,21 +40,45 @@ const nv_image_t nv_defaults = {
         },
         /* ints[]: int32_t */
         .ints = {
-            Sys_timestamp_min, 
+            Sys_timestamp_min,
             Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 
             Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 
-            0, 0, 0, 
-            0, //litros totais
-            35u, 35u, //Referencia de temperatura S1 e S2
-            100u,   //Valor do pulso contador de fluxo
-            1,1,1,  //Valor de calibração do sensor de temperatura T1
-            1,1,1   //Valor de calibração do sensor de temperatura T2
+            0,// Sys_RegMap_Flux_Counter,
+            0,// Sys_RegMap_Flux_Liters,
+            0,// Sys_RegMap_Total_Liters,
+            0,// Sys_RegMap_Temp_S1,
+            0,// Sys_RegMap_Adc_Measure_S1,
+            0,// Sys_RegMap_mV_Measure_S1,
+            0,// Sys_RegMap_Temp_S2,
+            0,// Sys_RegMap_Adc_Measure_S2,
+            0,// Sys_RegMap_mV_Measure_S2,
+            3500,// Sys_RegMap_Temp_Ref_1,
+            4500,// Sys_RegMap_Temp_Ref_1_Max,
+            3500,// Sys_RegMap_Temp_Ref_2,
+            4500,// Sys_RegMap_Temp_Ref_2_Max,
+            100,// Sys_RegMap_Flux_Calib,
+            1,// Sys_RegMap_T1_Calib_1,
+            1,// Sys_RegMap_T1_Calib_2,
+            1,// Sys_RegMap_T1_Calib_3,
+            1,// Sys_RegMap_T2_Calib_1,
+            1,// Sys_RegMap_T2_Calib_2,
+            1,// Sys_RegMap_T2_Calib_3,
+            6000,// Sys_RegMap_T1_Error_High,
+            -2500,// Sys_RegMap_T1_Error_Low,
+            100000,// Sys_RegMap_T1_Error_Desconnect,
+            0,// Sys_RegMap_T1_Error_Short_Circuit,
+            6000,// Sys_RegMap_T2_Error_High,
+            -2500,// Sys_RegMap_T2_Error_Low,
+            100000,// Sys_RegMap_T2_Error_Desconnect,
+            0,// Sys_RegMap_T2_Error_Short_Circuit,
+            0//Sys_RegMap_Erros
         },
         /* floats[]: float (32 bits) */
         .floats = {
         }
     }
 };
+
 
 /* ====== API ====== */
 

@@ -51,6 +51,7 @@ void isrScheduler(volatile void *arg)
             {
                 task_vet[i].lastExecution = time_us_aux;
                 task_vet[i].ptrFunc(task_vet[i].ptrData);
+                return;//////////////
             }
         }
     }
@@ -110,9 +111,21 @@ void task_delay_ms(unsigned long time_ms)
     unsigned long time_end = SysTickGetTime_ms()+time_ms; 
     while (SysTickGetTime_ms() < time_end);
 }
+void task_delay_ms_until(unsigned int *ptr, unsigned long time_ms)
+{
+    unsigned long time_end = *ptr+time_ms; 
+    *ptr = *ptr+time_ms;
+    while (SysTickGetTime_ms() < time_end);
 
+}
 void task_delay_ticks(unsigned long ticks)
 {
     unsigned long ticks_end = SysTickGetTicks()+ticks; 
     while (SysTickGetTicks() <= ticks_end);
+}
+void task_delay_ticks_until(unsigned int *ptr, unsigned long ticks)
+{
+    unsigned long time_end = *ptr+ticks; 
+    *ptr = *ptr+ticks;
+    while (SysTickGetTime_ms() < time_end);
 }

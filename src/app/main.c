@@ -24,9 +24,9 @@
 #include "flash_map.h"
 
 
-unsigned char getIntMessage[] =     {0x03, 0xEC, 0x13, 0x0B, 0x00};
-unsigned char getFloatMessage[] =   {0x03, 0xBC, 0x1B, 0x07, 0x00};
-unsigned char setPumpMessage[] =    {0x10, 0x49, 0x04, 0x01, 0x00, 0x01, 0xFF}; 
+// unsigned char getIntMessage[] =     {0x03, 0xEC, 0x13, 0x0B, 0x00};
+// unsigned char getFloatMessage[] =   {0x03, 0xBC, 0x1B, 0x07, 0x00};
+// unsigned char setPumpMessage[] =    {0x10, 0x49, 0x04, 0x01, 0x00, 0x01, 0xFF}; 
 
 
 //#define TESTE
@@ -69,15 +69,24 @@ void setup()
     thermistor_new(&temp_S1, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
     thermistor_new(&temp_S2, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
 
-    //SysTickBeginISR(SysTickFrequency, isrSysTick);//Cria a interrupção para contagem de tempo e controle do sistema
-    // //inicia interrupções
-    // newExternInterrupt(Syspin_Botoeira,isrBotoeira,FALLING);//Cria a interrupção para leitura da botoeira
-    // newExternInterrupt(Syspin_SensorDeFluxo,isrFlow,FALLING);//Cria a interrpção para leitura do fluxo
+    //Inicia as tasks
+    //task_schedulerInit();
+    task_new(rec_get_Temp1, "Rec_Get_Temp_1", 10, 0, NULL);
+    task_new(rec_get_Temp2, "Rec_Get_Temp_2", 10, 0, NULL);
+    task_new(rec_system, "System", 5, 0, NULL);
+    task_new(rec_error_process, "Error_Process", 1, 0, NULL);
+    //inicia interrupções
+    //Para leitura da botoeira
+    newExternInterrupt(Syspin_Botoeira, rec_isr_Botoeira, FALLING, NULL);
+    //Cria a interrução para leitura do fluxo
+    newExternInterrupt(Syspin_SensorDeFluxo, rec_isr_Flow, FALLING, NULL);
 
     //initQueue();//Inicia a fila de mensagens
     //inicia I2C
     i2cBegin(SysI2CADDR_Recirculador, Syspin_SDA, Syspin_SCL, SysI2CBaudRate, i2cModeMaster);
 
+    task_delay_ms(1000);
+    //Remover o reset pelo pino
 }
 /**
  * @brief 
@@ -86,16 +95,25 @@ void setup()
  */
 int main(void)
 {
-    unsigned int counter = 0;
-
+    // unsigned int counter = 0;
+    unsigned char message_aux[240];
+    unsigned int time_until = 0;
     while (1)
     {
-        getIntMessage[4] = counter%0xFF;
-        getIntMessage[3] = (counter%0xFFFF)/0xFF;
-        getIntMessage[2] = counter/0xFFFF;
-        counter ++;
-        i2cSend_master(SysI2CADDR_WiFi, getIntMessage, 5);
-        task_delay_ms(2000);
+        reg_read_vet((void*)message_aux, Sys_RegMap_Nreg_Bool, Sys_RegMap_Offset_Bool);
+        // i2cSend_master(SysI2CADDR_WiFi, message_aux, Sys_RegMap_Nreg_Bool);
+        // task_delay_ms_until(&time_until, 1000);
+
+        reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool], Sys_RegMap_Nreg_Short, Sys_RegMap_Offset_Short);
+        // i2cSend_master(SysI2CADDR_WiFi, message_aux, Sys_RegMap_Nreg_Short * sizeof(short));
+        // task_delay_ms_until(&time_until, 1000);
+
+        reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool 
+                                        + (Sys_RegMap_Nreg_Short * sizeof(short))], 
+                                        Sys_RegMap_Nreg_Int, Sys_RegMap_Offset_Int);
+
+        i2cSend_master(SysI2CADDR_WiFi, message_aux, Sys_RegMap_Nreg_Total_Bytes);
+        task_delay_ms_until(&time_until, 5000);
     }
 }
 

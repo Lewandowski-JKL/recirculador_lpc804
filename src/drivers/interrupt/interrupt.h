@@ -21,7 +21,7 @@ enum TIMER_MODE
     BusStall
 };
 
-void newExternInterrupt(unsigned char pin, ISR_FUNCTION isrFunc, enum INTERRUPT_TRIGGER trigger);
+void newExternInterrupt(unsigned char pin, ISR_FUNCTION isrFunc, enum INTERRUPT_TRIGGER trigger, volatile void *arg);
 void newTimerInterrupt(unsigned char Timer,  ISR_FUNCTION isrFunc, enum TIMER_MODE timerMode, unsigned int ticks);
 void newTimerIntFreq(unsigned char Timer,  ISR_FUNCTION isrFunc, long frequency);
 void newTimerIntOneShot(unsigned char Timer,  ISR_FUNCTION isrFunc, long time_us);

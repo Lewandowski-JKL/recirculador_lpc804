@@ -7,27 +7,6 @@
 #include "message_manager.h"
 #include "registers_manager.h"
 
-
-void isrBotoeira(volatile void *arg);
-void isrFlow(volatile void *arg);
-void isrTimer0(volatile void *arg);
-void isrSysTick(volatile void *arg);
-
-void getTemp();
-void processFunc();
-void initMyEEPROM();
-void _writeRegistersInEEPROM();
-void _writeEEPROMvaluesInRegisters();
-int myLog2(unsigned int value);
-/************************************************/
-void initQueue();
-void ControlMessageFunc(myMessage **ptrMessage, unsigned char *ptrRX, unsigned char *MessageStateControl, unsigned int *ptrTime);
-void receiveType(unsigned char *data);
-void checkBoolReg(unsigned char *data);
-void checkShortReg(unsigned char *data);
-void checkIntReg(unsigned char *data);
-void checkFloatReg(unsigned char *data);
-
 /*******************************************************************************
  * Global Variables
  ******************************************************************************/
@@ -36,6 +15,35 @@ NTC_Thermistor temp_S2;
 adc_t adc_S1;
 adc_t adc_S2;
 adc_t adc_Vref;
+
+/*******************************************************************************
+ * Tasks
+ ******************************************************************************/
+void rec_get_Temp1(void *arg);
+void rec_get_Temp2(void *arg);
+void rec_isr_Botoeira(volatile void *arg);
+void rec_isr_Flow(volatile void *arg);
+void rec_system(void *arg);
+void rec_error_process(void *arg);
+// void isrTimer0(volatile void *arg);
+// void isrSysTick(volatile void *arg);
+
+// void rec_getTemp();
+// void processFunc();
+// void initMyEEPROM();
+// void _writeRegistersInEEPROM();
+// void _writeEEPROMvaluesInRegisters();
+// int myLog2(unsigned int value);
+// /************************************************/
+// void initQueue();
+// void ControlMessageFunc(myMessage **ptrMessage, unsigned char *ptrRX, unsigned char *MessageStateControl, unsigned int *ptrTime);
+// void receiveType(unsigned char *data);
+// void checkBoolReg(unsigned char *data);
+// void checkShortReg(unsigned char *data);
+// void checkIntReg(unsigned char *data);
+// void checkFloatReg(unsigned char *data);
+
+
 // unsigned long timeDebounceBotoeira = 0;
 // unsigned long timeDebounceFlow = 0;
 // unsigned long timeAuxPumpOn = 0;

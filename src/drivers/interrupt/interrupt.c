@@ -15,6 +15,7 @@
  * External Interrupts
  ******************************************************************************/
 unsigned char intCount = 0;//Contador de interrupções externas
+volatile void *vetArg[8] = {NULL};
 ISR_FUNCTION ptrIsrFunc[8] = {NULL};//ponteiro para funções utilizada em interrupções externas
 /**
  * @brief Cria uma nova interrupção externa
@@ -23,7 +24,7 @@ ISR_FUNCTION ptrIsrFunc[8] = {NULL};//ponteiro para funções utilizada em inter
  * @param isrFunc   função que será chamada com essa interrupção
  * @param trigger   Tipo de interrupção externa -> falling, rising, edge, low level ou high level
  */
-void newExternInterrupt(unsigned char pin, ISR_FUNCTION isrFunc, enum INTERRUPT_TRIGGER trigger)
+void newExternInterrupt(unsigned char pin, ISR_FUNCTION isrFunc, enum INTERRUPT_TRIGGER trigger, volatile void *arg)
 {
     if (isrFunc==NULL)//Verifica se o ponteiro para função está alocado
         return;
@@ -72,7 +73,7 @@ void PIN_INT0_IRQHandler(void)
         //em um processo eficiente pois permite utilizar o mesmo registrador para
         //verificar e limpara a interrupção.
         if (ptrIsrFunc[0] != NULL)//Verifica se existe uma função para ser chamada
-            ptrIsrFunc[0](NULL);//Chama a função de tratamento de interrupção
+            ptrIsrFunc[0](vetArg[0]);//Chama a função de tratamento de interrupção
     }
     return;
 }
@@ -91,7 +92,7 @@ void PIN_INT1_IRQHandler(void)
         //em um processo eficiente pois permite utilizar o mesmo registrador para
         //verificar e limpara a interrupção.
         if (ptrIsrFunc[1] != NULL)//Verifica se existe uma função para ser chamada
-            ptrIsrFunc[1](NULL);//Chama a função de tratamento de interrupção
+            ptrIsrFunc[1](vetArg[1]);//Chama a função de tratamento de interrupção
     }
     return;
 }
@@ -110,7 +111,7 @@ void PIN_INT2_IRQHandler(void)
         //em um processo eficiente pois permite utilizar o mesmo registrador para
         //verificar e limpara a interrupção.
         if (ptrIsrFunc[2] != NULL)//Verifica se existe uma função para ser chamada
-            ptrIsrFunc[2](NULL);//Chama a função de tratamento de interrupção
+            ptrIsrFunc[2](vetArg[2]);//Chama a função de tratamento de interrupção
     }
     return;
 }
@@ -129,7 +130,7 @@ void PIN_INT3_IRQHandler(void)
         //em um processo eficiente pois permite utilizar o mesmo registrador para
         //verificar e limpara a interrupção.
         if (ptrIsrFunc[3] != NULL)//Verifica se existe uma função para ser chamada
-            ptrIsrFunc[3](NULL);//Chama a função de tratamento de interrupção
+            ptrIsrFunc[3](vetArg[3]);//Chama a função de tratamento de interrupção
     }
     return;
 }
@@ -148,7 +149,7 @@ void PIN_INT4_IRQHandler(void)
         //em um processo eficiente pois permite utilizar o mesmo registrador para
         //verificar e limpara a interrupção.
         if (ptrIsrFunc[4] != NULL)//Verifica se existe uma função para ser chamada
-            ptrIsrFunc[4](NULL);//Chama a função de tratamento de interrupção
+            ptrIsrFunc[4](vetArg[4]);//Chama a função de tratamento de interrupção
     }
     return;
 }
@@ -167,7 +168,7 @@ void PIN_INT5_IRQHandler(void)
         //em um processo eficiente pois permite utilizar o mesmo registrador para
         //verificar e limpara a interrupção.
         if (ptrIsrFunc[5] != NULL)//Verifica se existe uma função para ser chamada
-            ptrIsrFunc[5](NULL);//Chama a função de tratamento de interrupção
+            ptrIsrFunc[5](vetArg[5]);//Chama a função de tratamento de interrupção
     }
     return;
 }
@@ -186,7 +187,7 @@ void PIN_INT6_IRQHandler(void)
         //em um processo eficiente pois permite utilizar o mesmo registrador para
         //verificar e limpara a interrupção.
         if (ptrIsrFunc[6] != NULL)//Verifica se existe uma função para ser chamada
-            ptrIsrFunc[6](NULL);//Chama a função de tratamento de interrupção
+            ptrIsrFunc[6](vetArg[6]);//Chama a função de tratamento de interrupção
     }
     return;
 }
@@ -205,7 +206,7 @@ void PIN_INT7_IRQHandler(void)
         //em um processo eficiente pois permite utilizar o mesmo registrador para
         //verificar e limpara a interrupção.
         if (ptrIsrFunc[7] != NULL)//Verifica se existe uma função para ser chamada
-            ptrIsrFunc[7](NULL);//Chama a função de tratamento de interrupção
+            ptrIsrFunc[7](vetArg[7]);//Chama a função de tratamento de interrupção
     }
     return;
 }

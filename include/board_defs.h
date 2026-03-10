@@ -53,10 +53,10 @@
 extern unsigned char __flash_end;
 extern unsigned char __eeprom_start;
 extern unsigned char __reg_factory;
+extern unsigned char __app0_start;
+extern unsigned char __app0_end;
 extern unsigned char __app1_start;
 extern unsigned char __app1_end;
-extern unsigned char __app2_start;
-extern unsigned char __app2_end;
 
 #define SysEepromSize       (0x400)
 #define SysEepromADDR       (0x00007800)
@@ -69,7 +69,6 @@ extern unsigned char __app2_end;
 #define SysADC_TempS1       (3)// pin 16 adc channel 3
 #define SysADC_TempS2       (10)// pin 13 adc channel 10
 #define SysADC_VRef         (1)// pin 1 adc channel 1
-
 
 /*******************************************************************************
  * Pin Definitions
@@ -120,9 +119,9 @@ extern unsigned char __app2_end;
  * Modbus Registers
  *****************************************************************************/
 
-#define Sys_RegMap_Offset_Bool  (0x0448)
-#define Sys_RegMap_Offset_Short (0x0BB8)
-#define Sys_RegMap_Offset_Int   (0x13EB)
+#define Sys_RegMap_Offset_Bool  (0x03E8)//(0x0448)
+#define Sys_RegMap_Offset_Short (0x0BB8)//(0x0BB8)
+#define Sys_RegMap_Offset_Int   (0x1388)//(0x13EB)
 #ifndef __NO_FLOAT__
     #define Sys_RegMap_Offset_Float (0x1BBB)
     #define Sys_RegMap_End          (0x1F3F)
@@ -185,12 +184,19 @@ enum
     Sys_RegMap_Timestamp= Sys_RegMap_Offset_Int,      
     Sys_RegMap_Schedules_0, Sys_RegMap_Schedules_1, Sys_RegMap_Schedules_2, Sys_RegMap_Schedules_3, Sys_RegMap_Schedules_4,
     Sys_RegMap_Schedules_5, Sys_RegMap_Schedules_6, Sys_RegMap_Schedules_7, Sys_RegMap_Schedules_8, Sys_RegMap_Schedules_9,
-    Sys_RegMap_Flux,
-    Sys_RegMap_Temp_S1,
-    Sys_RegMap_Temp_S2,
+    Sys_RegMap_Flux_Counter,
+    Sys_RegMap_Flux_Liters,
     Sys_RegMap_Total_Liters,
+    Sys_RegMap_Temp_S1,
+    Sys_RegMap_Adc_Measure_S1,
+    Sys_RegMap_mV_Measure_S1,
+    Sys_RegMap_Temp_S2,
+    Sys_RegMap_Adc_Measure_S2,
+    Sys_RegMap_mV_Measure_S2,
     Sys_RegMap_Temp_Ref_1,
+    Sys_RegMap_Temp_Ref_1_Max,
     Sys_RegMap_Temp_Ref_2,
+    Sys_RegMap_Temp_Ref_2_Max,
     Sys_RegMap_Flux_Calib,
     Sys_RegMap_T1_Calib_1,
     Sys_RegMap_T1_Calib_2,
@@ -198,59 +204,37 @@ enum
     Sys_RegMap_T2_Calib_1,
     Sys_RegMap_T2_Calib_2,
     Sys_RegMap_T2_Calib_3,
+    Sys_RegMap_T1_Error_High,
+    Sys_RegMap_T1_Error_Low,
+    Sys_RegMap_T1_Error_Desconnect,
+    Sys_RegMap_T1_Error_Short_Circuit,
+    Sys_RegMap_T2_Error_High,
+    Sys_RegMap_T2_Error_Low,
+    Sys_RegMap_T2_Error_Desconnect,
+    Sys_RegMap_T2_Error_Short_Circuit,
+    Sys_RegMap_Erros
 };
-#define Sys_RegMap_Nreg_Bool    (2)
-#define Sys_RegMap_Nreg_Short   (39)
-#define Sys_RegMap_Nreg_Int     (24)//(11)
+#define Sys_RegMap_Nreg_Bool    (Sys_RegMap_Button + 1      -Sys_RegMap_Offset_Bool)//2 ->   1Byte
+#define Sys_RegMap_Nreg_Short   ((Sys_RegMap_pass_0+16) + 1 -Sys_RegMap_Offset_Short)//40 -> 80 Bytes
+#define Sys_RegMap_Nreg_Int     (Sys_RegMap_Erros + 1       -Sys_RegMap_Offset_Int)//160 -> 100 Bytes (11)
+#define Sys_RegMap_Nreg_Total   (Sys_RegMap_Nreg_Bool + Sys_RegMap_Nreg_Short + Sys_RegMap_Nreg_Int)
+#define Sys_RegMap_Nreg_Total_Bytes     (Sys_RegMap_Nreg_Bool                           \
+                                        + (Sys_RegMap_Nreg_Short    *   sizeof(short))  \
+                                        + (Sys_RegMap_Nreg_Int      *   sizeof(int)))
 #ifndef __NO_FLOAT__
 #define Sys_RegMap_Nreg_Float   (0)
 #endif
 
-// //Defines dos endereços utilizados nos registradores bool
-// #define Sys_RegMap_Pump             (Sys_RegMap_Offset_Bool)
-// #define Sys_RegMap_Button           (Sys_RegMap_Pump+1)
-// #define Sys_RegMap_Nreg_Bool    (2)
-// //Defines dos endereços utilizados nos registradores short
-// #define Sys_RegMap_Model            (Sys_RegMap_Offset_Short)       
-// #define Sys_RegMap_FV_Major         (Sys_RegMap_Model+1)       
-// #define Sys_RegMap_FV_Minor         (Sys_RegMap_FV_Major+1)       
-// #define Sys_RegMap_FV_Patch         (Sys_RegMap_FV_Minor+1) 
-// #define Sys_RegMap_Mac_Addr_1       (Sys_RegMap_FV_Patch+1)
-// #define Sys_RegMap_Mac_Addr_2       (Sys_RegMap_Mac_Addr_1+1)
-// #define Sys_RegMap_Mac_Addr_3       (Sys_RegMap_Mac_Addr_2+1)
-// #define Sys_RegMap_ssid             (Sys_RegMap_Mac_Addr_3+1)
-// #define Sys_RegMap_pass             (Sys_RegMap_ssid+16)
-// #define Sys_RegMap_Nreg_Short   (39)
-// //Defines dos endereços utilizados nos registradores int
-// #define Sys_RegMap_Timestamp        (Sys_RegMap_Offset_Int)        
-// #define Sys_RegMap_Schedules        (Sys_RegMap_Timestamp+1)
-// #define Sys_RegMap_Flux             (Sys_RegMap_Schedules+10)
-// #define Sys_RegMap_Temp_S1          (Sys_RegMap_Flux+1)
-// #define Sys_RegMap_Temp_S2          (Sys_RegMap_Temp_S1+1)
-// #define Sys_RegMap_Total_Liters     (Sys_RegMap_Temp_S2+1)
-// #define Sys_RegMap_Temp_Ref_1       (Sys_RegMap_Total_Liters+1)
-// #define Sys_RegMap_Temp_Ref_2       (Sys_RegMap_Temp_Ref_1+1)
-// #define Sys_RegMap_Flux_Calib       (Sys_RegMap_Temp_Ref_2+1)
-// #define Sys_RegMap_T1_Calib_1       (Sys_RegMap_Flux_Calib+1)
-// #define Sys_RegMap_T1_Calib_2       (Sys_RegMap_T1_Calib_1+1)
-// #define Sys_RegMap_T1_Calib_3       (Sys_RegMap_T1_Calib_2+1)
-// #define Sys_RegMap_T2_Calib_1       (Sys_RegMap_T1_Calib_3+1)
-// #define Sys_RegMap_T2_Calib_2       (Sys_RegMap_T2_Calib_1+1)
-// #define Sys_RegMap_T2_Calib_3       (Sys_RegMap_T2_Calib_2+1)
-// #define Sys_RegMap_Nreg_Int     (24)//(11)
-//Defines dos endereços utilizados nos registradores float
-// #define Sys_RegMap_Flux
-// #define Sys_RegMap_Temp_S1
-// #define Sys_RegMap_Temp_S2
-// #define Sys_RegMap_Total_Liters
-// #define Sys_RegMap_Temp_Ref_1
-// #define Sys_RegMap_Temp_Ref_2
-// #define Sys_RegMap_Flux_Calib
-// #define Sys_RegMap_Temp_Calib_1
-// #define Sys_RegMap_Temp_Calib_2
-// #define Sys_RegMap_Nreg_Float   (9)
-// #define Sys_RegMap_Nreg_Float   (0)
-
+ /*******************************************************************************
+ * Errors
+ *****************************************************************************/
+#define Sys_ERROR_NO                0b00000000000000000000000000000000
+#define Sys_ERROR_T1_HIGH           0b00000000000000000000000000000001
+#define Sys_ERROR_T1_LOW            0b00000000000000000000000000000010
+#define Sys_ERROR_T1_SHORT_CIRCUIT  0b00000000000000000000000000000100
+#define Sys_ERROR_T2_HIGH           0b00000000000000000000000000001000
+#define Sys_ERROR_T2_LOW            0b00000000000000000000000000010000
+#define Sys_ERROR_T2_SHORT_CIRCUIT  0b00000000000000000000000000100000
 
 #endif
 
