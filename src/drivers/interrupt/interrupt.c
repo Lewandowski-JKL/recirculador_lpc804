@@ -324,7 +324,7 @@ void MRT0_IRQHandler(void)
  * SysTick Interrupt
  ******************************************************************************/
 ISR_FUNCTION ptrSysTickISR = NULL;
-volatile unsigned long SysTickCount = 0;
+volatile unsigned long long SysTickCount = 0;
 volatile unsigned long SysTickFrequency = 0;
 volatile unsigned long dT_us = 0;
 volatile unsigned long dT_ms = 0;
@@ -399,7 +399,7 @@ void SysTickBeginISR(int frequency,  ISR_FUNCTION isrFunc)
  * 
  * @return unsigned long 
  */
-unsigned long SysTickGetTicks()
+unsigned long long SysTickGetTicks()
 {
     return SysTickCount;
 }
@@ -418,7 +418,7 @@ void SysTick_Handler(void)
  * 
  * @return unsigned long 
  */
-unsigned long SysTickGetTime_us()
+unsigned long long SysTickGetTime_us()
 {
     return (dT_us*SysTickCount);
 }
@@ -427,7 +427,7 @@ unsigned long SysTickGetTime_us()
  * 
  * @return unsigned long 
  */
-unsigned long SysTickGetTime_ms()
+unsigned long long SysTickGetTime_ms()
 {
     return ((dT_us * SysTickCount)/1000);
 }
@@ -436,7 +436,7 @@ unsigned long SysTickGetTime_ms()
  * 
  * @return unsigned long 
  */
-unsigned long SysTickGetTime_seconds()
+unsigned long long SysTickGetTime_seconds()
 {
     return SysTickGetTime_ms() / 1000;
 }

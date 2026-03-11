@@ -69,6 +69,7 @@ extern unsigned char __app1_end;
 #define SysADC_TempS1       (3)// pin 16 adc channel 3
 #define SysADC_TempS2       (10)// pin 13 adc channel 10
 #define SysADC_VRef         (1)// pin 1 adc channel 1
+#define SysADC_Current      (8)// pin 15 adc channel 8
 
 /*******************************************************************************
  * Pin Definitions
@@ -87,7 +88,7 @@ extern unsigned char __app1_end;
 #define Syspin_SensorDeFluxo   (8)
 #define Syspin_Pump            (17)
 #define Syspin_VRef            (1)// pin 1 adc channel 1
-
+#define Syspin_Current         (15)// pin 15 adc channel 8
 
 /*******************************************************************************
  * APP Definitions
@@ -102,7 +103,7 @@ extern unsigned char __app1_end;
  /*******************************************************************************
  * Tasks Definitions
  *****************************************************************************/
-#define Sys_task_max            (10)
+#define Sys_task_max            (20)
 #define Sys_task_name_length    (20)
 
  /*******************************************************************************
@@ -129,9 +130,13 @@ extern unsigned char __app1_end;
     #define Sys_RegMap_End          (0x176F)
 #endif
 
-#define Sys_RegMap_Nreg_Bool_tot    (240)
-#define Sys_RegMap_Nreg_Short_tot   (120)
-#define Sys_RegMap_Nreg_Int_tot     (60)
+// #define Sys_RegMap_Nreg_Bool_tot    (96)
+// #define Sys_RegMap_Nreg_Short_tot   (96)
+// #define Sys_RegMap_Nreg_Int_tot     (96)
+
+#define Sys_RegMap_Nreg_Bool_tot    (64)
+#define Sys_RegMap_Nreg_Short_tot   (64)
+#define Sys_RegMap_Nreg_Int_tot     (64)
 #ifndef __NO_FLOAT__
     #define Sys_RegMap_Nreg_Float_tot   (60)
 #endif
@@ -179,44 +184,59 @@ enum
     Sys_RegMap_Mac_Addr_1,
     Sys_RegMap_Mac_Addr_2,
     Sys_RegMap_ssid_0,
-    Sys_RegMap_pass_0=(Sys_RegMap_ssid_0+16),
+    Sys_RegMap_pass_0 = (Sys_RegMap_ssid_0+16),
 //Defines dos endereços utilizados nos registradores int
-    Sys_RegMap_Timestamp= Sys_RegMap_Offset_Int,      
+    Sys_RegMap_Timestamp = Sys_RegMap_Offset_Int,      
     Sys_RegMap_Schedules_0, Sys_RegMap_Schedules_1, Sys_RegMap_Schedules_2, Sys_RegMap_Schedules_3, Sys_RegMap_Schedules_4,
     Sys_RegMap_Schedules_5, Sys_RegMap_Schedules_6, Sys_RegMap_Schedules_7, Sys_RegMap_Schedules_8, Sys_RegMap_Schedules_9,
+    //Registradores de leitura de fluxo
     Sys_RegMap_Flux_Counter,
     Sys_RegMap_Flux_Liters,
-    Sys_RegMap_Total_Liters,
-    Sys_RegMap_Temp_S1,
-    Sys_RegMap_Adc_Measure_S1,
-    Sys_RegMap_mV_Measure_S1,
-    Sys_RegMap_Temp_S2,
-    Sys_RegMap_Adc_Measure_S2,
-    Sys_RegMap_mV_Measure_S2,
-    Sys_RegMap_Temp_Ref_1,
-    Sys_RegMap_Temp_Ref_1_Max,
-    Sys_RegMap_Temp_Ref_2,
-    Sys_RegMap_Temp_Ref_2_Max,
+    Sys_RegMap_Flux_Total_Liters,
     Sys_RegMap_Flux_Calib,
-    Sys_RegMap_T1_Calib_1,
-    Sys_RegMap_T1_Calib_2,
-    Sys_RegMap_T1_Calib_3,
-    Sys_RegMap_T2_Calib_1,
-    Sys_RegMap_T2_Calib_2,
-    Sys_RegMap_T2_Calib_3,
-    Sys_RegMap_T1_Error_High,
-    Sys_RegMap_T1_Error_Low,
-    Sys_RegMap_T1_Error_Desconnect,
-    Sys_RegMap_T1_Error_Short_Circuit,
-    Sys_RegMap_T2_Error_High,
-    Sys_RegMap_T2_Error_Low,
-    Sys_RegMap_T2_Error_Desconnect,
-    Sys_RegMap_T2_Error_Short_Circuit,
-    Sys_RegMap_Erros
+    Sys_RegMap_Flux_Error_Max,
+    Sys_RegMap_Flux_Error_Min,
+    //Registradores de leitura de temperatura s1
+    Sys_RegMap_S1_Adc,
+    Sys_RegMap_S1_mV,
+    Sys_RegMap_S1_Temp,
+    Sys_RegMap_S1_Temp_Ref,
+    Sys_RegMap_S1_Calib_1,
+    Sys_RegMap_S1_Calib_2,
+    Sys_RegMap_S1_Calib_3,
+    Sys_RegMap_S1_Error_High,
+    Sys_RegMap_S1_Error_Low,
+    Sys_RegMap_S1_Error_Desconnect,
+    Sys_RegMap_S1_Error_Short_Circuit,
+    //Registradores de leitura de temperatura s2
+    Sys_RegMap_S2_Adc,
+    Sys_RegMap_S2_mV,
+    Sys_RegMap_S2_Temp,
+    Sys_RegMap_S2_Temp_Ref,
+    Sys_RegMap_S2_Calib_1,
+    Sys_RegMap_S2_Calib_2,
+    Sys_RegMap_S2_Calib_3,
+    Sys_RegMap_S2_Error_High,
+    Sys_RegMap_S2_Error_Low,
+    Sys_RegMap_S2_Error_Desconnect,
+    Sys_RegMap_S2_Error_Short_Circuit,
+    //Registradores de leitura de corrente
+    Sys_RegMap_Current_Adc,
+    Sys_RegMap_Current_mV,
+    Sys_RegMap_Current,
+    Sys_RegMap_Current_Resistor,
+    Sys_RegMap_Current_Calib,
+    Sys_RegMap_Current_Error_Desconnect,
+    Sys_RegMap_Current_Error_Short_Circuit,
+    //Configurações
+    Sys_RegMap_Time_Recirculation,
+    Sys_RegMap_Temp_Ref_Recirculation,
+    //Alarmes e erros
+    Sys_RegMap_Errors
 };
 #define Sys_RegMap_Nreg_Bool    (Sys_RegMap_Button + 1      -Sys_RegMap_Offset_Bool)//2 ->   1Byte
 #define Sys_RegMap_Nreg_Short   ((Sys_RegMap_pass_0+16) + 1 -Sys_RegMap_Offset_Short)//40 -> 80 Bytes
-#define Sys_RegMap_Nreg_Int     (Sys_RegMap_Erros + 1       -Sys_RegMap_Offset_Int)//160 -> 100 Bytes (11)
+#define Sys_RegMap_Nreg_Int     (Sys_RegMap_Errors + 1       -Sys_RegMap_Offset_Int)//51 -> 200 Bytes (11)
 #define Sys_RegMap_Nreg_Total   (Sys_RegMap_Nreg_Bool + Sys_RegMap_Nreg_Short + Sys_RegMap_Nreg_Int)
 #define Sys_RegMap_Nreg_Total_Bytes     (Sys_RegMap_Nreg_Bool                           \
                                         + (Sys_RegMap_Nreg_Short    *   sizeof(short))  \
@@ -229,12 +249,12 @@ enum
  * Errors
  *****************************************************************************/
 #define Sys_ERROR_NO                0b00000000000000000000000000000000
-#define Sys_ERROR_T1_HIGH           0b00000000000000000000000000000001
-#define Sys_ERROR_T1_LOW            0b00000000000000000000000000000010
-#define Sys_ERROR_T1_SHORT_CIRCUIT  0b00000000000000000000000000000100
-#define Sys_ERROR_T2_HIGH           0b00000000000000000000000000001000
-#define Sys_ERROR_T2_LOW            0b00000000000000000000000000010000
-#define Sys_ERROR_T2_SHORT_CIRCUIT  0b00000000000000000000000000100000
+#define Sys_ERROR_S1_HIGH           0b00000000000000000000000000000001
+#define Sys_ERROR_S1_LOW            0b00000000000000000000000000000010
+#define Sys_ERROR_S1_SHORT_CIRCUIT  0b00000000000000000000000000000100
+#define Sys_ERROR_S2_HIGH           0b00000000000000000000000000001000
+#define Sys_ERROR_S2_LOW            0b00000000000000000000000000010000
+#define Sys_ERROR_S2_SHORT_CIRCUIT  0b00000000000000000000000000100000
 
 #endif
 

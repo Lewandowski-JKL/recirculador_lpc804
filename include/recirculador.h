@@ -7,6 +7,8 @@
 #include "message_manager.h"
 #include "registers_manager.h"
 
+bool reg_eeprom_test(unsigned int addr);
+
 /*******************************************************************************
  * Global Variables
  ******************************************************************************/
@@ -15,6 +17,7 @@ NTC_Thermistor temp_S2;
 adc_t adc_S1;
 adc_t adc_S2;
 adc_t adc_Vref;
+adc_t adc_Current;
 
 /*******************************************************************************
  * Tasks
@@ -25,6 +28,9 @@ void rec_isr_Botoeira(volatile void *arg);
 void rec_isr_Flow(volatile void *arg);
 void rec_system(void *arg);
 void rec_error_process(void *arg);
+void rec_measure(void *arg);
+//void rec_botoeira(void *arg);
+
 // void isrTimer0(volatile void *arg);
 // void isrSysTick(volatile void *arg);
 

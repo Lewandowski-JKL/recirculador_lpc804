@@ -39,7 +39,8 @@ MEMORY
 {
   m_interrupts          (RX)  : ORIGIN = 0x00000000, LENGTH = 0x00000200
   m_crp                 (RX)  : ORIGIN = 0x000002FC, LENGTH = 0x00000004
-  m_text                (RX)  : ORIGIN = 0x00000300, LENGTH = 0x00007500
+  m_app0                (RX)  : ORIGIN = 0x00000300, LENGTH = 0x00003A80
+  m_app1                (RX)  : ORIGIN = 0x00003D80, LENGTH = 0x00003A80
   m_eeprom              (RX)  : ORIGIN = 0x00007800, LENGTH = 0x00000400 
   m_reg_factory         (RX)  : ORIGIN = 0x00007C00, LENGTH = 0x00000400
   m_data                (RW)  : ORIGIN = 0x10000000, LENGTH = 0x00000FE0
@@ -102,19 +103,19 @@ SECTIONS
     KEEP (*(.init))
     KEEP (*(.fini))
     . = ALIGN(4);
-  } > m_text
+  } > m_app0
 
   .ARM.extab :
   {
     *(.ARM.extab* .gnu.linkonce.armextab.*)
-  } > m_text
+  } > m_app0
 
   .ARM :
   {
     __exidx_start = .;
     *(.ARM.exidx*)
     __exidx_end = .;
-  } > m_text
+  } > m_app0
 
 
  .ctors :
@@ -139,7 +140,7 @@ SECTIONS
     KEEP (*(SORT(.ctors.*)))
     KEEP (*(.ctors))
     __CTOR_END__ = .;
-  } > m_text
+  } > m_app0
 
   .dtors :
   {
@@ -150,14 +151,14 @@ SECTIONS
     KEEP (*(SORT(.dtors.*)))
     KEEP (*(.dtors))
     __DTOR_END__ = .;
-  } > m_text
+  } > m_app0
 
   .preinit_array :
   {
     PROVIDE_HIDDEN (__preinit_array_start = .);
     KEEP (*(.preinit_array*))
     PROVIDE_HIDDEN (__preinit_array_end = .);
-  } > m_text
+  } > m_app0
 
   .init_array :
   {
@@ -165,7 +166,7 @@ SECTIONS
     KEEP (*(SORT(.init_array.*)))
     KEEP (*(.init_array*))
     PROVIDE_HIDDEN (__init_array_end = .);
-  } > m_text
+  } > m_app0
 
   .fini_array :
   {
@@ -173,7 +174,7 @@ SECTIONS
     KEEP (*(SORT(.fini_array.*)))
     KEEP (*(.fini_array*))
     PROVIDE_HIDDEN (__fini_array_end = .);
-  } > m_text
+  } > m_app0
 
   __etext = .;    /* define a global symbol at end of code */
   __DATA_ROM = .; /* Symbol is used by startup for data initialization */
@@ -192,8 +193,8 @@ SECTIONS
   } > m_data
 
   __DATA_END = __DATA_ROM + (__data_end__ - __data_start__);
-  text_end = ORIGIN(m_text) + LENGTH(m_text);
-  ASSERT(__DATA_END <= text_end, "region m_text overflowed with text and data")
+  text_end = ORIGIN(m_app0) + LENGTH(m_app0);
+  ASSERT(__DATA_END <= text_end, "region m_app0 overflowed with text and data")
 
   /* Uninitialized data section */
   .bss :
@@ -238,10 +239,11 @@ SECTIONS
 
 }
 
-__app1_start      = 0x00000300;
-__app1_end        = 0x00003D7F;
-__app2_start      = 0x00003D80;
-__app2_end        = 0x000077FF;
+__app0_start      = 0x00000300;
+__app0_end        = 0x00003D7F;
+__app1_start      = 0x00003D80;
+__app1_end        = 0x000077FF;
+__eeprom_start    = 0x00007800;
 __reg_factory     = 0x00007C00;
 __flash_end       = 0x00008000;
 

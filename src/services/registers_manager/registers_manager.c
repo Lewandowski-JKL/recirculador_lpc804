@@ -22,19 +22,8 @@ typedef struct registers_manager
 registers_manager reg_vet;
 
 /*************************** */
-bool _reg_eeprom_test(unsigned int addr)
+bool reg_eeprom_test(unsigned int addr)
 {
-    switch (addr)
-    {
-    case Sys_RegMap_Mac_Addr_0 ... (Sys_RegMap_pass_0+16):
-        return true;
-    case Sys_RegMap_Schedules_0 ... Sys_RegMap_Schedules_9:
-        return true;
-    case Sys_RegMap_Total_Liters ... Sys_RegMap_T2_Calib_3:
-        return true;
-    default:
-        return false;
-    }
     return false;
 }
 /************************** */

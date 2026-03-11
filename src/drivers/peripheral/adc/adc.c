@@ -53,13 +53,16 @@ int adc_Read(adc_t *adc)
  * @param adc 
  * @return short 
  */
-short adc_ReadMiliVolts(adc_t *adc)
+int adc_ReadMiliVolts(adc_t *adc)
 {
     int value = (adc->_convertTo_mv * adc_Read(adc))/1000;//converte a leitura em mV
-    return (short)((972*value)/1000);//retorna o valor em mV
-    //ajuste temporário para testes
+    return ((972*value)/1000);//retorna o valor em mV
 }
-
+int adc_ConvertToMiliVolts(adc_t *adc, int measure)
+{
+    int value = (adc->_convertTo_mv * measure)/1000;//converte a leitura em mV
+    return ((972*value)/1000);//retorna o valor em mV
+}
 /**
  * @brief Configura ADC
  * 

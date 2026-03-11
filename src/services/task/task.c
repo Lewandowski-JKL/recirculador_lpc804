@@ -20,7 +20,7 @@ int tasks_on=0;
 typedef struct task_s
 {
     task_func_t *ptrFunc;
-    unsigned long lastExecution;
+    unsigned long long lastExecution;
     unsigned long dt_us;
     unsigned char priority;
     void *ptrData;
@@ -60,6 +60,8 @@ void isrScheduler(volatile void *arg)
 
 void task_schedulerInit()
 {
+    if (scheduler_on)
+        return;
     scheduler_on = 1;
     SysTickBeginISR(SysTickFrequency, isrScheduler);
 }

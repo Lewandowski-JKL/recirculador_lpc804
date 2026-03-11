@@ -1,22 +1,22 @@
 # ninja log v5
-1327	2043	7945298628760330	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/debug_console_lite/fsl_debug_console.c.obj	d04c7dc64221c0a3
+2218	3347	7949655880529280	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/debug_console_lite/fsl_debug_console.c.obj	3511b7653ffd37fc
 4	781	7935705141131833	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/main.c.obj	d5a6d3c9a6b7cc5f
 1198	1560	7937328832044038	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/devices/LPC804/drivers/fsl_reset.c.obj	e3f775253064c025
 24	833	7935705141297534	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/peripherals.c.obj	f9bd6a986f915d8b
 265	1352	7937311197769136	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/boards/lpcxpresso804/clock_config.c.obj	23a2ad464a048ded
 59	886	7935705141875746	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/pin_mux.c.obj	8c68fd5a7136947f
+2348	3358	7949655881659917	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/common/fsl_common.c.obj	e7fbf5418fdcf963
 250	1391	7937328822139203	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/utilities/misc_utilities/fsl_syscall_stub.c.obj	7fab52271c51d2f
-932	1202	7948747211737440	Recirculador.elf	7369fdfcc6a1d66b
-1448	2050	7945298629594487	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/common/fsl_common.c.obj	fadec14435ef5eca
+274	498	7949655331258699	Recirculador.elf	7369fdfcc6a1d66b
 171	1290	7937311197021051	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/boards/lpcxpresso804/board.c.obj	cfbcf1d24471d7ca
 199	1385	7937328821220853	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/utilities/misc_utilities/fsl_sbrk.c.obj	2c04e839982bfdd3
-1645	2055	7945298631742783	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/components/uart/fsl_adapter_miniusart.c.obj	563760be040a59eb
+2699	3372	7949655886146155	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/components/uart/fsl_adapter_miniusart.c.obj	3ce2b7fe5591a42
 844	1426	7937328827921000	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/devices/LPC804/system_LPC804.c.obj	85fafa101a616fe4
 310	1395	7937328822727556	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/devices/LPC804/gcc/startup_LPC804.S.obj	4a1cd79434727606
-1706	2056	7945298632243012	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_gpio/fsl_gpio.c.obj	6795cffad9c9b225
-717	1706	7945298621966484	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/led_control/led_control.c.obj	f63470674d9c291c
+2797	3376	7949655886899909	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_gpio/fsl_gpio.c.obj	6fb28e36f48995f
+1064	2699	7949655869099482	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/led_control/led_control.c.obj	ec3ce1bfe6eabd27
 1250	1498	7937328831435623	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/drivers/swm/fsl_swm.c.obj	bd62893893fa69f9
-1763	2059	7945298633079562	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj	6a042d91f064d458
+2885	3380	7949655888026479	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj	ead63499500a9fd0
 388	1400	7937328824170612	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/devices/LPC804/drivers/fsl_clock.c.obj	770656fe3bbecfaa
 478	1404	7937328824910788	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/utilities/str/fsl_str.c.obj	c2274cb45b21fe93
 34	130	7939159326595524	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/stubs/stubs.c.obj	f3975e68c8a36e2c
@@ -25,85 +25,152 @@
 691	1417	7937328826881639	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/drivers/common/fsl_common.c.obj	4a172220b7edc326
 771	1422	7937328827712866	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/drivers/common/fsl_common_arm.c.obj	1f40bd700b0d801c
 906	1431	7937328828821890	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/utilities/assert/fsl_assert.c.obj	5d92252caa671dcd
-1048	2027	7945298625583483	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_sbrk.c.obj	8acd063e2721da28
+1784	3266	7949655876417789	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_sbrk.c.obj	3db85f885c271f40
 984	1431	7937328829482352	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/components/uart/fsl_adapter_miniusart.c.obj	fc397ca4dca3530f
-399	755	7948747207289879	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	fcaa796f7f4799fc
+806	2402	7949655866988888	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	d293cefd81bf8ea3
 1058	1432	7937328830198421	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/drivers/lpc_gpio/fsl_gpio.c.obj	60408a947383669f
-1982	2188	7945298634364811	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/iap/fsl_iap.c.obj	801eaf26d51eda1f
+3266	3551	7949655890307559	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/iap/fsl_iap.c.obj	9834c1570c009753
 1148	1436	7937328830795717	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/drivers/lpc_miniusart/fsl_usart.c.obj	e4105d48e75fcc33
-356	729	7948747206625279	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	ca6f05ec710b9cb1
-446	790	7948726983277026	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj	4b7432892c77f1af
-92	727	7948747203281001	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	c9d7be690ce183bd
+647	2296	7949655865275143	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	340995822fc07ef9
+729	2348	7949655866378077	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj	1ce9f1ba726c7582
+151	1523	7949655858699659	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	9dce94b4e183f737
 1302	1554	7937328831956959	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/VS_Code/NXP/core/drivers/syscon/fsl_syscon.c.obj	bfe1e74ad246d59b
-132	847	7948747208217526	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	785e073fc3fdf03e
-33	505	7945298612235934	build.ninja	b36ebfbab8046a87
+231	1784	7949655860402935	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	a406a3720d8fe72c
+70	840	7949656740348846	build.ninja	b36ebfbab8046a87
 21	1008	7935734490379803	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/peripherals.c.obj	ba4a5dc35b91e392
 41	1059	7935734491209562	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/pin_mux.c.obj	6387cce98bc9252a
-4	64	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-845	1818	7945298623503328	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/message_manager/message_manager.c.obj	5efdc13a95135142
-1596	2055	7945298631163992	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/assert/fsl_assert.c.obj	725b1f200b41183e
-62	954	7945298614564401	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/board.c.obj	9753fc147b44ee6e
-237	729	7948747205392176	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	a306e3bf345c5bbe
-651	932	7948747209051221	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	a688004f51a1d7cd
-285	729	7948747206156076	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	1ba3390cc69ac5b7
-1109	2030	7945298626315420	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_syscall_stub.c.obj	c190c72f7b6c6e57
-1171	2033	7945298626525716	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj	c7a3d2bf9527ba4c
-68	722	7948747203024191	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	c7013417445ac2ab
-1220	2037	7945298627579606	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_clock.c.obj	8526db4646e71a7f
-770	1763	7945298623015815	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/log_lpc804/log_lpc804.c.obj	79bfcebde00a15d8
-1275	2040	7945298628344948	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/str/fsl_str.c.obj	7b872e12f5061489
-1400	2047	7945298629261374	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_power.c.obj	e3d31035fc1236e
+3	46	7949656734289957	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+1289	2885	7949655872004624	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/message_manager/message_manager.c.obj	9e0356dadb406b38
+2573	3369	7949655884598223	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/assert/fsl_assert.c.obj	3466f82f85b2cd79
+90	1451	7949655857815185	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/board.c.obj	faab941a6a4eaa39
+326	1923	7949655861826487	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	2820c18a7f937784
+1637	3160	7949655875342542	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	9f0d14369fa82304
+393	1967	7949655862900910	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	488b3c851d9abd99
+1868	3332	7949655876873037	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_syscall_stub.c.obj	a9040e0babca7564
+1924	3335	7949655877665973	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj	36f3b9020058d69c
+64	1366	7949655858149058	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	8531aa8658972924
+1967	3338	7949655878897534	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_clock.c.obj	c3c1e1e303a1382
+1206	2796	7949655870519105	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/log_lpc804/log_lpc804.c.obj	501bd0af81e0a49e
+2061	3343	7949655880158214	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/str/fsl_str.c.obj	f714fc1e1a6ca643
+2296	3354	7949655881315738	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_power.c.obj	e503ef1e4a276ea5
 609	1104	7939188064667772	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/register_manager/register_manager.c.obj	bfadffe0b5d6a488
-1509	2054	7945298630079311	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/common/fsl_common_arm.c.obj	29d3a553333de42
-1547	2054	7945298630422734	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj	e11d8fff0216ca16
-1928	2153	7945298634007458	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/syscon/fsl_syscon.c.obj	917bf3dd98aad3e4
+2402	3361	7949655882602151	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/common/fsl_common_arm.c.obj	b9947c73471531ab
+2462	3365	7949655883484259	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj	3fe14135ea7c0d97
+3160	3486	7949655889668115	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/syscon/fsl_syscon.c.obj	6c53d1314a6c70b3
 194	552	7945111649937354	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/register_manager_copy/register_manager.c.obj	5fdeda288d2ca332
-1818	2085	7945298633356144	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_reset.c.obj	2df95785b1ee569e
-1874	2126	7945298633763773	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/swm/fsl_swm.c.obj	cbe737b7b8eab385
-113	1048	7945298615711519	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/log.c.obj	5e7f728467121b4a
-613	1596	7945298620935402	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj	c2cdffd31a5862a6
-344	1327	7945298618650811	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj	9c5b1b8240f60db1
-901	1874	7945298623930712	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj	e321bc25d9ee69f
-292	781	7948726982027451	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj	6d676ad0d501e179
-200	728	7948747204811538	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	7774e9180b9d8739
-460	798	7948747207747123	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	831cc70122e80c3a
-569	912	7948747208795324	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	7b26ae6fd2e50a76
-7	44	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-3	43	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-47	675	7948751501803033	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	c7013417445ac2ab
-74	684	7948751501988084	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	c9d7be690ce183bd
-145	691	7948751503278622	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	7774e9180b9d8739
-185	696	7948751504038029	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	a306e3bf345c5bbe
-226	702	7948751504729301	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	1ba3390cc69ac5b7
-301	708	7948751505594531	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	ca6f05ec710b9cb1
-361	723	7948751506121409	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	fcaa796f7f4799fc
-435	778	7948751506688552	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	831cc70122e80c3a
-102	819	7948751507094455	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	785e073fc3fdf03e
-514	870	7948751507597402	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	7b26ae6fd2e50a76
-588	887	7948751507764949	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	a688004f51a1d7cd
-887	1191	7948751510792109	Recirculador.elf	7369fdfcc6a1d66b
-3	55	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-3	39	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-3	45	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-48	279	7948753388605499	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	785e073fc3fdf03e
-73	298	7948753388756853	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	7774e9180b9d8739
-299	577	7948753391519010	Recirculador.elf	7369fdfcc6a1d66b
+2982	3385	7949655888659507	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_reset.c.obj	cd56f80caf612060
+3054	3450	7949655889221478	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/swm/fsl_swm.c.obj	9da815b216273ac4
+199	1637	7949655859538065	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/log.c.obj	fec2449c056277df
+880	2462	7949655867545736	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj	3ebfd49b98b51484
+473	2061	7949655863647795	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj	9afb745f191a7e59
+1366	2982	7949655872492336	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj	21d4547bb3016424
+556	2218	7949655864425974	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj	e32206e1d7cd214d
+261	1868	7949655861277041	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	5a0c114ea0fcd738
+964	2573	7949655868375348	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	e6fe9f57a5afa2ff
+1523	3054	7949655877621369	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	67d5749c160799ca
+47	680	7949656740348846	build.ninja	b36ebfbab8046a87
+14	58	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+61	1265	7949656743921080	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	3fb7d5dcdc12547b
+86	1367	7949656743518979	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/board.c.obj	415fcea6aecf237e
+114	1433	7949656744802617	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	a88eb6a05d8718cd
+165	1510	7949656745599447	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/log.c.obj	4c83c1311d22b534
+213	1608	7949656746710051	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	dc553f927ecb81b6
+284	1678	7949656747480479	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	f35eb3f6183a483
+361	1770	7949656748188579	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	8c0e91deafd3204c
+446	1850	7949656749024003	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	d3c98eca4d455e8c
+533	1902	7949656749545688	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/gpio/gpio.c.obj	2293deb768376212
+610	1964	7949656750137299	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/interrupt/interrupt.c.obj	646f1b29d44e8216
+684	2004	7949656750638960	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	b81d45c6d1137764
+762	2083	7949656751763482	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c.obj	f955fbf66f4f4c03
+834	2159	7949656752103781	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	7fa15cbc2e3a28c5
+887	2268	7949656754332615	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/checksum/checksum.c.obj	90fb389119dfc2cb
+938	2383	7949656752775739	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	972054acd394e2e4
+989	2478	7949656754158230	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/led_control/led_control.c.obj	db54411087b5772c
+1056	2569	7949656755642680	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/log_lpc804/log_lpc804.c.obj	ec88396c21b52b6e
+1142	2624	7949656756093243	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/message_manager/message_manager.c.obj	f25548d8131b1fe6
+1266	2700	7949656756645151	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/ntc_thermistor/ntc_thermistor.c.obj	9ad41cec5af92c87
+1367	2781	7949656758178667	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	2a435e702ac4a98
+1433	2847	7949656759016657	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	2359ff5d692c7014
+1510	2907	7949656759195503	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_sbrk.c.obj	5151933b9b50294
+1608	2913	7949656760034002	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/misc_utilities/fsl_syscall_stub.c.obj	67f6ed925ed3affd
+1678	2917	7949656760320125	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/gcc/startup_LPC804.S.obj	bbd9e0c6b1da21b7
+1770	2920	7949656761437808	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_clock.c.obj	e5de70e637b2f67
+1850	2923	7949656762142776	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/str/fsl_str.c.obj	4b8d2e7c218b7a70
+1902	2926	7949656762985684	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/debug_console_lite/fsl_debug_console.c.obj	64bfde592f5ef99
+1964	2929	7949656763743751	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_power.c.obj	a6b834ab809c78c5
+2004	2932	7949656764390160	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/common/fsl_common.c.obj	ae42de5b4165019
+2083	2936	7949656765220007	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/common/fsl_common_arm.c.obj	f22d33ebf9e1ba93
+2159	2941	7949656766220855	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/system_LPC804.c.obj	ba14cff0dcba9a1b
+2268	2946	7949656767518383	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/utilities/assert/fsl_assert.c.obj	e8b0bfbae3ad9e95
+2383	2951	7949656768365021	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/components/uart/fsl_adapter_miniusart.c.obj	df0ed018e31cdec4
+2479	2954	7949656768896867	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_gpio/fsl_gpio.c.obj	ff3e54e59ba06e98
+2569	2959	7949656769724512	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/lpc_miniusart/fsl_usart.c.obj	be56054c34cfc4f2
+2624	2963	7949656770185176	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/devices/LPC804/drivers/fsl_reset.c.obj	62eacbcfb7db4796
+2700	2994	7949656770575374	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/swm/fsl_swm.c.obj	99ccebc7f3072c76
+2781	3017	7949656770792892	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/syscon/fsl_syscon.c.obj	4fd83c12b694b8cd
+2847	3069	7949656771313394	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/lib/repo/core/drivers/iap/fsl_iap.c.obj	a23a2a003f97ff41
+3070	3606	7949656776682568	Recirculador.elf	103a1d375e6caea2
 2	38	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-3	55	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-60	518	7948791502065791	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	c7013417445ac2ab
-77	519	7948791501835509	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	c9d7be690ce183bd
-92	525	7948791502681847	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	785e073fc3fdf03e
-109	530	7948791503195774	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	7774e9180b9d8739
-159	536	7948791503740613	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	a306e3bf345c5bbe
-203	542	7948791504076453	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	1ba3390cc69ac5b7
-253	546	7948791504458472	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	ca6f05ec710b9cb1
-294	582	7948791505003201	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	fcaa796f7f4799fc
-340	595	7948791505147132	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	831cc70122e80c3a
-395	686	7948791506039070	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	7b26ae6fd2e50a76
-448	697	7948791506160933	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	a688004f51a1d7cd
-697	952	7948791508678786	Recirculador.elf	7369fdfcc6a1d66b
-3	46	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-4	58	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-4	42	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
-46	217	7948797202813906	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	c9d7be690ce183bd
-218	476	7948797205372106	Recirculador.elf	7369fdfcc6a1d66b
+4	43	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+3	40	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+2	43	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+46	323	7949657850740170	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	dc553f927ecb81b6
+324	531	7949657852814741	Recirculador.elf	103a1d375e6caea2
+3	41	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+44	245	7949657938030418	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	dc553f927ecb81b6
+246	440	7949657939986251	Recirculador.elf	103a1d375e6caea2
+4	40	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+43	782	7949659035483526	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	3fb7d5dcdc12547b
+60	783	7949659036246435	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	a88eb6a05d8718cd
+80	783	7949659037126585	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	dc553f927ecb81b6
+119	784	7949659037934433	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	f35eb3f6183a483
+179	784	7949659038477023	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	8c0e91deafd3204c
+253	784	7949659039228282	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	d3c98eca4d455e8c
+332	790	7949659040528232	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	b81d45c6d1137764
+420	873	7949659041639101	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	7fa15cbc2e3a28c5
+516	897	7949659041887779	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	972054acd394e2e4
+593	1004	7949659042966859	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	2a435e702ac4a98
+681	1030	7949659043229426	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	2359ff5d692c7014
+1030	1253	7949659045433791	Recirculador.elf	103a1d375e6caea2
+4	41	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+44	753	7949659280760150	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	3fb7d5dcdc12547b
+67	754	7949659281539001	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	a88eb6a05d8718cd
+111	754	7949659282277416	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	dc553f927ecb81b6
+175	759	7949659283278390	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	f35eb3f6183a483
+240	765	7949659283685994	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	8c0e91deafd3204c
+321	771	7949659284550831	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	d3c98eca4d455e8c
+400	777	7949659285207629	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	b81d45c6d1137764
+483	840	7949659285930810	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	7fa15cbc2e3a28c5
+568	866	7949659286165193	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	972054acd394e2e4
+634	942	7949659286981811	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	2a435e702ac4a98
+692	981	7949659287345552	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	2359ff5d692c7014
+981	1281	7949659290324421	Recirculador.elf	103a1d375e6caea2
+4	43	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+3	60	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+63	752	7949660111319569	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	3fb7d5dcdc12547b
+94	757	7949660111841558	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	a88eb6a05d8718cd
+134	762	7949660112589738	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	dc553f927ecb81b6
+180	766	7949660113256353	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	f35eb3f6183a483
+235	771	7949660114042968	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	8c0e91deafd3204c
+290	776	7949660114780108	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	d3c98eca4d455e8c
+393	780	7949660115409776	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	b81d45c6d1137764
+463	816	7949660116049557	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	7fa15cbc2e3a28c5
+536	829	7949660116176374	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	972054acd394e2e4
+612	911	7949660117034529	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	2a435e702ac4a98
+686	940	7949660117307933	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	2359ff5d692c7014
+940	1231	7949660120228100	Recirculador.elf	103a1d375e6caea2
+4	39	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+3	44	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa
+47	720	7949660773923615	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/app_config.c.obj	3fb7d5dcdc12547b
+85	721	7949660774594656	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/flash_map.c.obj	a88eb6a05d8718cd
+134	721	7949660775248973	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/main.c.obj	dc553f927ecb81b6
+191	722	7949660775853858	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/recirculador.c.obj	f35eb3f6183a483
+250	722	7949660776408022	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/app/system.c.obj	8c0e91deafd3204c
+317	722	7949660776906594	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/flash_memory/flash_memory.c.obj	d3c98eca4d455e8c
+388	729	7949660777834645	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/drivers/peripheral/adc/adc.c.obj	b81d45c6d1137764
+450	793	7949660778621019	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/calendar/calendar.c.obj	7fa15cbc2e3a28c5
+513	814	7949660778820775	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/fota/fota.c.obj	972054acd394e2e4
+566	901	7949660779684251	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/registers_manager/registers_manager.c.obj	2a435e702ac4a98
+632	936	7949660780017262	CMakeFiles/Recirculador.elf.dir/C_/Users/jackson.lewandowski/Documents/NXP_Projects/Recirculador/src/services/task/task.c.obj	2359ff5d692c7014
+937	1211	7949660782821971	Recirculador.elf	103a1d375e6caea2
+3	41	0	C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/debug/CMakeFiles/cmake.verify_globs	a25e460fdb9c53fa

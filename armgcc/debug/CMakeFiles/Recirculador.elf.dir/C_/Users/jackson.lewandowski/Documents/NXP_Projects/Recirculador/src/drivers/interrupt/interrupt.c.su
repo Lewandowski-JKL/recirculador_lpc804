@@ -17,8 +17,8 @@ C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/int
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:303:6:MRT0_IRQHandler	8	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:336:6:SysTickBegin	16	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:390:6:SysTickBeginISR	16	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:402:15:SysTickGetTicks	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:402:20:SysTickGetTicks	8	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:410:6:SysTick_Handler	8	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:421:15:SysTickGetTime_us	8	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:430:15:SysTickGetTime_ms	8	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:439:15:SysTickGetTime_seconds	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:421:20:SysTickGetTime_us	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:430:20:SysTickGetTime_ms	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/interrupt/interrupt.c:439:20:SysTickGetTime_seconds	8	static

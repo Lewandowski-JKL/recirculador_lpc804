@@ -115,7 +115,7 @@ int i2cRead_slave(unsigned char buffer[])
     }
     return 0;
 }
-int i2cSend_slave(unsigned char buffer[], unsigned char size)
+int i2cSend_slave(unsigned char buffer[], int size)
 {
     if (size==0)
         return i2cStat_Fail;
@@ -246,7 +246,7 @@ int WaitI2cMasterRXRDY(I2C_Type * ptr_LPC_I2C)
     }
     return i2cStat_OK; // ok
 }
-int i2cReadLenght_master(unsigned char addr, unsigned char buffer[], unsigned char len)
+int i2cReadLenght_master(unsigned char addr, unsigned char buffer[], int len)
 {
     int i2c_stats = WaitI2cMasterState(I2C0,I2C_STAT_MSTST_IDLE);
     if (i2c_stats!=i2cStat_OK)
@@ -285,7 +285,7 @@ int i2cRead_master(unsigned char addr, unsigned char buffer[])
         return i2c_stats;
     I2C0->MSTDAT = (addr<<1)|1;//send addr
     I2C0->MSTCTL = MSTCTL_START;
-    for (unsigned char i = 0; i < 0xFF; i++)
+    for (int i = 0; i < 0x1FF; i++)
     {
         i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_RXRDY);
         if (i2c_stats!=i2cStat_OK)
@@ -297,7 +297,7 @@ int i2cRead_master(unsigned char addr, unsigned char buffer[])
     WaitI2cMasterState(I2C0,I2C_STAT_MSTST_IDLE);
     return i2cStat_OK;
 }
-int i2cSend_master(unsigned char addr, unsigned char *message, unsigned char size)
+int i2cSend_master(unsigned char addr, unsigned char *message, int size)
 {
     int i2c_stats = WaitI2cMasterState(I2C0,I2C_STAT_MSTST_IDLE);
     if (i2c_stats!=i2cStat_OK)
@@ -312,7 +312,7 @@ int i2cSend_master(unsigned char addr, unsigned char *message, unsigned char siz
     i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
     if (i2c_stats!=i2cStat_OK)
         return i2c_stats;
-    for (unsigned char i = 0; i < newLen; i++)
+    for (int i = 0; i < newLen; i++)
     {
         i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
         if (i2c_stats!=i2cStat_OK)

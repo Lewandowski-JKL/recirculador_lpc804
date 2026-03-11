@@ -28,9 +28,9 @@ void newTimerIntOneShot(unsigned char Timer,  ISR_FUNCTION isrFunc, long time_us
 
 void SysTickBegin(int ticks);
 void SysTickBeginISR(int frequency,  ISR_FUNCTION isrFunc);
-unsigned long SysTickGetTicks();
-unsigned long SysTickGetTime_us();
-unsigned long SysTickGetTime_ms();
-unsigned long SysTickGetTime_seconds();
+unsigned long long SysTickGetTicks();
+unsigned long long SysTickGetTime_us();
+unsigned long long SysTickGetTime_ms();
+unsigned long long SysTickGetTime_seconds();
 
 #endif

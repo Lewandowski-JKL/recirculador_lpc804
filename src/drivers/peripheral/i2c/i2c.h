@@ -14,11 +14,11 @@ void i2cBegin(unsigned char addr, unsigned char sda, unsigned char scl, unsigned
 
 void i2cBeginSlave(unsigned char addr, unsigned char sda, unsigned char scl, unsigned int baudRate);
 int i2cRead_slave(unsigned char buffer[]);
-int i2cSend_slave(unsigned char buffer[], unsigned char size);
+int i2cSend_slave(unsigned char buffer[], int size);
 
 void i2cBeginMaster(unsigned char sda, unsigned char scl, unsigned int baudRate);
 int i2cRead_master(unsigned char addr, unsigned char buffer[]);
-int i2cSend_master(unsigned char addr, unsigned char *message, unsigned char size);
-int i2cReadLenght_master(unsigned char addr, unsigned char buffer[], unsigned char len);
+int i2cSend_master(unsigned char addr, unsigned char *message, int size);
+int i2cReadLenght_master(unsigned char addr, unsigned char buffer[], int len);
 
 #endif

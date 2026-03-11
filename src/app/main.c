@@ -48,13 +48,14 @@ void setup()
 
     //Inicia Pinos utilizados para controlar o equipamento
     gpio_ConfigPinOutput(Syspin_Pump);//Define o pino utilizado para ligar a bomba como Saída
-    gpio_ClearPin(Syspin_Pump);//Coloca ele em estado '0' | Desligado
+    gpio_SetPin(Syspin_Pump);//Coloca ele em estado '1' | Desligado
     gpio_ConfigPinInput(Syspin_Botoeira);//Define o pino como entrada para leitura da botoeira
     gpio_ConfigPinInput(Syspin_SensorDeFluxo);//Define o pino como entrada para leitura do sensor de fluxo
     //Inicia o adc
     adc_Config(&adc_S1, SysADC_TempS1, SysADCMeasureLenght);
     adc_Config(&adc_S2, SysADC_TempS2, SysADCMeasureLenght);
     adc_Config(&adc_Vref, SysADC_VRef, SysADCMeasureLenght);
+    // adc_Config(&adc_Current, SysADC_Current, SysADCMeasureLenght);
 
     //inicia iap flash ("eeprom")
     iap_Begin();
@@ -70,11 +71,16 @@ void setup()
     thermistor_new(&temp_S2, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
 
     //Inicia as tasks
-    //task_schedulerInit();
-    task_new(rec_get_Temp1, "Rec_Get_Temp_1", 10, 0, NULL);
-    task_new(rec_get_Temp2, "Rec_Get_Temp_2", 10, 0, NULL);
-    task_new(rec_system, "System", 5, 0, NULL);
-    task_new(rec_error_process, "Error_Process", 1, 0, NULL);
+    // task_new(rec_get_Temp1, "Rec_Get_Temp_1", 10, 0, NULL);//Faz 10 medidas de temperatura por segundo
+    // task_new(rec_get_Temp2, "Rec_Get_Temp_2", 10, 0, NULL);//Faz 10 medidas de temperatura por segundo
+    // task_new(rec_system, "System", 100, 0, NULL);   //Processa mudanças e, caso perceba alguma,
+    //                                                 // cria a mensagem para ser enviada para o modulo wifi e o display
+    // task_new(rec_error_process, "Error_Process", 1, 0, NULL);//identifica erros e cria a mensagem de erro
+    // task_new(rec_measure, "measure_Process", 1, 0, NULL);//Faz a media das ultimas medidas e adiciona no registrador
+    // //task_new(rec_botoeira, "reg_botoeira", 10, 0, NULL);//Faz a media das ultimas medidas e adiciona no registrador
+    task_schedulerInit();
+
+
     //inicia interrupções
     //Para leitura da botoeira
     newExternInterrupt(Syspin_Botoeira, rec_isr_Botoeira, FALLING, NULL);
@@ -96,21 +102,16 @@ void setup()
 int main(void)
 {
     // unsigned int counter = 0;
-    unsigned char message_aux[240];
+    unsigned char message_aux[0xF0];
     unsigned int time_until = 0;
     while (1)
     {
-        reg_read_vet((void*)message_aux, Sys_RegMap_Nreg_Bool, Sys_RegMap_Offset_Bool);
-        // i2cSend_master(SysI2CADDR_WiFi, message_aux, Sys_RegMap_Nreg_Bool);
-        // task_delay_ms_until(&time_until, 1000);
+        //reg_read_vet((void*)message_aux, Sys_RegMap_Nreg_Bool, Sys_RegMap_Offset_Bool);
+        //reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool], Sys_RegMap_Nreg_Short, Sys_RegMap_Offset_Short);
 
-        reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool], Sys_RegMap_Nreg_Short, Sys_RegMap_Offset_Short);
-        // i2cSend_master(SysI2CADDR_WiFi, message_aux, Sys_RegMap_Nreg_Short * sizeof(short));
-        // task_delay_ms_until(&time_until, 1000);
-
-        reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool 
+        /*reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool 
                                         + (Sys_RegMap_Nreg_Short * sizeof(short))], 
-                                        Sys_RegMap_Nreg_Int, Sys_RegMap_Offset_Int);
+                                        Sys_RegMap_Nreg_Int, Sys_RegMap_Offset_Int);*/
 
         i2cSend_master(SysI2CADDR_WiFi, message_aux, Sys_RegMap_Nreg_Total_Bytes);
         task_delay_ms_until(&time_until, 5000);

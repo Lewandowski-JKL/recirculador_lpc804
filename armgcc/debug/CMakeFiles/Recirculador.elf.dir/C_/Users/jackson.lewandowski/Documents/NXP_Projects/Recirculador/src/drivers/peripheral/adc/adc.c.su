@@ -1,4 +1,5 @@
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/adc/adc.c:9:6:adc_Begin	8	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/adc/adc.c:31:5:adc_Read	32	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/adc/adc.c:56:7:adc_ReadMiliVolts	32	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/adc/adc.c:70:6:adc_Config	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/adc/adc.c:56:5:adc_ReadMiliVolts	32	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/adc/adc.c:61:5:adc_ConvertToMiliVolts	24	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/adc/adc.c:73:6:adc_Config	16	static

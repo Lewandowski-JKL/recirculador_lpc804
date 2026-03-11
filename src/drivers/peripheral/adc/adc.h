@@ -22,7 +22,8 @@ typedef struct adc_t
 //Leitura do adc
 int adc_Read(adc_t *adc);
 //Leitura em MiliVolts
-short adc_ReadMiliVolts(adc_t *adc);
+int adc_ReadMiliVolts(adc_t *adc);
+int adc_ConvertToMiliVolts(adc_t *adc, int measure);
 //Inicialização do periférico do ADC
 void adc_Begin();
 //Configuração do ADC
