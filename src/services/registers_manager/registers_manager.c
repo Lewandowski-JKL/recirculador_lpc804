@@ -21,6 +21,8 @@ typedef struct registers_manager
 
 registers_manager reg_vet;
 
+char change_flag = 0;
+
 /*************************** */
 bool reg_eeprom_test(unsigned int addr)
 {
@@ -57,8 +59,17 @@ void reg_write_bool(bool value, unsigned int addr)
     int index_aux = Sys_RegMap_GetIndex(addr);
     if (index_aux < 0)
         return;
-    reg_vet._short_reg_vet[_bool_index_addr(index_aux)] = reg_vet._short_reg_vet[_bool_index_addr(index_aux)] 
-                                                        || (0b10000000 >> _bool_index_pos(index_aux));
+    char value_register = reg_vet._bool_reg_vet[_bool_index_addr(index_aux)];
+    char value_write;
+    if (value)
+        value_write =  reg_vet._bool_reg_vet[_bool_index_addr(index_aux)] || (0b10000000 >> _bool_index_pos(index_aux));
+        else
+            value_write =  reg_vet._bool_reg_vet[_bool_index_addr(index_aux)] & ~(0b10000000 >> _bool_index_pos(index_aux));
+    if (value_register != value_write)
+    {
+        reg_vet._bool_reg_vet[_bool_index_addr(index_aux)] = value_write;
+        change_flag |= Reg_Change_Bool_Register;
+    }
 }
 void reg_write_bool_vet(bool *vet, unsigned int size, unsigned int addr)
 {
@@ -76,7 +87,11 @@ void reg_write_short(short value, unsigned int addr)
     int index = Sys_RegMap_GetIndex(addr);
     if (index < 0)
         return;
-    reg_vet._short_reg_vet[index]=value;
+    if (reg_vet._short_reg_vet[index] != value)
+    {
+        reg_vet._short_reg_vet[index]=value;
+        change_flag |= Reg_Change_Short_Register;
+    }
 }
 void reg_write_short_vet(short *vet, unsigned int size, unsigned int addr)
 {
@@ -85,14 +100,26 @@ void reg_write_short_vet(short *vet, unsigned int size, unsigned int addr)
         return;
     if ((index + size) > Sys_RegMap_Nreg_Short_tot)
         return;
-    memcpy((void*)&reg_vet._short_reg_vet[index], (void*)vet, size*sizeof(short));
+    for (int i = 0; i < size; i++)
+    {
+        if (vet[i] != reg_vet._short_reg_vet[index+i])
+        {
+            memcpy((void*)&reg_vet._short_reg_vet[index], (void*)vet, size*sizeof(short));
+            change_flag |= Reg_Change_Short_Register;
+            return;
+        }
+    }
 }
 void reg_write_int(int value, unsigned int addr)
 {
     int index = Sys_RegMap_GetIndex(addr);
     if (index < 0)
         return;
-    reg_vet._int_reg_vet[index]=value;
+    if (reg_vet._int_reg_vet[index] != value)
+    {
+        reg_vet._int_reg_vet[index]=value;
+        change_flag |= Reg_Change_Short_Register;
+    }
 }
 void reg_write_int_vet(int *vet, unsigned int size, unsigned int addr)
 {
@@ -101,7 +128,15 @@ void reg_write_int_vet(int *vet, unsigned int size, unsigned int addr)
         return;
     if ((index + size) > Sys_RegMap_Nreg_Int_tot)
         return;
-    memcpy((void*)&reg_vet._int_reg_vet[index], (void*)vet, size*sizeof(int));
+    for (int i = 0; i < size; i++)
+    {
+        if (vet[i] != reg_vet._short_reg_vet[index+i])
+        {
+            memcpy((void*)&reg_vet._int_reg_vet[index], (void*)vet, size*sizeof(int));
+            change_flag |= Reg_Change_Int_Register;
+            return;
+        }
+    }
 }
 
 #ifndef __NO_FLOAT__
@@ -284,7 +319,28 @@ void reg_read_vet(void *vet, unsigned int nRegs, unsigned int addr)
     }
 }
 
+/***********************************
+ * Funções auxiliares
+ ***********************************/
+unsigned char *reg_ptr()
+{
+    return (char*)&reg_vet;
+}
+unsigned int reg_mem_size()
+{
+    return sizeof(reg_vet);
+}
 
-
-
-
+char reg_return_change_flag()
+{
+    return change_flag;
+}
+void reg_clear_change_flag(char flag)
+{
+    if (flag == NULL)
+    {
+        change_flag = 0;
+        return;
+    }
+    change_flag = change_flag & ~flag;
+}

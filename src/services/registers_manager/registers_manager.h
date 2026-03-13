@@ -5,7 +5,10 @@
 #include <stdbool.h>
 #include "board_defs.h"
 
-
+#define Reg_Change_Bool_Register    0b00000001
+#define Reg_Change_Short_Register   0b00000010
+#define Reg_Change_Int_Register     0b00000100
+#define Reg_Change_Float_Register   0b00001000
 
 void reg_Begin();
 void reg_write_bool(bool value, unsigned int addr);
@@ -36,5 +39,8 @@ void reg_read_float_vet(float *vet, unsigned int size, unsigned int addr);
 #endif
 void reg_read(void *ptr, unsigned int addr);
 void reg_read_vet(void *vet, unsigned int nRegs, unsigned int addr);
-
+unsigned char *reg_ptr();
+unsigned int reg_mem_size();
+char reg_return_change_flag();
+void reg_clear_change_flag(char flag);
 #endif 

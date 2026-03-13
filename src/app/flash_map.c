@@ -8,8 +8,9 @@
 #else
 #  define STATIC_ASSERT(cond, msg) _Static_assert((cond), #msg)
 #endif
-
+#ifndef __NO_FLOAT__
 STATIC_ASSERT(sizeof(float)   == 4, float_must_be_4_bytes);
+#endif
 STATIC_ASSERT(sizeof(int32_t) == 4, int32_must_be_4_bytes);
 STATIC_ASSERT(sizeof(int16_t) == 2, int16_must_be_2_bytes);
 STATIC_ASSERT(sizeof(uint8_t) == 1, u8_must_be_1_byte);
@@ -35,10 +36,64 @@ const nv_image_t nv_defaults = {
         },
         /* shorts[]: int16_t */
         .shorts = {
-            Sys_equip_code, //Codigo do equipamento 
-            Sys_firmware_version_major, Sys_firmware_version_minor, Sys_firmware_version_patch  //Versão do firmware    
+            Sys_equip_code,             // Sys_RegMap_Model     
+            Sys_firmware_version_major, // Sys_RegMap_FV_Major     
+            Sys_firmware_version_minor, // Sys_RegMap_FV_Minor      
+            Sys_firmware_version_patch, // Sys_RegMap_FV_Patch
+            0XFF,                       // Sys_RegMap_Mac_Addr_0
+            0xFF,                       // Sys_RegMap_Mac_Addr_1
+            0xFF,                       // Sys_RegMap_Mac_Addr_2
+            0x0, 0x0, 0x0, 0x0,         // Sys_RegMap_ssid_0
+            0x0, 0x0, 0x0, 0x0,         //Define 0 como nome de rede padrão
+            0x0, 0x0, 0x0, 0x0, 
+            0x0, 0x0, 0x0, 0x0,    
+            0x0, 0x0, 0x0, 0x0,         // Sys_RegMap_pass_0
+            0x0, 0x0, 0x0, 0x0,         //Define 0 como senha padrão
+            0x0, 0x0, 0x0, 0x0, 
+            0x0, 0x0, 0x0, 0x0,           
+            //Os proximos endereços definem se o registrador deve ser salvo na eeprom 
+            //booleanos
+            0x0, 0x0, 0x0, 0x0,         // Sys_RegMap_eeprom_reg_bool_0
+            0x0, 0x0, 0x0, 0x0,         //Não salva nenhum booleano  
+            //short
+            0b0000111111111111,         // Sys_RegMap_eeprom_reg_short_0 
+            0xFFFF, 0xFFFF, 0xFFFF,       
+            0xFFFF, 0xFFFF, 
+            0x1111111000000000, 0x0,         
+            //int
+            0b0111111111101111,         // Sys_RegMap_eeprom_reg_int_0
+            0b1000111111111000, 
+            0b1111111110001111,
+            0b1110000000000000,        
+            0x0, 0x0, 0x0, 0x0,            
+            //float
+            0x0, 0x0, 0x0, 0x0,         // Sys_RegMap_eeprom_reg_float_0
+            0x0, 0x0, 0x0, 0x0,         //Não salva nenhum booleano             
+            //Os proximos endereços definem se o registrador tem prioridade de envio
+            //isso quer dizer que qualquer alteração ele envia para os outros equipamentos
+            //booleanos
+            //Toda vez que a bomba ou o botão troca de valor ele enviar esse registrador
+            0b1100000000000000,         // Sys_RegMap_priority_reg_bool_0
+            0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0,          
+            //short
+            //Os registradores short são definidos no inicio do codigo, não sofrem alteração
+            0x0, 0x0, 0x0, 0x0,         // Sys_RegMap_priority_reg_short_0 
+            0x0, 0x0, 0x0, 0x0,         //Não salva nenhum booleano  
+            //int
+            //Alguns registradores int são medidas e devem ser enviados logo quando identifica uma mudança
+            0b1111111111111110,         // Sys_RegMap_priority_reg_int_0
+            0b0111110000000111, 
+            0b0000111000000000, 
+            0x0, 0x0, 0x0, 0x0, 0x0,   
+            //float
+            //Não utiliza registradores float
+            0x0, 0x0, 0x0, 0x0,         // Sys_RegMap_priority_reg_float_0
+            0x0, 0x0, 0x0, 0x0         //Não salva nenhum booleano    
         },
         /* ints[]: int32_t */
+        //0b1111 1111 1111 1110
+        //0b0111 1100 0000 0111
+        //0b0000 1110 0000 0000
         .ints = {
             Sys_timestamp_min,
             Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 
@@ -55,6 +110,7 @@ const nv_image_t nv_defaults = {
             0,// Sys_RegMap_S1_mV,
             0,// Sys_RegMap_S1_Temp,
             3500,// Sys_RegMap_S1_Temp_Ref,
+            200,//Sys_RegMap_S1_Temp_Hysteresis,
             1,// Sys_RegMap_S1_Calib_1,
             1,// Sys_RegMap_S1_Calib_2,
             1,// Sys_RegMap_S1_Calib_3,
@@ -67,6 +123,7 @@ const nv_image_t nv_defaults = {
             0,// Sys_RegMap_S2_mV,
             0,// Sys_RegMap_S2_Temp,
             3500,// Sys_RegMap_S2_Temp_Ref,
+            200,//Sys_RegMap_S2_Temp_Hysteresis,
             1,// Sys_RegMap_S2_Calib_1,
             1,// Sys_RegMap_S2_Calib_2,
             1,// Sys_RegMap_S2_Calib_3,
@@ -86,12 +143,13 @@ const nv_image_t nv_defaults = {
             30000,// Sys_RegMap_Time_Recirculation,
             0,// Sys_RegMap_Temp_Ref_Recirculation,
             //Alarmes e erros
-            0// Sys_RegMap_Errors
+            0u// Sys_RegMap_Errors
+#ifndef __NO_FLOAT__
         },
         /* floats[]: float (32 bits) */
         .floats = {
-        }
-    }
+#endif
+        }}
 };
 
 
@@ -127,13 +185,16 @@ uintptr_t nv_flash_addr_ints(void)
 {
     return (uintptr_t)(&nv_defaults.data.ints[0]);
 }
-uintptr_t nv_flash_addr_floats(void)
-{
-    return (uintptr_t)(&nv_defaults.data.floats[0]);
-}
-
+#ifndef __NO_FLOAT__
+    uintptr_t nv_flash_addr_floats(void)
+    {
+        return (uintptr_t)(&nv_defaults.data.floats[0]);
+    }
+#endif
 /* Tamanhos úteis (bytes) */
 size_t nv_size_bools(void)  { return (sizeof(nv.bools)/8);  }
 size_t nv_size_shorts(void) { return sizeof(nv.shorts); }
 size_t nv_size_ints(void)   { return sizeof(nv.ints);   }
-size_t nv_size_floats(void) { return sizeof(nv.floats); }
+#ifndef __NO_FLOAT__
+    size_t nv_size_floats(void) { return sizeof(nv.floats); }
+#endif

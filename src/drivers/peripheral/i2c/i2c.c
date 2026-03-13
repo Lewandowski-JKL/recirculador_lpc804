@@ -119,7 +119,7 @@ int i2cSend_slave(unsigned char buffer[], int size)
 {
     if (size==0)
         return i2cStat_Fail;
-    unsigned char newLen = size+2;
+    unsigned int newLen = size+2;
     unsigned char data[newLen];
     unsigned short crc = MODBUS_CRC16(buffer,size);
     memcpy(data,buffer,size);
@@ -302,7 +302,7 @@ int i2cSend_master(unsigned char addr, unsigned char *message, int size)
     int i2c_stats = WaitI2cMasterState(I2C0,I2C_STAT_MSTST_IDLE);
     if (i2c_stats!=i2cStat_OK)
         return i2c_stats;
-    unsigned char newLen = size+2;
+    unsigned int newLen = size+2;
     unsigned char data[newLen];
     unsigned short crc = MODBUS_CRC16(message,size);
     memcpy(data,message,size);

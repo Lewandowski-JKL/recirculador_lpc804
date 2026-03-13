@@ -26,8 +26,10 @@ extern "C" {
 #define Sys_RegMap_Nreg_Int_tot    60
 #endif
 
-#ifndef Sys_RegMap_Nreg_Float_tot
-#define Sys_RegMap_Nreg_Float_tot  60
+#ifndef __NO_FLOAT__
+    #ifndef Sys_RegMap_Nreg_Float_tot
+    #define Sys_RegMap_Nreg_Float_tot  60
+    #endif
 #endif
 
 /* ========= TIPOS ========= */
@@ -36,7 +38,9 @@ typedef struct __attribute__((packed, aligned(4))) {
     uint8_t  bools[Sys_RegMap_Nreg_Bool_tot/8];     /* bool salvo como 1 byte */
     int16_t  shorts[Sys_RegMap_Nreg_Short_tot];
     int32_t  ints[Sys_RegMap_Nreg_Int_tot];
+#ifndef __NO_FLOAT__
     float    floats[Sys_RegMap_Nreg_Float_tot];   /* 32 bits IEEE-754 */
+#endif
 } nv_payload_t;
 
 typedef struct __attribute__((packed, aligned(4))) {

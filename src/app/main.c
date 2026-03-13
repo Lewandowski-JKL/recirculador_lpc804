@@ -62,23 +62,21 @@ void setup()
     // //Inicia valores dos registradores
     reg_Begin();//Fazer a inicialização depois
     
-    // //inicia valores de acordo com a eeprom
-    //initMyEEPROM();
-
     //defina a leitura do thermistor
     //Configura o termistor e o circuito de medidas
     thermistor_new(&temp_S1, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
     thermistor_new(&temp_S2, 10000, 3300, 3300, -55, 125, NTC_10K_3380_VET);
 
     //Inicia as tasks
-    // task_new(rec_get_Temp1, "Rec_Get_Temp_1", 10, 0, NULL);//Faz 10 medidas de temperatura por segundo
-    // task_new(rec_get_Temp2, "Rec_Get_Temp_2", 10, 0, NULL);//Faz 10 medidas de temperatura por segundo
-    // task_new(rec_system, "System", 100, 0, NULL);   //Processa mudanças e, caso perceba alguma,
-    //                                                 // cria a mensagem para ser enviada para o modulo wifi e o display
-    // task_new(rec_error_process, "Error_Process", 1, 0, NULL);//identifica erros e cria a mensagem de erro
-    // task_new(rec_measure, "measure_Process", 1, 0, NULL);//Faz a media das ultimas medidas e adiciona no registrador
-    // //task_new(rec_botoeira, "reg_botoeira", 10, 0, NULL);//Faz a media das ultimas medidas e adiciona no registrador
-    task_schedulerInit();
+    task_new(rec_get_Temp1, "Rec_Get_Temp_1", 10, 0, NULL);//Faz 10 medidas de temperatura por segundo
+    task_new(rec_get_Temp2, "Rec_Get_Temp_2", 10, 0, NULL);//Faz 10 medidas de temperatura por segundo
+    task_new(rec_system, "System", 100, 0, NULL);   //Processa mudanças e, caso perceba alguma,
+                                                    // cria a mensagem para ser enviada para o modulo wifi e o display
+    task_new(rec_error_process, "Error_Process", 1, 0, NULL);//identifica erros e cria a mensagem de erro
+    task_new(rec_measure, "measure_Process", 1, 0, NULL);//Faz a media das ultimas medidas e adiciona no registrador
+    task_new(rec_botoeira, "reg_botoeira", 10, 0, NULL);
+    // task_new(rec_change_verify, "reg_change", 10, 0, NULL);
+    // task_schedulerInit();
 
 
     //inicia interrupções
@@ -90,8 +88,9 @@ void setup()
     //initQueue();//Inicia a fila de mensagens
     //inicia I2C
     i2cBegin(SysI2CADDR_Recirculador, Syspin_SDA, Syspin_SCL, SysI2CBaudRate, i2cModeMaster);
-
-    task_delay_ms(1000);
+    
+    unsigned int time=0;
+    task_delay_ms_until(&time, 5000);
     //Remover o reset pelo pino
 }
 /**
@@ -101,20 +100,22 @@ void setup()
  */
 int main(void)
 {
-    // unsigned int counter = 0;
-    unsigned char message_aux[0xF0];
+    unsigned char message_aux[(Sys_RegMap_Nreg_Bool 
+                                + (Sys_RegMap_Nreg_Short*sizeof(short)) 
+                                + (Sys_RegMap_Nreg_Int*sizeof(int)))];
     unsigned int time_until = 0;
     while (1)
     {
-        //reg_read_vet((void*)message_aux, Sys_RegMap_Nreg_Bool, Sys_RegMap_Offset_Bool);
-        //reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool], Sys_RegMap_Nreg_Short, Sys_RegMap_Offset_Short);
-
-        /*reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool 
+        reg_read_vet((void*)message_aux, Sys_RegMap_Nreg_Bool, Sys_RegMap_Offset_Bool);
+        reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool], Sys_RegMap_Nreg_Short, Sys_RegMap_Offset_Short);
+        reg_read_vet((void*)&message_aux[Sys_RegMap_Nreg_Bool 
                                         + (Sys_RegMap_Nreg_Short * sizeof(short))], 
-                                        Sys_RegMap_Nreg_Int, Sys_RegMap_Offset_Int);*/
+                                        Sys_RegMap_Nreg_Int, Sys_RegMap_Offset_Int);
 
-        i2cSend_master(SysI2CADDR_WiFi, message_aux, Sys_RegMap_Nreg_Total_Bytes);
+        i2cSend_master(SysI2CADDR_WiFi, message_aux, sizeof(message_aux));
         task_delay_ms_until(&time_until, 5000);
+        // i2cSend_master(SysI2CADDR_WiFi, reg_ptr(), reg_mem_size());
+        // task_delay_ms_until(&time_until, 5000);
     }
 }
 

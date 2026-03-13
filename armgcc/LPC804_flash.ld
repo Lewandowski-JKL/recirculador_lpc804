@@ -40,9 +40,9 @@ MEMORY
   m_interrupts          (RX)  : ORIGIN = 0x00000000, LENGTH = 0x00000200
   m_crp                 (RX)  : ORIGIN = 0x000002FC, LENGTH = 0x00000004
   m_app0                (RX)  : ORIGIN = 0x00000300, LENGTH = 0x00003A80
-  m_app1                (RX)  : ORIGIN = 0x00003D80, LENGTH = 0x00003A80
-  m_eeprom              (RX)  : ORIGIN = 0x00007800, LENGTH = 0x00000400 
-  m_reg_factory         (RX)  : ORIGIN = 0x00007C00, LENGTH = 0x00000400
+  m_app1                (RX)  : ORIGIN = 0x00003D80, LENGTH = 0x00003A80/*inicia em 15744 e finalizaem 30719 com tamanho 14976*/
+  m_eeprom              (RX)  : ORIGIN = 0x00007800, LENGTH = 0x00000380/*inicia em 30720 e finalizaem 31615 com tamanho 896*/ 
+  m_reg_factory         (RX)  : ORIGIN = 0x00007B80, LENGTH = 0x00000380/*inicia em 31616 e finalizaem 32512 com tamanho 896*/
   m_data                (RW)  : ORIGIN = 0x10000000, LENGTH = 0x00000FE0
 }
 
@@ -244,7 +244,5 @@ __app0_end        = 0x00003D7F;
 __app1_start      = 0x00003D80;
 __app1_end        = 0x000077FF;
 __eeprom_start    = 0x00007800;
-__reg_factory     = 0x00007C00;
-__flash_end       = 0x00008000;
-
-
+__reg_factory     = 0x00007B80;
+__flash_end       = 0x00007F00;

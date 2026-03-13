@@ -28,8 +28,10 @@ __attribute__((weak)) bool reg_eeprom_test(unsigned int addr)
 /************************
  * Definições uteis
  *************************/
-#define PUMP_ON     {gpio_ClearPin(Syspin_Pump);}
-#define PUMP_OFF    {gpio_SetPin(Syspin_Pump);}
+#define PUMP_ON     {   reg_write_bool(true, Sys_RegMap_Pump);\
+                        gpio_ClearPin(Syspin_Pump);}
+#define PUMP_OFF    {   reg_write_bool(false, Sys_RegMap_Pump);\
+                        gpio_SetPin(Syspin_Pump);}
 
 /************************
  * Funções uteis
@@ -98,6 +100,14 @@ void rec_isr_Botoeira(volatile void *arg)
     //Salva tempo atual para uso no proximo teste de debounce
     isr_botoeira_var.last_time_click = SysTickGetTime_ms();
     isr_botoeira_var.pump_on = !isr_botoeira_var.pump_on;
+    //Apenas um controle para identificar se a bomba foi ligada através do botão
+    if (isr_botoeira_var.pump_on)
+    {
+        PUMP_ON;
+    }else
+    {
+        PUMP_OFF;
+    }
 }
 /**
  * @brief Tratamento da interrupção da entrada de sensor de fluxo
@@ -146,93 +156,276 @@ rec_measure_s rec_measure_var =
 };
 void rec_measure(void *arg)
 {
+    //Faz a média das medidas e carrega nos registradores do modbus
     int size_vet = (sizeof(rec_get_temp1_var.measure_adc)/sizeof(int));
+    //Medidas de temperatura do sensor 1
     reg_write_int(rec_average(rec_get_temp1_var.measure_adc, size_vet), Sys_RegMap_S1_Adc);
     reg_write_int(rec_average(rec_get_temp1_var.measure_mv, size_vet), Sys_RegMap_S1_mV);
     reg_write_int(rec_average(rec_get_temp1_var.measure_temp, size_vet), Sys_RegMap_S1_Temp);
-
+    //Medidas de temperatura do sensor 2
     reg_write_int(rec_average(rec_get_temp2_var.measure_adc, size_vet), Sys_RegMap_S2_Adc);
     reg_write_int(rec_average(rec_get_temp2_var.measure_mv, size_vet), Sys_RegMap_S2_mV);
     reg_write_int(rec_average(rec_get_temp2_var.measure_temp, size_vet), Sys_RegMap_S2_Temp);
-
-
 }
 void rec_botoeira(void *arg)
 {
-
+    reg_write_bool(gpio_ReadPin(Syspin_Botoeira), Sys_RegMap_Button);
 }
 /***********************
  * Variaveis Sys
 ***********************/
 /**
- * Essa função faz o o tratamento da interrupção do sistema que ocorre a cada 100us
-*/
+ * Faz a gestão e controle da bomba dependendo do que a acionar
+ */
+#ifndef __LOW_MEMORY__
+typedef struct req_verify_send
+{
+    char var_on;
+    bool *bool_var;
+    short *short_var;
+    int *int_var;
+}req_verify_send;
+req_verify_send req_verify_send_var =
+{
+    .var_on = 0,
+    .bool_var = NULL,
+    .int_var = NULL
+};
+void _rec_chage_begin_var()
+{
+    req_verify_send_var.var_on = 1;
+    short regBool = 0;
+    short regShort = 0;
+    short regInt = 0;
+    int nRegBool = 0;
+    int nRegShort = 0;
+    int nRegInt = 0;
+    short bit = 0b1000000000000000;
+    for (int i = 0; i < 8; i++)
+    {
+        regBool = 0;
+        regShort = 0;
+        regInt = 0;
+    }
+    bool *ptrBool = (bool*)malloc(regBool);
+    short *ptrShort = (short*)malloc(regShort);
+    int *ptrInt = (int*)malloc(regInt);
+    req_verify_send_var.bool_var = ptrBool;
+    req_verify_send_var.short_var = ptrShort;
+    req_verify_send_var.int_var = ptrInt;
+}
+void rec_change_verify(void *arg)
+{
+    if (!req_verify_send_var.var_on)
+        _rec_chage_begin_var();
+    
+    // char *ptr = reg_ptr();
+    short bit = 0b1000000000000000;
+    int addr_aux = Sys_RegMap_priority_reg_bool_0;
+    short bit_ref;
+    //Primeiro verifica os bool 
+    for (int i = 0; i < 8; i++)
+    {
+        bit_ref = reg_read_short(Sys_RegMap_priority_reg_bool_0+i);
+        bit = 0b1000000000000000;
+        for (int j = 0; i < 16; i++)
+        {
+            bit_ref = reg_read_short(Sys_RegMap_priority_reg_bool_0+i);
+            //deve ser comparado
+            if (bit & bit_ref)
+            {
+                /* code */
+            }
+            bit = bit >> 1;
+        }
+    }
+}
+
+typedef struct req_verify_send
+{
+    char bool_var;
+    short short_var[Sys_RegMap_Nreg_Short];
+    int int_var[Sys_RegMap_Nreg_Int];
+}req_verify_send;
+req_verify_send req_verify_send_var;
+bool _is_different(void *ptrRef, void *ptrCompare, int size)
+{
+    for (int i = 0; i < size; i++)
+        if((*(char*)(ptrRef+i)) != (*(char*)(ptrCompare+i)))
+            return true;
+    return false;
+}
+
+void rec_change_verify(void *arg)
+{
+    //Compara os booleanos
+    char *ptr = reg_ptr();
+    if (_is_different((void*)(&req_verify_send_var.bool_var), (void*)ptr, 1))
+    {
+        //Cria mensagem e copia
+        memcpy((void*)(&req_verify_send_var.bool_var), (void*)ptr, 1);
+    }
+    //Compara os Shorts
+    ptr = (reg_ptr()+(Sys_RegMap_Nreg_Bool_tot/8));
+    if (_is_different((void*)(&req_verify_send_var.short_var), (void*)ptr, (Sys_RegMap_Nreg_Short*sizeof(short))))
+    {
+        //Cria mensagem e copia
+        memcpy((void*)(&req_verify_send_var.short_var), (void*)ptr, (Sys_RegMap_Nreg_Short*sizeof(short)));
+    }
+    //Compara os ints
+    ptr = (reg_ptr()+(Sys_RegMap_Nreg_Bool_tot/8)+Sys_RegMap_Nreg_Short_tot);
+    if (_is_different((void*)(&req_verify_send_var.int_var), (void*)ptr, (Sys_RegMap_Nreg_Int*sizeof(int))))
+    {
+        //Cria mensagem e copia
+        memcpy((void*)(&req_verify_send_var.int_var), (void*)ptr, (Sys_RegMap_Nreg_Int*sizeof(int)));
+    }
+}
+
+
+#else
+
+void rec_change_verify(void *arg)
+{
+    char flag_change = reg_return_change_flag();
+    reg_clear_change_flag(NULL);
+    if (flag_change & Reg_Change_Bool_Register)
+    {
+        /* Cria mensagem com os registradores booleanos */
+    }
+    if (flag_change & Reg_Change_Short_Register)
+    {
+        /* Cria mensagem com os registradores booleanos */
+    }
+    if (flag_change & Reg_Change_Int_Register)
+    {
+        /* Cria mensagem com os registradores booleanos */
+    }
+}
+
+
+#endif
+
 void rec_pump_control()
 {
     //Verifica se está em erro, caso estiver desliga a bomba e não executa as comparações
     if (reg_read_int(Sys_RegMap_Errors))
     {
         PUMP_OFF;
-        reg_write_bool(false, Sys_RegMap_Pump);
         return;
     }
     //Verifica se o Registrador está apontando para ligar a bomba, caso esteja ele força a bomba a estar ligada
     if (reg_read_bool(Sys_RegMap_Pump))
         PUMP_ON;
-    //Verifica se está com um agendamento ativado,
-    //ou se o botão foi pressionado.
-    //No caso positivo ele liga a bomba até verificar se a temperetura atingiu o esperado
-    unsigned long long dt_botoeira = SysTickGetTime_ms() - isr_botoeira_var.last_time_click;
-    if (schedulingTest() || 
-       (isr_botoeira_var.pump_on && (reg_read_int(Sys_RegMap_Time_Recirculation) < dt_botoeira)))
-    {
-        int temp_ref = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
-                        reg_read_int(Sys_RegMap_S1_Temp_Ref) : reg_read_int(Sys_RegMap_S2_Temp_Ref);
-        int temp_measure = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
+    
+    int temp_measure = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
                         reg_read_int(Sys_RegMap_S1_Temp) : reg_read_int(Sys_RegMap_S2_Temp);
-        if (temp_measure < temp_ref)
+    int temp_ref_sup = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
+                        reg_read_int(Sys_RegMap_S1_Temp_Ref) : reg_read_int(Sys_RegMap_S2_Temp_Ref);
+    int temp_ref_inf = temp_ref_sup;
+    temp_ref_sup += (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
+                        reg_read_int(Sys_RegMap_S1_Temp_Hysteresis) : reg_read_int(Sys_RegMap_S2_Temp_Hysteresis);
+    //Se atingiu a temperatura ele desliga a bomba
+    if (temp_measure > temp_ref_sup)
+    {
+        PUMP_OFF;
+        //Caso foi a partir da botoeira ele limpa a flag
+        if (isr_botoeira_var.pump_on)
+            isr_botoeira_var.pump_on = false;
+        return;
+    }
+    //Verifica se a bomba está ligada por conta da botoeira
+    if (isr_botoeira_var.pump_on )
+    {
+        //Verifica quanto tempo faz que foi pressionado, se estourou o tempo volta para a operação comum.
+        unsigned long long dt_botoeira = SysTickGetTime_ms() - isr_botoeira_var.last_time_click;
+        //Se dt maior que o tempo de recirculação ele desliga a bomba
+        if (dt_botoeira > reg_read_int(Sys_RegMap_Time_Recirculation))
+        {
+            PUMP_OFF;
+            isr_botoeira_var.pump_on = false;
+        }
+    }
+    temp_ref_inf -= (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
+                        reg_read_int(Sys_RegMap_S1_Temp_Hysteresis) : reg_read_int(Sys_RegMap_S2_Temp_Hysteresis);
+    
+    //Verifica se está com um agendamento ativado
+    if (schedulingTest())
+    {
+        if (temp_measure > temp_ref_sup)
         {
             PUMP_ON;
             return;
-        }
+        }else if (temp_measure < temp_ref_inf)
+        {
+            PUMP_OFF;
+            return;
+        }   
     }
-    PUMP_OFF;
 }
 void rec_system(void *arg)
 {
     //faz a leitura para acompanhar se o botão ta pressionado
     reg_write_bool(!reg_read_bool(Sys_RegMap_Button),Sys_RegMap_Button);
-    //Faz a leitura da bomba
-    rec_pump_control();
-    
-    // if (flagReceiveMessage)
-    //     return;
-
-
-
-    // unsigned int SysTicksGetAux = SysTickGetTicks();
-    /*if(SysTicksGetAux % SysTicksToProcess)
-        return;*/
-    // if(!(SysTicksGetAux % SysTicks100_ms))//Faz a leitura da temperatura a cada 100ms
-    //     getTemp();
-    // if(!(SysTicksGetAux % SysTicks1000_ms))//Faz a leitura do fluxo a ca 1s
-    // {
-    //     tickTimestamp();
-    //     //FlowCounter *= getFloatWithAddr(regMapCalibFluxo);
-    //     //setFloatValue(FlowCounter, regMapCalibFluxo);
-    //     FlowCounter = 0;
-    // }
-    // if(!(SysTicksGetAux % SysTicks10_ms))//Processa possíveis alterações do sistema a cada 10ms
-    //     processFunc();
-    /*if(!(SysTicksGetAux % SysTicks100_ms))
-        _writeRegistersInEEPROM();//atualiza eeprom (so faz commit se teve alguma alteração)*/
+    //Faz a gestão do controle da bomba
+    rec_pump_control();   
 }
 
+int _rec_S1_error_test()
+{
+    int measure = reg_read_int(Sys_RegMap_S1_Temp);
+    if (measure > reg_read_int(Sys_RegMap_S1_Error_Desconnect))
+        return Sys_ERROR_S1_OPEN_CIRCUIT;
+    if (measure < reg_read_int(Sys_RegMap_S1_Error_Short_Circuit))
+        return Sys_ERROR_S1_SHORT_CIRCUIT;
+    if (measure > reg_read_int(Sys_RegMap_S1_Error_High))
+        return Sys_ERROR_S1_HIGH;
+    if (measure < reg_read_int(Sys_RegMap_S1_Error_Low))
+        return Sys_ERROR_S1_LOW;
+    return Sys_ERROR_NO;
+}
+int _rec_S2_error_test()
+{
+    int measure = reg_read_int(Sys_RegMap_S2_Temp);
+    if (measure > reg_read_int(Sys_RegMap_S2_Error_Desconnect))
+        return Sys_ERROR_S1_OPEN_CIRCUIT;
+    if (measure < reg_read_int(Sys_RegMap_S2_Error_Short_Circuit))
+        return Sys_ERROR_S1_SHORT_CIRCUIT;
+    if (measure > reg_read_int(Sys_RegMap_S2_Error_High))
+        return Sys_ERROR_S1_HIGH;
+    if (measure < reg_read_int(Sys_RegMap_S2_Error_Low))
+        return Sys_ERROR_S1_LOW;
+    return Sys_ERROR_NO;
+}
+int _rec_Current_error_test()
+{
+    /*
+    
+    int measure = reg_read_int(Sys_RegMap_S1_Temp);
+    if (measure > reg_read_int(Sys_RegMap_S1_Error_Desconnect))
+        return Sys_ERROR_S1_OPEN_CIRCUIT;
+    if (measure < reg_read_int(Sys_RegMap_S1_Error_Short_Circuit))
+        return Sys_ERROR_S1_SHORT_CIRCUIT;
+    if (measure > reg_read_int(Sys_RegMap_S1_Error_High))
+        return Sys_ERROR_S1_HIGH;
+    if (measure < reg_read_int(Sys_RegMap_S1_Error_Low))
+        return Sys_ERROR_S1_LOW;
+    return Sys_ERROR_NO;
+    */
+    // ///////////////////////////////////////////////////
+    // #define Sys_ERROR_CURRENT_HIGH           0b000000010000000000000000
+    // #define Sys_ERROR_CURRENT_LOW            00000000100000000000000000
+    // #define Sys_ERROR_CURRENT_SHORT_CIRCUIT  0b000010000000000000000000
+    // #define Sys_ERROR_CURRENT_OPEN_CIRCUIT   0b000100000000000000000000
+    return Sys_ERROR_NO;
+}
 void rec_error_process(void *arg)
 {
-
+    int value = Sys_ERROR_NO;
+    value |= _rec_S1_error_test();
+    value |= _rec_S2_error_test();
+    value |= _rec_Current_error_test();
+    reg_write_int(value, Sys_RegMap_Errors);
 }
-
 
 
 
