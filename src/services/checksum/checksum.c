@@ -1,9 +1,6 @@
 #include "checksum.h"
 
-
-unsigned short MODBUS_CRC16(unsigned char *buf, unsigned int len )
-{
-	static const unsigned short table[256] = {
+static const unsigned short table[256] = {
 	0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280, 0xC241,
 	0xC601, 0x06C0, 0x0780, 0xC741, 0x0500, 0xC5C1, 0xC481, 0x0440,
 	0xCC01, 0x0CC0, 0x0D80, 0xCD41, 0x0F00, 0xCFC1, 0xCE81, 0x0E40,
@@ -37,6 +34,26 @@ unsigned short MODBUS_CRC16(unsigned char *buf, unsigned int len )
 	0x4400, 0x84C1, 0x8581, 0x4540, 0x8701, 0x47C0, 0x4680, 0x8641,
 	0x8201, 0x42C0, 0x4380, 0x8341, 0x4100, 0x81C1, 0x8081, 0x4040 };
 
+unsigned short MODBUS_STRUCT_CRC16(unsigned char *buf1, unsigned int len1, unsigned char *buf2, unsigned int len2)
+{
+	unsigned short crc = 0xFFFF;
+	// 1) Primeiro buffer
+    for (unsigned int i = 0; i < len1; i++) {
+        unsigned char x = (unsigned char)((crc ^ buf1[i]) & 0xFF);
+        crc = (crc >> 8) ^ table[x];
+    }
+
+    // 2) Segundo buffer (se existir)
+    for (unsigned int i = 0; i < len2; i++) {
+        unsigned char x = (unsigned char)((crc ^ buf2[i]) & 0xFF);
+        crc = (crc >> 8) ^ table[x];
+    }
+
+	return crc;
+}
+
+unsigned short MODBUS_CRC16(unsigned char *buf, unsigned int len )
+{
 	unsigned char xor = 0;
 	unsigned short crc = 0xFFFF;
 

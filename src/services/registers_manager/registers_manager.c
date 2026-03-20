@@ -31,6 +31,7 @@ bool reg_eeprom_test(unsigned int addr)
 /************************** */
 void reg_Begin()
 {
+#ifdef __IAP_MEM__
     iap_Begin();
     iap_ReadVet((unsigned char*)(reg_vet._bool_reg_vet), Sys_RegMap_Total_Bytes, 0);
     //verifica se a eeprom ja foi iniciada alguma vez
@@ -41,8 +42,23 @@ void reg_Begin()
     //agora deve salvar toda a memória
     iap_WriteVet((unsigned char*)(reg_vet._bool_reg_vet), Sys_RegMap_Total_Bytes, 0);
     iap_Commit();
+#else
+#ifdef __EEPROM_MEM__
+    eeprom_Begin();
+    eeprom_ReadVet((unsigned char*)reg_ptr(), reg_mem_size(), 0);
+    //verifica se a eeprom ja foi iniciada alguma vez
+    // if (reg_vet._short_reg_vet[Sys_RegMap_GetIndex(Sys_RegMap_Model)] == Sys_equip_code)
+    //     return;
+    //Caso não foi deve buscar o sistema de arquivos de backup
+    memcpy((void*)reg_ptr(), (unsigned char*)&nv_defaults.data , reg_mem_size());
+    //agora deve salvar toda a memória
+    eeprom_Reset();
+    eeprom_Commit();
+#else
+    memcpy((void*)reg_ptr(), (unsigned char*)&nv_defaults.data , reg_mem_size());
+#endif
+#endif
 }
-
 /***********************************
  * Write
  ***********************************/
@@ -59,12 +75,14 @@ void reg_write_bool(bool value, unsigned int addr)
     int index_aux = Sys_RegMap_GetIndex(addr);
     if (index_aux < 0)
         return;
-    char value_register = reg_vet._bool_reg_vet[_bool_index_addr(index_aux)];
-    char value_write;
+    unsigned char value_register = reg_vet._bool_reg_vet[_bool_index_addr(index_aux)];
+    unsigned char pos_aux = _bool_index_pos(index_aux);
+    unsigned char value_write = value_register;
     if (value)
-        value_write =  reg_vet._bool_reg_vet[_bool_index_addr(index_aux)] || (0b10000000 >> _bool_index_pos(index_aux));
+        value_write =  value_register | (0b10000000 >> pos_aux);
         else
-            value_write =  reg_vet._bool_reg_vet[_bool_index_addr(index_aux)] & ~(0b10000000 >> _bool_index_pos(index_aux));
+            value_write =  value_register & ~(0b10000000 >> pos_aux);
+
     if (value_register != value_write)
     {
         reg_vet._bool_reg_vet[_bool_index_addr(index_aux)] = value_write;
@@ -118,7 +136,7 @@ void reg_write_int(int value, unsigned int addr)
     if (reg_vet._int_reg_vet[index] != value)
     {
         reg_vet._int_reg_vet[index]=value;
-        change_flag |= Reg_Change_Short_Register;
+        change_flag |= Reg_Change_Int_Register;
     }
 }
 void reg_write_int_vet(int *vet, unsigned int size, unsigned int addr)
@@ -211,8 +229,8 @@ bool reg_read_bool(unsigned int addr)
     int index_aux = Sys_RegMap_GetIndex(addr);
     if (index_aux < 0)
         return false;
-    unsigned char value_aux = reg_vet._short_reg_vet[_bool_index_addr(index_aux)] 
-                            && (0b10000000 >> _bool_index_pos(index_aux));
+    unsigned char value_aux = reg_vet._bool_reg_vet[_bool_index_addr(index_aux)] 
+                            & (0b10000000 >> _bool_index_pos(index_aux));
     return value_aux ? true : false;
 }
 void reg_read_bool_vet(bool *vet, unsigned int size, unsigned int addr)
@@ -324,12 +342,48 @@ void reg_read_vet(void *vet, unsigned int nRegs, unsigned int addr)
  ***********************************/
 unsigned char *reg_ptr()
 {
-    return (char*)&reg_vet;
+    return (unsigned char*)&reg_vet;
 }
+unsigned char *reg_ptr_bool()
+{
+    return (unsigned char*)reg_vet._bool_reg_vet;
+}
+unsigned char *reg_ptr_short()
+{
+    return (unsigned char*)&reg_vet._short_reg_vet;
+}
+unsigned char *reg_ptr_int()
+{
+    return (unsigned char*)&reg_vet._int_reg_vet;
+}
+#ifndef __NO_FLOAT__
+unsigned char *reg_ptr_float()
+{
+    return (unsigned char*)&reg_vet._float_reg_vet;
+}
+#endif
 unsigned int reg_mem_size()
 {
     return sizeof(reg_vet);
 }
+unsigned int reg_mem_size_bool()
+{
+    return sizeof(reg_vet._bool_reg_vet);
+}
+unsigned int reg_mem_size_short()
+{
+    return sizeof(reg_vet._short_reg_vet);
+}
+unsigned int reg_mem_size_int()
+{
+    return sizeof(reg_vet._int_reg_vet);
+}
+#ifndef __NO_FLOAT__
+unsigned int reg_mem_size_float()
+{
+    return sizeof(reg_vet._float_reg_vet);
+}
+#endif
 
 char reg_return_change_flag()
 {
@@ -337,7 +391,7 @@ char reg_return_change_flag()
 }
 void reg_clear_change_flag(char flag)
 {
-    if (flag == NULL)
+    if (flag == 0)
     {
         change_flag = 0;
         return;

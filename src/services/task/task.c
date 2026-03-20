@@ -15,6 +15,7 @@
 
 int scheduler_on = 0;
 int tasks_on=0;
+int pause = 0;
 
 //Estrutura da task
 typedef struct task_s
@@ -39,6 +40,8 @@ task_s task_vet[Sys_task_max];
 
 void isrScheduler(volatile void *arg)
 {
+    if (pause)
+        return;
     unsigned long time_us_aux = 0;
     unsigned long time_dt = 0;
     for (int i = 0; i < Sys_task_max; i++)
@@ -51,7 +54,7 @@ void isrScheduler(volatile void *arg)
             {
                 task_vet[i].lastExecution = time_us_aux;
                 task_vet[i].ptrFunc(task_vet[i].ptrData);
-                return;//////////////
+                return;
             }
         }
     }
@@ -103,6 +106,7 @@ void task_new(task_func_t *ptrFunc, char *taskName, unsigned int frequency, unsi
     }
     
     tasks_on += 0b10;
+
     if (scheduler_on == 0)
         task_schedulerInit();
     
@@ -116,7 +120,7 @@ void task_delay_ms(unsigned long time_ms)
 void task_delay_ms_until(unsigned int *ptr, unsigned long time_ms)
 {
     unsigned long time_end = *ptr+time_ms; 
-    *ptr = *ptr+time_ms;
+    *ptr = time_end;
     while (SysTickGetTime_ms() < time_end);
 
 }
@@ -128,6 +132,14 @@ void task_delay_ticks(unsigned long ticks)
 void task_delay_ticks_until(unsigned int *ptr, unsigned long ticks)
 {
     unsigned long time_end = *ptr+ticks; 
-    *ptr = *ptr+ticks;
+    *ptr = time_end;
     while (SysTickGetTime_ms() < time_end);
+}
+void task_scheduler_pause()
+{
+    pause = 1;
+}
+void task_scheduler_continue()
+{
+    pause = 0;
 }

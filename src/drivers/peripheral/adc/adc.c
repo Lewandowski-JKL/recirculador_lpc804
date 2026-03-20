@@ -72,7 +72,7 @@ int adc_ConvertToMiliVolts(adc_t *adc, int measure)
  */
 void adc_Config(adc_t *adc, unsigned char channel, unsigned short measureLength)
 {
-    if (~adcOn)//Verifica se o periférico ja foi iniciado
+    if (!adcOn)//Verifica se o periférico ja foi iniciado
         adc_Begin();
     //myADC *ADCaux = (myADC*)malloc(sizeof(myADC));
     adc->_channel = channel;

@@ -83,6 +83,8 @@ void thermistor_new(NTC_Thermistor *ptrAux, int parallelResistance, int refResis
  */
 short _findTemp(NTC_Thermistor *ptrThermistor, int resistance)
 {
+    if (resistance<0)
+        return (ptrThermistor->_offset - 1);
     int size = (ptrThermistor->_max-ptrThermistor->_offset); //Descobrindo o tamanho do vetor do Thermisto Tmax-Tmin -> no caso 125-(-55) = 180
     for (short i = 0; i < size; i++)//Percorre o vetor procurando o valor mais proximo da resistencia medida
     {

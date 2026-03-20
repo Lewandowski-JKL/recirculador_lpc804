@@ -23,6 +23,7 @@
 
 unsigned int I2C_mode = 0;
 
+
 void _I2C_PrimarySetBaudRate(unsigned int baudRate_Bps, unsigned int srcClock_Hz);
 /*******************************************************************************
  * Slave
@@ -302,22 +303,17 @@ int i2cSend_master(unsigned char addr, unsigned char *message, int size)
     int i2c_stats = WaitI2cMasterState(I2C0,I2C_STAT_MSTST_IDLE);
     if (i2c_stats!=i2cStat_OK)
         return i2c_stats;
-    unsigned int newLen = size+2;
-    unsigned char data[newLen];
-    unsigned short crc = MODBUS_CRC16(message,size);
-    memcpy(data,message,size);
-    memcpy(&data[size], (void*)(&crc), sizeof(short));
     I2C0->MSTDAT = (addr<<1)|0;//send addr
     I2C0->MSTCTL = MSTCTL_START;
     i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
     if (i2c_stats!=i2cStat_OK)
         return i2c_stats;
-    for (int i = 0; i < newLen; i++)
+    for (int i = 0; i < size; i++)
     {
         i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
         if (i2c_stats!=i2cStat_OK)
             return i2c_stats;
-        I2C0->MSTDAT = data[i];
+        I2C0->MSTDAT = message[i];
         I2C0->MSTCTL = MSTCTL_CONTINUE;  
     }
     WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
@@ -327,5 +323,52 @@ int i2cSend_master(unsigned char addr, unsigned char *message, int size)
     return i2cStat_OK;
 }
 
+int i2cSend_master_modbus(i2c_modbus_s *ptrMessage)
+{
+        int i2c_stats = WaitI2cMasterState(I2C0,I2C_STAT_MSTST_IDLE);
+    if (i2c_stats!=i2cStat_OK)
+        return i2c_stats;
+    ptrMessage->crc = MODBUS_STRUCT_CRC16((unsigned char*)ptrMessage, ptrMessage->size_head,
+                                           (unsigned char*)ptrMessage->ptrMessage , ptrMessage->size_message);
+    I2C0->MSTDAT = (ptrMessage->addr<<1)|0;//send addr
+    I2C0->MSTCTL = MSTCTL_START;
+    i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
+    if (i2c_stats!=i2cStat_OK)
+        return i2c_stats;
+    //envia o cabeçalho
+    for (int i = 0; i < ptrMessage->size_head; i++)
+    {
+        i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
+        if (i2c_stats!=i2cStat_OK)
+            return i2c_stats;
+        I2C0->MSTDAT = ((unsigned char*)ptrMessage)[i];
+        I2C0->MSTCTL = MSTCTL_CONTINUE;  
+    }
+//Send message
+    for (int i = 0; i < ptrMessage->size_message; i++)
+    {
+        i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
+        if (i2c_stats!=i2cStat_OK)
+            return i2c_stats;
+        I2C0->MSTDAT = ptrMessage->ptrMessage[i];
+        I2C0->MSTCTL = MSTCTL_CONTINUE;  
+    }
+//Send CRC
+    for (int i = 0; i < sizeof(short); i++)
+    {
+        i2c_stats = WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
+        if (i2c_stats!=i2cStat_OK)
+            return i2c_stats;
+        I2C0->MSTDAT = ((unsigned char*)&ptrMessage->crc)[i];
+        I2C0->MSTCTL = MSTCTL_CONTINUE;  
+    } 
+
+    WaitI2cMasterState(I2C0, I2C_STAT_MSTST_TXRDY);
+    I2C0->MSTDAT = 0x00;
+    I2C0->MSTCTL = MSTCTL_STOP;
+    WaitI2cMasterState(I2C0,I2C_STAT_MSTST_IDLE);
+
+    return i2cStat_OK;
+}
 
 

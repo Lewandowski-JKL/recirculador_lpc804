@@ -40,6 +40,19 @@ void reg_read_float_vet(float *vet, unsigned int size, unsigned int addr);
 void reg_read(void *ptr, unsigned int addr);
 void reg_read_vet(void *vet, unsigned int nRegs, unsigned int addr);
 unsigned char *reg_ptr();
+unsigned char *reg_ptr_bool();
+unsigned char *reg_ptr_short();
+unsigned char *reg_ptr_int();
+#ifndef __NO_FLOAT__
+unsigned char *reg_ptr_float();
+#endif
+unsigned int reg_mem_size();
+unsigned int reg_mem_size_bool();
+unsigned int reg_mem_size_short();
+unsigned int reg_mem_size_int();
+#ifndef __NO_FLOAT__
+unsigned int reg_mem_size_float();
+#endif
 unsigned int reg_mem_size();
 char reg_return_change_flag();
 void reg_clear_change_flag(char flag);

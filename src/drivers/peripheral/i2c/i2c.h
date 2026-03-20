@@ -1,6 +1,23 @@
 #ifndef I2C_H
 #define I2C_H
 
+typedef struct __attribute__((packed)) i2c_modbus_s
+{
+    unsigned char code;
+    short RegAddr;
+    char nReg;
+    char bytes;
+    unsigned char *ptrMessage;
+    unsigned short crc;
+    //////////////////
+    unsigned char addr;
+    short size_head;
+    short size_message;
+    short size_reply;
+}i2c_modbus_s;
+
+int i2cSend_master_modbus(i2c_modbus_s *ptrMessage);
+
 enum I2cStat{
     i2cStat_Fail = -1,
     i2cStat_TimeOut,

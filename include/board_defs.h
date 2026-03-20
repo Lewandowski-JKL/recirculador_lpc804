@@ -13,16 +13,18 @@
 
 #define __LPC804__
 #define __RECIRCULADOR__
+//#define __IAP_MEM__
+#define __EEPROM_MEM__
 
 //COm essa definição não é utilizado calculos com numeros float
 #define __NO_FLOAT__ 
 #define __LOW_MEMORY__
 
-#ifdef __RECIRCULADOR__
+//#ifdef __RECIRCULADOR__
 /*******************************************************************************
  * TIME definitions
  ******************************************************************************/
-#define SysTickFrequency        (10000U)
+#define SysTickFrequency        (2000U)
 #define SysTicksToProcess       (SysTickFrequency/1000U)   
 #define SysTicks10_ms           (SysTickFrequency/100U)  
 #define SysTicks100_ms          (SysTickFrequency/10U)  
@@ -116,6 +118,9 @@ extern unsigned char __app1_end;
 #define Sys_Modbus_Set_Single_Reg       (0x06)
 #define Sys_Modbus_Set_Mult_Bool_Reg    (0x0F)
 #define Sys_Modbus_Set_Mult_Num_Reg     (0x10)
+#define Sys_Modbus_Message_Queue_Size   (10)    //Quantidade de mensagens que podem esparar pelo envio
+#define Sys_Modbus_Time_Reply           (50)    //Tempo de espera por uma resposta
+#define Sys_Modbus_Send_Fail            (5)     //Quantidade de vezes que tenta enviar uma mesma mensagem
 
  /*******************************************************************************
  * Modbus Registers
@@ -124,6 +129,7 @@ extern unsigned char __app1_end;
 #define Sys_RegMap_Offset_Bool  (0x03E8)//(0x0448)
 #define Sys_RegMap_Offset_Short (0x0BB8)//(0x0BB8)
 #define Sys_RegMap_Offset_Int   (0x1388)//(0x13EB)
+
 #ifndef __NO_FLOAT__
     #define Sys_RegMap_Offset_Float (0x1BBB)
     #define Sys_RegMap_End          (0x1F3F)
@@ -150,9 +156,9 @@ extern unsigned char __app1_end;
     -1 )
 #else
     #define Sys_RegMap_GetIndex(addr) ( \
-    ((addr) >= Sys_RegMap_Offset_Bool  && (addr) <  Sys_RegMap_Offset_Short) ? (int32_t)((addr) - Sys_RegMap_Offset_Bool)  : \
-    ((addr) >= Sys_RegMap_Offset_Short && (addr) <  Sys_RegMap_Offset_Int)   ? (int32_t)((addr) - Sys_RegMap_Offset_Short) : \
-    ((addr) >= Sys_RegMap_Offset_Int   && (addr) <  Sys_RegMap_End) ? (int32_t)((addr) - Sys_RegMap_Offset_Int)   : \
+    (((addr) >= Sys_RegMap_Offset_Bool ) && ((addr) <  Sys_RegMap_Offset_Short)) ? (int32_t)((addr) - Sys_RegMap_Offset_Bool)  : \
+    (((addr) >= Sys_RegMap_Offset_Short) && ((addr) <  Sys_RegMap_Offset_Int)  ) ? (int32_t)((addr) - Sys_RegMap_Offset_Short) : \
+    (((addr) >= Sys_RegMap_Offset_Int  ) && ((addr) <  Sys_RegMap_End)         ) ? (int32_t)((addr) - Sys_RegMap_Offset_Int)   : \
     -1 )
 #endif
 
@@ -247,15 +253,15 @@ enum
 };
 #define Sys_RegMap_Nreg_Bool    (Sys_RegMap_Reset_Button + 1             -Sys_RegMap_Offset_Bool)    //2 ->   1Byte
 #define Sys_RegMap_Nreg_Short   ((Sys_RegMap_priority_reg_float_0+8) + 1 -Sys_RegMap_Offset_Short)   //104 -> 208 Bytes
-#define Sys_RegMap_Nreg_Int     (Sys_RegMap_Errors + 1                   -Sys_RegMap_Offset_Int)     //51 -> 200 Bytes (11)
+#define Sys_RegMap_Nreg_Int     (Sys_RegMap_Errors + 1                   -Sys_RegMap_Offset_Int)     //51 -> 204 Bytes (11)
 
 #ifndef __NO_FLOAT__
     #define Sys_RegMap_Nreg_Float   (0)
 #else
     #define Sys_RegMap_Nreg_Total   (Sys_RegMap_Nreg_Bool + Sys_RegMap_Nreg_Short + Sys_RegMap_Nreg_Int)
-    #define Sys_RegMap_Nreg_Total_Bytes     (Sys_RegMap_Nreg_Bool                           \
-                                        + (Sys_RegMap_Nreg_Short    *   sizeof(short))  \
-                                        + (Sys_RegMap_Nreg_Int      *   sizeof(int)))
+    #define Sys_RegMap_Nreg_Total_Bytes     ((Sys_RegMap_Nreg_Bool/8+1)                     \
+                                            + (Sys_RegMap_Nreg_Short    *   sizeof(short))  \
+                                            + (Sys_RegMap_Nreg_Int      *   sizeof(int)))
 #endif
 
  /*******************************************************************************
@@ -279,6 +285,5 @@ enum
 #define Sys_ERROR_CURRENT_OPEN_CIRCUIT   0b000100000000000000000000
 /////////////////////////////////////////////////////
 
-#endif
-
-#endif
+//#endif /*__RECIRCULADOR__*/
+#endif /* BOARD_DEFS_H*/

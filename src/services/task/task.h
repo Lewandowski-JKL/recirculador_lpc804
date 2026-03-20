@@ -54,5 +54,6 @@ void task_delay_ms(unsigned long time_ms);
 void task_delay_ms_until(unsigned int *ptr, unsigned long time_ms);
 void task_delay_ticks(unsigned long ticks);
 void task_delay_ticks_until(unsigned int *ptr, unsigned long ticks);
-
+void task_scheduler_pause();
+void task_scheduler_continue();
 #endif

@@ -29,7 +29,6 @@ void rec_isr_Flow(volatile void *arg);
 void rec_system(void *arg);
 void rec_error_process(void *arg);
 void rec_measure(void *arg);
-void rec_botoeira(void *arg);
 void rec_change_verify(void *arg);
 
 // void isrTimer0(volatile void *arg);

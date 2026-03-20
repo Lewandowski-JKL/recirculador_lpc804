@@ -128,9 +128,9 @@ isr_flow_s isr_flow_var =
 };
 void rec_isr_Flow(volatile void *arg)
 {
-    if ((isr_flow_var.debouce_time+isr_flow_var.last_time_interrupt) > SysTickGetTime_ms())
-        return;
-    //Essa leitura Auxilia como um filtro de ruido
+    // if ((isr_flow_var.debouce_time+isr_flow_var.last_time_interrupt) > SysTickGetTime_ms())
+    //     return;
+    // //Essa leitura Auxilia como um filtro de ruido
     if(gpio_ReadPin(Syspin_SensorDeFluxo))
         return;
     //Incrementa contador de fluxo
@@ -158,7 +158,7 @@ void rec_measure(void *arg)
 {
     //Faz a média das medidas e carrega nos registradores do modbus
     int size_vet = (sizeof(rec_get_temp1_var.measure_adc)/sizeof(int));
-    //Medidas de temperatura do sensor 1
+    // //Medidas de temperatura do sensor 1
     reg_write_int(rec_average(rec_get_temp1_var.measure_adc, size_vet), Sys_RegMap_S1_Adc);
     reg_write_int(rec_average(rec_get_temp1_var.measure_mv, size_vet), Sys_RegMap_S1_mV);
     reg_write_int(rec_average(rec_get_temp1_var.measure_temp, size_vet), Sys_RegMap_S1_Temp);
@@ -166,10 +166,14 @@ void rec_measure(void *arg)
     reg_write_int(rec_average(rec_get_temp2_var.measure_adc, size_vet), Sys_RegMap_S2_Adc);
     reg_write_int(rec_average(rec_get_temp2_var.measure_mv, size_vet), Sys_RegMap_S2_mV);
     reg_write_int(rec_average(rec_get_temp2_var.measure_temp, size_vet), Sys_RegMap_S2_Temp);
-}
-void rec_botoeira(void *arg)
-{
-    reg_write_bool(gpio_ReadPin(Syspin_Botoeira), Sys_RegMap_Button);
+    //Medidas de temperatura do sensor de Fluxo
+    int contador = isr_flow_var.counter;
+    isr_flow_var.counter = 0;
+    int liters = contador*reg_read_int(Sys_RegMap_Flux_Calib);
+    reg_write_int(contador, Sys_RegMap_Flux_Counter);
+    reg_write_int(liters, Sys_RegMap_Flux_Liters);
+    reg_write_int(contador+reg_read_int(Sys_RegMap_Flux_Total_Liters), Sys_RegMap_Flux_Total_Liters);
+
 }
 /***********************
  * Variaveis Sys
@@ -283,28 +287,54 @@ void rec_change_verify(void *arg)
 
 
 #else
-
 void rec_change_verify(void *arg)
 {
     char flag_change = reg_return_change_flag();
-    reg_clear_change_flag(NULL);
+    reg_clear_change_flag(0);
+
+    i2c_modbus_s message;
+
     if (flag_change & Reg_Change_Bool_Register)
     {
         /* Cria mensagem com os registradores booleanos */
+        message.code = Sys_Modbus_Set_Mult_Num_Reg;
+        message.RegAddr = Sys_RegMap_Offset_Bool;
+        message.nReg = Sys_RegMap_Nreg_Bool;
+        message.bytes = (Sys_RegMap_Nreg_Bool/8)+1;
+        message.ptrMessage = reg_ptr_bool();
+        message.addr = SysI2CADDR_WiFi;
+        message.size_head = 5;
+        message.size_message = message.bytes;
+        message_New(message);
     }
     if (flag_change & Reg_Change_Short_Register)
     {
-        /* Cria mensagem com os registradores booleanos */
+        /* Cria mensagem com os registradores Short */
+        message.code = Sys_Modbus_Set_Mult_Num_Reg;
+        message.RegAddr = Sys_RegMap_Offset_Short;
+        message.nReg = Sys_RegMap_Nreg_Short;
+        message.bytes = (Sys_RegMap_Nreg_Short*sizeof(short));
+        message.ptrMessage = reg_ptr_short();
+        message.addr = SysI2CADDR_WiFi;
+        message.size_head = 5;
+        message.size_message = message.bytes;
+        message_New(message);
     }
     if (flag_change & Reg_Change_Int_Register)
     {
-        /* Cria mensagem com os registradores booleanos */
+        /* Cria mensagem com os registradores Int */
+        message.code = Sys_Modbus_Set_Mult_Num_Reg;
+        message.RegAddr = Sys_RegMap_Offset_Int;
+        message.nReg = Sys_RegMap_Nreg_Int;
+        message.bytes = (Sys_RegMap_Nreg_Int*sizeof(int));
+        message.ptrMessage = reg_ptr_int();
+        message.addr = SysI2CADDR_WiFi;
+        message.size_head = 5;
+        message.size_message = message.bytes;
+        message_New(message);
     }
 }
-
-
 #endif
-
 void rec_pump_control()
 {
     //Verifica se está em erro, caso estiver desliga a bomba e não executa as comparações
@@ -313,10 +343,11 @@ void rec_pump_control()
         PUMP_OFF;
         return;
     }
-    //Verifica se o Registrador está apontando para ligar a bomba, caso esteja ele força a bomba a estar ligada
-    if (reg_read_bool(Sys_RegMap_Pump))
+    //Verifica se o Registrador está apontando para ligar a bomba e, se a bomba está ligada
+    //Caso a bomba não esteja (nivél logico alto na saída) liga a bomba
+    if (reg_read_bool(Sys_RegMap_Pump) && gpio_ReadPin(Syspin_Pump))
         PUMP_ON;
-    
+        
     int temp_measure = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
                         reg_read_int(Sys_RegMap_S1_Temp) : reg_read_int(Sys_RegMap_S2_Temp);
     int temp_ref_sup = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
@@ -324,6 +355,7 @@ void rec_pump_control()
     int temp_ref_inf = temp_ref_sup;
     temp_ref_sup += (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
                         reg_read_int(Sys_RegMap_S1_Temp_Hysteresis) : reg_read_int(Sys_RegMap_S2_Temp_Hysteresis);
+
     //Se atingiu a temperatura ele desliga a bomba
     if (temp_measure > temp_ref_sup)
     {
@@ -333,6 +365,7 @@ void rec_pump_control()
             isr_botoeira_var.pump_on = false;
         return;
     }
+
     //Verifica se a bomba está ligada por conta da botoeira
     if (isr_botoeira_var.pump_on )
     {
@@ -348,7 +381,7 @@ void rec_pump_control()
     temp_ref_inf -= (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
                         reg_read_int(Sys_RegMap_S1_Temp_Hysteresis) : reg_read_int(Sys_RegMap_S2_Temp_Hysteresis);
     
-    //Verifica se está com um agendamento ativado
+    // //Verifica se está com um agendamento ativado
     if (schedulingTest())
     {
         if (temp_measure > temp_ref_sup)
@@ -365,11 +398,10 @@ void rec_pump_control()
 void rec_system(void *arg)
 {
     //faz a leitura para acompanhar se o botão ta pressionado
-    reg_write_bool(!reg_read_bool(Sys_RegMap_Button),Sys_RegMap_Button);
+    reg_write_bool(!gpio_ReadPin(Syspin_Botoeira), Sys_RegMap_Button);
     //Faz a gestão do controle da bomba
     rec_pump_control();   
 }
-
 int _rec_S1_error_test()
 {
     int measure = reg_read_int(Sys_RegMap_S1_Temp);
@@ -426,6 +458,7 @@ void rec_error_process(void *arg)
     value |= _rec_Current_error_test();
     reg_write_int(value, Sys_RegMap_Errors);
 }
+
 
 
 

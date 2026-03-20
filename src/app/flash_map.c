@@ -59,7 +59,7 @@ const nv_image_t nv_defaults = {
             0b0000111111111111,         // Sys_RegMap_eeprom_reg_short_0 
             0xFFFF, 0xFFFF, 0xFFFF,       
             0xFFFF, 0xFFFF, 
-            0x1111111000000000, 0x0,         
+            0b1111111000000000, 0x0,         
             //int
             0b0111111111101111,         // Sys_RegMap_eeprom_reg_int_0
             0b1000111111111000, 
@@ -102,7 +102,7 @@ const nv_image_t nv_defaults = {
             0,// Sys_RegMap_Flux_Counter,
             0,// Sys_RegMap_Flux_Liters,
             0,// Sys_RegMap_Flux_Total_Liters,
-            50,// Sys_RegMap_Flux_Calib,
+            133,// Sys_RegMap_Flux_Calib,
             100000,// Sys_RegMap_Flux_Error_Max,
             0,// Sys_RegMap_Flux_Error_Min,
             //Registradores de leitura de temperatura s1

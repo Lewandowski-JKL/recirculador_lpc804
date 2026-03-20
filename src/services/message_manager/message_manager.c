@@ -2,127 +2,164 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <task.h>
 
-/*myMessage *_newMessage(unsigned char addr, unsigned char *ptrMesssage, unsigned char len,
-                unsigned char replyLen, void (*ptrFunc)(unsigned char *data))
+#ifndef Sys_Modbus_Message_Queue_Size
+    #define Sys_Modbus_Message_Queue_Size 5
+#endif
+#ifndef Sys_Modbus_Time_Reply
+    #define Sys_Modbus_Time_Reply 50
+#endif
+
+
+#define Sys_Modbus_Message_Flag_Send        0b0000000000000011
+#define Sys_Modbus_Message_Flag_Send_Fail   0b0000000000000100
+#define Sys_Modbus_Message_Flag_Wait_Reply  0b0000000000001000
+#define Sys_Modbus_Message_Flag_Read_Ewply  0b0000000000010000
+
+unsigned short message_stage_flag = 1;
+
+
+i2c_modbus_s  _message_default =
+{           
+    .code=0,
+    .RegAddr=0,
+    .nReg=0,
+    .bytes=0,
+    .ptrMessage=NULL,
+    .crc=0,
+    .addr=0,
+    .size_head=0,
+    .size_message=0    
+}; 
+
+typedef struct message_s
 {
-    myMessage *ptrAux = (myMessage*)malloc(sizeof(myMessage));
-    ptrAux->addr = addr;
-    ptrAux->message = (unsigned char*)malloc(sizeof(unsigned char)*len);
-    memcpy(&(ptrAux->message), ptrMesssage, len);
-    ptrAux->len = len;
-    ptrAux->replyLen = replyLen;
-    ptrAux->ptrFunc = ptrFunc;
-    ptrAux->ptrNext = NULL;
-    return ptrAux;
-}*/
-/**
- * @brief Adiciona uma nova mensagem a fila
- * 
- * @param ptrQueue Fila de mensagens
- * @param addr endereço que será destinada a mensagem
- * @param ptrMesssage mensagem que será adicionada
- * @param len tamanho da mensagem
- * @param replyLen tamanho da resposta
- * @param ptrFunc função que irá tratar a resposta
- * @return int 
- */
-int addNewMessage(myMessage *ptrQueue, unsigned char addr, unsigned char *ptrMesssage, unsigned char len,
-                unsigned char replyLen, void (*ptrFunc)(unsigned char *data))
+    i2c_modbus_s message;
+    void *ptrNext;
+}message_s;
+
+message_s _Queue[Sys_Modbus_Message_Queue_Size];
+message_s *_ptrQueue;
+
+int _message_init = 0;
+
+void message_Init()
 {
-    myMessage *ptrAux = ptrQueue;
-    if (lenQueue(ptrAux) >= LengthMessageQueue)
-        return MessageSizeOverload;
-    int i = 0;
-    while (ptrAux->len)
+    for (int i = 0; i < Sys_Modbus_Message_Queue_Size; i++)
     {
-        i++;
-        ptrAux = (myMessage *)ptrAux->ptrNext;
-        if (i >= LengthMessageQueue)
-            return 0;
+        _Queue[i].message = _message_default;
+        _Queue[i].ptrNext = (void*)&_Queue[(i+1)%Sys_Modbus_Message_Queue_Size];
     }
-    ptrAux->addr=addr;
-    ptrAux->len = len;
-    ptrAux->replyLen = replyLen;
-    ptrAux->ptrFunc = ptrFunc;
-    memcpy(ptrAux->message, ptrMesssage, len);
-    return MessageOk;
-}
-/**
- * @brief 'Deleta' a mensagem
- *          Na pratica zera os valores e aponta pra a proxima mensagem.
- *          Inicialmente era utilizado alocação dinamica mas o micro não esta aceitando muito bem esse processo
- * @param ptr mensagem que será deletada
- */
-void deleteMessage(myMessage **ptr)
-{
-    (*ptr)->addr = 0;
-    (*ptr)->len = 0;
-    (*ptr)->ptrFunc = NULL;
-    (*ptr)->replyLen = 0;
-    //free((*ptrQueue)->message);
-    (*ptr) = (myMessage*)((*ptr)->ptrNext);
-    /*myMessage *ptrAux = *ptrMessageQueue;
-    ptrMessageQueue = (myMessage**)(&(*ptrMessageQueue)->ptrNext);
-    free(ptrAux->message);
-    free(ptrAux);*/
-}
-/*int addMessage(myMessage **ptrQueue, unsigned char addr, unsigned char *ptrMesssage, unsigned char len,
-                unsigned char replyLen, void (*ptrFunc)(unsigned char *data))
-{
-    myMessage **ptrAux = ptrQueue;
-    int sizeAux = sizeQueue(*ptrAux)+20+len;
-    if (sizeAux>1024)
-        return MessageSizeOverload;
-    int i = 0;
-    while (*ptrAux != NULL)
-    {
-        i++;
-        ptrAux = (myMessage **)&((*ptrAux)->ptrNext);
-        if (i == 0xFF)
-            return MessageSizeOverload;
-    }
-    *ptrAux = _newMessage(addr, ptrMesssage, len, replyLen, ptrFunc);
-    return MessageOk;
-}*/
-/**
- * @brief Retorna o tamanho da fila de mensagem
- * 
- * @param ptrMessageQueue fila de mensagem
- * @return int 
- */
-int lenQueue(myMessage *ptrMessageQueue)
-{
-    int i = 0;
-    myMessage *ptrAux = ptrMessageQueue;
-    while (ptrAux->len)
-    {
-        i++;
-        ptrAux = (myMessage*)(ptrAux->ptrNext);
-        if (i >= LengthMessageQueue)
-            return LengthMessageQueue;
-    }
-    return i;
-}
-/**
- * @brief Retorna o tanto de memoria alocada
- * 
- * @param ptrMessageQueue fila de mensagem
- * @return int 
- */
-int sizeQueue(myMessage *ptrMessageQueue)
-{
-    int sizeAux = 0;
-    short i = 0;
-    myMessage *ptrAux = ptrMessageQueue;
-    while (ptrAux->len)
-    {
-        i++;
-        sizeAux += sizeof(myMessage);
-        ptrAux = (myMessage*)(ptrAux->ptrNext);
-        if (i >= LengthMessageQueue)
-            return MessageSizeOverload;
-    }
-    return sizeAux;
+    _ptrQueue = _Queue;
+    _message_init = 1;
 }
 
+void message_Delete()
+{
+    if (!_message_init)
+        return;
+
+}
+int message_QueueLen()
+{
+    if (!_message_init)
+        return 0;
+    return 0;
+}
+int message_QueueSize()
+{
+    if (!_message_init)
+        return 0;
+    return 0;
+}
+int message_New(i2c_modbus_s newMessage)
+{
+    if (!_message_init)
+        return 0;
+    int counter=0;
+    message_s *ptrAux = _ptrQueue;
+    while (ptrAux->message.ptrMessage != NULL)
+    {
+        counter++;
+        if (counter == Sys_Modbus_Message_Queue_Size)
+            return Message_QueueOverload;
+    }
+    ptrAux->message = newMessage;
+    return Message_Ok;
+}
+
+/*******************************************************************************
+ * Loop de gestão das Mensagens
+ *****************************************************************************/
+void message_loop()
+{
+    if (!_message_init)
+        return;
+    if (_ptrQueue->message.ptrMessage == NULL)
+    {
+        _ptrQueue = (message_s*)_ptrQueue->ptrNext;
+        return;
+    }
+    //Verifica se esta esperando uma resposta
+    task_scheduler_pause();
+    i2cSend_master_modbus(&_ptrQueue->message);
+    task_scheduler_continue();
+    message_stage_flag++;
+    message_stage_flag |= Sys_Modbus_Message_Flag_Wait_Reply;
+    task_delay_ms(10);
+    //esperar retorno entre outras coisas
+    //tratar mensagem e recebimento
+    _ptrQueue->message = _message_default;
+    _ptrQueue = (message_s*)_ptrQueue->ptrNext;
+}
+/*
+void ControlMessageFunc(myMessage **ptr, unsigned char *ptrRX, unsigned char *MessageStateControl, unsigned int *ptrTime)
+{   
+    if (*MessageStateControl & 0b1000)//Falhou 8 vezes, então exclui a mensagem
+    {
+        //blink = !blink; -> utilizado para auxilio de debug no passado
+        deleteMessage(ptr);//Deleta a mensagem
+        *MessageStateControl = 0b100000;//Coloca em estado de espera
+    }
+    if (*MessageStateControl & 0b10000000)//estado de enviar mensagem
+    {
+        if((*ptr)->len == 0)
+            return;
+        if (sendI2C_master((*ptr)->addr, (*ptr)->message, (*ptr)->len) == i2cStat_OK)
+        {
+            *ptrTime = SysTickGetTime_ms();
+            *MessageStateControl |= 0b1000000;//entra no estado de espera para leitura
+            *MessageStateControl &= 0b1001111;//filtra para a contagem de mensagens
+        }else
+            *MessageStateControl = *MessageStateControl+1;
+    }else if (*MessageStateControl & 0b1000000)//estado de espera para leitura
+        {
+            if ((SysTickGetTime_ms()-*ptrTime)<50)//ainda em estado de espera até passar 50 ms
+                return;
+            readLenI2C_master((*ptr)->addr, ptrRX, (*ptr)->replyLen);
+            if (CHECK_CRC16(ptrRX, (*ptr)->replyLen))
+            {
+                *ptrTime = SysTickGetTime_ms();
+                *MessageStateControl = 0b100000; //espera mais 5ms para enviar a proxima mensagem
+                if((*ptr)->ptrFunc != NULL)
+                    (*ptr)->ptrFunc(ptrRX);
+                //blink = !blink;
+                deleteMessage(ptr);
+                return;
+            }
+            readLenI2C_master((*ptr)->addr, ptrRX,  0xFF);//limpa o buffer de leitura
+            (*MessageStateControl)++;//add erro
+            *MessageStateControl |= 0b10000000;//reenvia a mensagem
+            *MessageStateControl &= 0b10001111;//filtra para a contagem de mensagens
+        }else if (*MessageStateControl & 0b100000)//
+            {
+                if ((SysTickGetTime_ms()-*ptrTime)<5)//ainda em estado de espera até passar 5 ms
+                    return;
+                *MessageStateControl = 0b10000000;//preparado para enviar uma nova mensagem
+            }else if (*MessageStateControl & 0b10000)//não utilizado
+                {
+                    *MessageStateControl = 0b10000000;
+                }
+}
+*/
