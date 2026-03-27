@@ -35,7 +35,7 @@ unsigned char dayToMouth[12] = {31,28,31,30,31,30,31,31,30,31,30,31}; //dias de 
 void _attTime();
 
 //Ponteiro para auxiliar no controle do timestamp
-volatile int *ptrTimestamp = NULL;//&IntRegisters[regMapTimestamp-regMapIntOffset-1];
+unsigned int *ptrTimestamp = NULL;//&IntRegisters[regMapTimestamp-regMapIntOffset-1];
 unsigned char seg;      //variavel que guarda os segundos
 unsigned char min;      //variavel que guarda os minutos
 unsigned char hr;       //variavel que guarda as horas       
@@ -224,8 +224,12 @@ void setTimestamp(unsigned int setTimestamp)
  * @brief Atualiza o valor do timestamp
  * 
  */
-void tickTimestamp()
+void calendar_tickTimestamp(void *arg)
 {
     unsigned int value = *ptrTimestamp+1;
     setTimestamp(value);
+}
+void pontingTimestamp(unsigned int *ptr)
+{
+    ptrTimestamp = ptr;
 }

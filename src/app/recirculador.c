@@ -36,6 +36,13 @@ __attribute__((weak)) bool reg_eeprom_test(unsigned int addr)
 /************************
  * Funções uteis
  *************************/
+bool rec_variation_test(int ref1, int ref2, int variation)
+{
+    int value = ref1-ref2;
+    if ((value > (-variation)) && (value < variation))
+        return false;
+    return true;
+}
 int rec_average(int *vet, int size)
 {
     int aux = 0;
@@ -43,41 +50,74 @@ int rec_average(int *vet, int size)
         aux+=vet[i];
     return (aux/size);
 }
-int rec_variation(int ant, int now)
+
+
+/*************************** */
+typedef struct reg_eeprom_test_s
 {
-    return 0;
+    int counter;
+    int flag;
+}reg_eeprom_test_s;
+reg_eeprom_test_s reg_eeprom_test_var = 
+{
+    .counter = 0,
+    .flag = 0
+};
+void rec_eeprom_test(void *arg)
+{
+    reg_eeprom_test_var.counter++;
+    reg_eeprom_test_var.counter%=10;
+    if ((!reg_eeprom_test_var.counter) || (!reg_eeprom_test_var.flag) )
+        return;
+    //salva na eeprom
+    eeprom_WriteVet(reg_ptr(), reg_mem_size(), 0);
+    //limpa os valores que devem ser limpos
 }
+/************************** */
+
+
 typedef struct rec_get_temp_s
 {
-    int measure_adc[10];
-    int measure_mv[10];
-    int measure_temp[10];
+    int measure_adc_vet[3];
+    int measure_mv_vet[3];
+    int measure_temp_vet[3];
     int counter;
 }rec_get_temp_s;
-rec_get_temp_s rec_get_temp1_var = {.counter = 0};
-rec_get_temp_s rec_get_temp2_var = {.counter = 0};
-void rec_get_Temp1(void *arg)
+rec_get_temp_s rec_get_temp1_var = {
+    .counter = 0
+};
+rec_get_temp_s rec_get_temp2_var =  {
+    .counter = 0
+};
+void rec_get_Temp(void *arg)
 {
     rec_get_temp1_var.counter++;
-    rec_get_temp1_var.counter%=(sizeof(rec_get_temp1_var.measure_adc)/sizeof(int));
+    rec_get_temp1_var.counter%=(sizeof(rec_get_temp1_var.measure_adc_vet)/sizeof(int));
     //Faz a leitura do adc, converte em mV apos isso converte em °C
     int measure_aux = adc_Read(&adc_S1);
-    rec_get_temp1_var.measure_adc[rec_get_temp1_var.counter] = measure_aux;
+    rec_get_temp1_var.measure_adc_vet[rec_get_temp1_var.counter] = measure_aux;
     measure_aux = adc_ConvertToMiliVolts(&adc_S1, measure_aux);
-    rec_get_temp1_var.measure_mv[rec_get_temp1_var.counter] = measure_aux;
-    rec_get_temp1_var.measure_temp[rec_get_temp1_var.counter] = convert_mV_to_celcius(&temp_S1,measure_aux);
-}
-void rec_get_Temp2(void *arg)
-{
+    rec_get_temp1_var.measure_mv_vet[rec_get_temp1_var.counter] = measure_aux;
+    rec_get_temp1_var.measure_temp_vet[rec_get_temp1_var.counter] = convert_mV_to_celcius(&temp_S1,measure_aux);
+
     rec_get_temp2_var.counter++;
-    rec_get_temp2_var.counter%=(sizeof(rec_get_temp2_var.measure_adc)/sizeof(int));
+    rec_get_temp2_var.counter%=(sizeof(rec_get_temp2_var.measure_adc_vet)/sizeof(int));
     //Faz a leitura do adc, converte em mV apos isso converte em °C
-    int measure_aux = adc_Read(&adc_S2);
-    rec_get_temp2_var.measure_adc[rec_get_temp2_var.counter] = measure_aux;
+    measure_aux = adc_Read(&adc_S2);
+    rec_get_temp2_var.measure_adc_vet[rec_get_temp2_var.counter] = measure_aux;
     measure_aux = adc_ConvertToMiliVolts(&adc_S2, measure_aux);
-    rec_get_temp2_var.measure_mv[rec_get_temp2_var.counter] = measure_aux;
-    rec_get_temp2_var.measure_temp[rec_get_temp2_var.counter] = convert_mV_to_celcius(&temp_S2,measure_aux);
+    rec_get_temp2_var.measure_mv_vet[rec_get_temp2_var.counter] = measure_aux;
+    rec_get_temp2_var.measure_temp_vet[rec_get_temp2_var.counter] = convert_mV_to_celcius(&temp_S2,measure_aux);
 }
+void rec_ref_measure(void* arg)
+{
+    int measure_aux = adc_Read(&adc_Vref);
+    measure_aux = 2500000/measure_aux;//novo valor de conversão
+    adc_S1._convertTo_mv = measure_aux;
+    adc_S2._convertTo_mv = measure_aux;
+    adc_Current._convertTo_mv = measure_aux;
+}
+
 typedef struct isr_Botoeira_s
 {
     unsigned long long last_time_click;
@@ -109,6 +149,7 @@ void rec_isr_Botoeira(volatile void *arg)
         PUMP_OFF;
     }
 }
+
 /**
  * @brief Tratamento da interrupção da entrada de sensor de fluxo
  * 
@@ -116,64 +157,126 @@ void rec_isr_Botoeira(volatile void *arg)
  */
 typedef struct isr_flow_s
 {
-    unsigned long long last_time_interrupt;
-    unsigned int debouce_time;
     int counter;
 }isr_flow_s;
 isr_flow_s isr_flow_var = 
 {
-    .last_time_interrupt = 0,
-    .debouce_time = 1, //1ms
     .counter = 0
 };
 void rec_isr_Flow(volatile void *arg)
 {
-    // if ((isr_flow_var.debouce_time+isr_flow_var.last_time_interrupt) > SysTickGetTime_ms())
-    //     return;
     // //Essa leitura Auxilia como um filtro de ruido
-    if(gpio_ReadPin(Syspin_SensorDeFluxo))
-        return;
+    // if(gpio_ReadPin(Syspin_SensorDeFluxo))
+    //     return;
     //Incrementa contador de fluxo
-    isr_flow_var.last_time_interrupt = SysTickGetTime_ms();
     isr_flow_var.counter++;
-    // int flux_aux = reg_read_int(Sys_RegMap_Flux_Counter)+1;
-    // reg_write_int(flux_aux,Sys_RegMap_Flux_Counter);
 }
 
-typedef struct rec_measure_s
+typedef struct rec_current_s
 {
-    int S1_ant;
-    int S2_ant;
-    int Flux_ant;
-    bool button;
-}rec_measure_s;
-rec_measure_s rec_measure_var = 
+    int offset;
+}rec_current_s;
+rec_current_s rec_current_var = 
 {
-    .S1_ant = 0,
-    .S2_ant = 0,
-    .Flux_ant = 0,
-    .button = false
+    .offset = 0,
 };
+void rec_current_measure(void* arg)
+{
+    int *ptrAux = (int*)reg_ptr_int(0);
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_Adc)] = adc_Read(&adc_Current);
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_mV)] = adc_ConvertToMiliVolts(&adc_Current, 
+                                                        ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_Adc)]);
+    //se a bomba estiver desligada isso é o offset
+    int vAux = (1000*ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_mV)]) /
+                ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_Resistor)];
+    if (reg_read_bool(Sys_RegMap_Pump))
+    {
+        ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current)] = vAux - rec_current_var.offset;
+    }else
+        {
+            rec_current_var.offset = vAux;
+            ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current)] = 0;
+        }
+}
+
 void rec_measure(void *arg)
 {
+    int *ptrAux = (int*)reg_ptr_int(0);
     //Faz a média das medidas e carrega nos registradores do modbus
-    int size_vet = (sizeof(rec_get_temp1_var.measure_adc)/sizeof(int));
+    int size_vet = (sizeof(rec_get_temp1_var.measure_adc_vet)/sizeof(int));
+    int temp_aux = rec_average(rec_get_temp1_var.measure_temp_vet, size_vet);
     // //Medidas de temperatura do sensor 1
-    reg_write_int(rec_average(rec_get_temp1_var.measure_adc, size_vet), Sys_RegMap_S1_Adc);
-    reg_write_int(rec_average(rec_get_temp1_var.measure_mv, size_vet), Sys_RegMap_S1_mV);
-    reg_write_int(rec_average(rec_get_temp1_var.measure_temp, size_vet), Sys_RegMap_S1_Temp);
-    //Medidas de temperatura do sensor 2
-    reg_write_int(rec_average(rec_get_temp2_var.measure_adc, size_vet), Sys_RegMap_S2_Adc);
-    reg_write_int(rec_average(rec_get_temp2_var.measure_mv, size_vet), Sys_RegMap_S2_mV);
-    reg_write_int(rec_average(rec_get_temp2_var.measure_temp, size_vet), Sys_RegMap_S2_Temp);
-    //Medidas de temperatura do sensor de Fluxo
-    int contador = isr_flow_var.counter;
-    isr_flow_var.counter = 0;
-    int liters = contador*reg_read_int(Sys_RegMap_Flux_Calib);
-    reg_write_int(contador, Sys_RegMap_Flux_Counter);
-    reg_write_int(liters, Sys_RegMap_Flux_Liters);
-    reg_write_int(contador+reg_read_int(Sys_RegMap_Flux_Total_Liters), Sys_RegMap_Flux_Total_Liters);
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_Adc)] = rec_average(rec_get_temp1_var.measure_adc_vet, size_vet); 
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_mV)]= rec_average(rec_get_temp1_var.measure_mv_vet, size_vet); 
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_Temp)] = temp_aux;
 
+    //Medidas de temperatura do sensor 2
+    temp_aux = rec_average(rec_get_temp2_var.measure_temp_vet, size_vet);
+    // //Medidas de temperatura do sensor 2
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_Adc)] = rec_average(rec_get_temp2_var.measure_adc_vet, size_vet); 
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_mV)]= rec_average(rec_get_temp2_var.measure_mv_vet, size_vet); 
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_Temp)] = temp_aux;
+
+    //Medidas de temperatura do sensor de Fluxo
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Flux_Counter)] = isr_flow_var.counter;
+    isr_flow_var.counter = 0;
+    int value_aux = (ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Flux_Calib)] * ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Flux_Counter)]);
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Flux_Total_Liters)] += value_aux;
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Flux_Liters)] = 60*value_aux;
+}
+
+typedef struct rec_create_messages_s
+{
+    int S1;
+    int S2;
+    int Flux;
+    int Current;
+    int Timestamp;
+    unsigned char Message_counter;
+}rec_create_messages_s;
+rec_create_messages_s rec_create_messages_var = 
+{
+    .S1 = 0,
+    .S2 = 0,
+    .Flux = 0,
+    .Current = 0,
+    .Timestamp = 0,
+    .Message_counter = 0
+};
+void rec_create_messages(void *arg)
+{
+    /*rec_create_messages_var.Message_counter++;
+    rec_create_messages_var.Message_counter%=5;
+    if (!rec_create_messages_var.Message_counter)
+    {
+        rec_get_status(NULL);
+    }*/
+    rec_get_status(NULL);
+
+    int *ptrAux = (int*)reg_ptr_int(0);
+    char message_flag = 0b0;
+    message_flag |= rec_variation_test(ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_Temp)], rec_create_messages_var.S1, 20)         ? 0b0001 : 0b0;
+    message_flag |= rec_variation_test(ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_Temp)], rec_create_messages_var.S2, 20)         ? 0b0010 : 0b0;
+    message_flag |= rec_variation_test(ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Flux_Liters)], rec_create_messages_var.Flux, 50)   ? 0b0100 : 0b0;
+    message_flag |= rec_variation_test(ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current)], rec_create_messages_var.Current, 100)   ? 0b1000 : 0b0;
+    message_flag |= (ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Timestamp)] != rec_create_messages_var.Timestamp)  ? 0b1000 : 0b0;
+    if (!message_flag)
+        return;
+    rec_create_messages_var.S1 = ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_Temp)];
+    rec_create_messages_var.S2 = ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_Temp)];
+    rec_create_messages_var.Flux = ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Flux_Liters)];
+    rec_create_messages_var.Current = ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current)];
+    rec_create_messages_var.Timestamp = ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Timestamp)];
+    i2c_modbus_s message;
+    message.code = Sys_Modbus_Set_Mult_Num_Reg;
+    message.RegAddr = Sys_RegMap_Offset_Int;
+    message.nReg = (Sys_RegMap_Errors - Sys_RegMap_Timestamp);
+    message.bytes = (message.nReg * sizeof(int));
+    message.ptrMessage = reg_ptr_int(0);
+    message.addr = SysI2C_ADDR_ALL;
+    message.size_head = 6;
+    message.size_message = message.bytes;
+    message_New(message);
 }
 /***********************
  * Variaveis Sys
@@ -287,13 +390,54 @@ void rec_change_verify(void *arg)
 
 
 #else
+typedef struct _rec_change_s
+{
+    unsigned long long last_update;
+    unsigned long long variation;
+    char flag;
+}_rec_change_s;
+_rec_change_s _rec_change_var =
+{
+    .last_update = 0,
+    .variation = 0,
+    .flag = 0b1
+};
+void _rec_change()
+{
+    _rec_change_var.variation = (SysTickGetTime_ms() - _rec_change_var.last_update);
+    if (_rec_change_var.variation > 10000)
+    {
+        _rec_change_var.last_update = SysTickGetTime_ms();
+        _rec_change_var.variation = 0;
+        _rec_change_var.flag = _rec_change_var.flag << 1;
+    }
+    if (_rec_change_var.flag & 0b10)
+    {
+        reg_set_change_flag(Reg_Change_Bool_Register);
+        _rec_change_var.flag = _rec_change_var.flag << 1;
+        return;
+    }
+    
+    if (_rec_change_var.flag & 0b1000)
+    {
+        reg_set_change_flag(Reg_Change_Short_Register);
+        _rec_change_var.flag = _rec_change_var.flag << 1;
+        return;
+    }
+    
+    if (_rec_change_var.flag & 0b100000)
+    {
+        reg_set_change_flag(Reg_Change_Int_Register);
+        _rec_change_var.flag = 0b1;
+        return;
+    }
+
+}
 void rec_change_verify(void *arg)
 {
+    _rec_change();
     char flag_change = reg_return_change_flag();
-    reg_clear_change_flag(0);
-
     i2c_modbus_s message;
-
     if (flag_change & Reg_Change_Bool_Register)
     {
         /* Cria mensagem com os registradores booleanos */
@@ -302,10 +446,12 @@ void rec_change_verify(void *arg)
         message.nReg = Sys_RegMap_Nreg_Bool;
         message.bytes = (Sys_RegMap_Nreg_Bool/8)+1;
         message.ptrMessage = reg_ptr_bool();
-        message.addr = SysI2CADDR_WiFi;
-        message.size_head = 5;
+        message.addr = SysI2C_ADDR_ALL;
+        message.size_head = 6;
         message.size_message = message.bytes;
         message_New(message);
+        reg_clear_change_flag(Reg_Change_Bool_Register);
+        return;
     }
     if (flag_change & Reg_Change_Short_Register)
     {
@@ -314,24 +460,28 @@ void rec_change_verify(void *arg)
         message.RegAddr = Sys_RegMap_Offset_Short;
         message.nReg = Sys_RegMap_Nreg_Short;
         message.bytes = (Sys_RegMap_Nreg_Short*sizeof(short));
-        message.ptrMessage = reg_ptr_short();
-        message.addr = SysI2CADDR_WiFi;
-        message.size_head = 5;
+        message.ptrMessage = reg_ptr_short(0);
+        message.addr = SysI2C_ADDR_ALL;
+        message.size_head = 6;
         message.size_message = message.bytes;
         message_New(message);
+        reg_clear_change_flag(Reg_Change_Short_Register);
+        return;
     }
     if (flag_change & Reg_Change_Int_Register)
     {
         /* Cria mensagem com os registradores Int */
         message.code = Sys_Modbus_Set_Mult_Num_Reg;
-        message.RegAddr = Sys_RegMap_Offset_Int;
-        message.nReg = Sys_RegMap_Nreg_Int;
-        message.bytes = (Sys_RegMap_Nreg_Int*sizeof(int));
-        message.ptrMessage = reg_ptr_int();
-        message.addr = SysI2CADDR_WiFi;
-        message.size_head = 5;
+        message.RegAddr = Sys_RegMap_Flux_Calib;
+        message.nReg = (Sys_RegMap_Schedules_9 - Sys_RegMap_Flux_Calib)+1;
+        message.bytes = (message.nReg*sizeof(int));
+        message.ptrMessage = reg_ptr_int(Sys_RegMap_Flux_Calib);
+        message.addr = SysI2C_ADDR_ALL;
+        message.size_head = 6;
         message.size_message = message.bytes;
         message_New(message);
+        reg_clear_change_flag(Reg_Change_Int_Register);
+        return;
     }
 }
 #endif
@@ -395,10 +545,29 @@ void rec_pump_control()
         }   
     }
 }
+/*typedef struct _rec_ResePin_s
+{
+    char resetCounter;
+}_rec_ResePin_s;
+_rec_ResePin_s _rec_ResetPin_var =
+{
+    .resetCounter=0
+};*/
 void rec_system(void *arg)
 {
     //faz a leitura para acompanhar se o botão ta pressionado
     reg_write_bool(!gpio_ReadPin(Syspin_Botoeira), Sys_RegMap_Button);
+    /*if (gpio_ReadPin(Syspin_RESET))
+    {
+        reg_write_bool(false, Sys_RegMap_Reset_Button);
+        _rec_ResetPin_var.resetCounter = 0;
+    }else
+        {
+            reg_write_bool(true, Sys_RegMap_Reset_Button);
+            _rec_ResetPin_var.resetCounter++;
+            if (_rec_ResetPin_var.resetCounter > 150)
+                gpio_resetEnable();
+        }*/
     //Faz a gestão do controle da bomba
     rec_pump_control();   
 }
@@ -458,204 +627,14 @@ void rec_error_process(void *arg)
     value |= _rec_Current_error_test();
     reg_write_int(value, Sys_RegMap_Errors);
 }
-
-
-
-
-// void processFunc()
-// {
-//     // short tempSup = getFloatWithAddr(regMapTemperaturaRef) + 100;//Temperatura referencia + 1°C
-//     // short tempInf = getFloatWithAddr(regMapTemperaturaRef) - 100;//Temperatura referencia - 1°C
-//     // short temp = getFloatWithAddr(regMapTemperaturaMedida);//Temperatura atual
-//     // //Verifica se ja passou o tempo de recirculação de 30s
-//     // if(((SysTickGetTime_ms() - timeDebounceBotoeira) > SysRecirculationTicks) && getBoolWithAddr(regMapBotoeira))
-//     //     setBoolValue(false,regMapBotoeira);
-    
-//     // if (schedulingTest() || getBoolWithAddr(regMapBotoeira))//Verifica se tem algum agendamento ou se a botoeira esta pressionada
-//     // {
-//     //     if (tempInf>temp)//Verifica se a temperatura atual está abaixo da temperatura minima
-//     //     {
-//     //         if (!getBoolWithAddr(regMapBomba))//Caso a bomba está desligada é enviado uma mensagem informando que a bomba foi ligada
-//     //             addNewMessage(ptrPriorityMessage, WIFI_ADDR, (unsigned char*)setPumpMessage, 
-//     //                     sizeof(setPumpMessage), sizeof(setPumpMessage)+2, NULL);
-//     //         setBoolValue(true,regMapBomba);//Escreve no registrador que a bomba está ligada
-//     //         gpio_SetPin(Syspin_Pump);//Liga a bomba
-//     //     }else if(tempSup < temp)//Verifica se a temperatura estáacima da temperatura máxima
-//     //         {
-//     //             if (getBoolWithAddr(regMapBomba))//Verifica se a bomba está ligada, caso esteja informa que a bomba será desligada
-//     //                 addNewMessage(ptrPriorityMessage, WIFI_ADDR, (unsigned char*)resetPumpMessage, 
-//     //                         sizeof(resetPumpMessage), sizeof(resetPumpMessage)+2, NULL);
-//     //             setBoolValue(false,regMapBomba);//Define o registrador da bomba como off
-//     //             gpio_ClearPin(Syspin_Pump);//Desliga a bomba
-//     //         }
-//     // }else
-//     //     {
-//     //         if (getBoolWithAddr(regMapBomba))//Verifica se a bomba está ligada, caso esteja informa que a bomba será desligada
-//     //             addNewMessage(ptrPriorityMessage, WIFI_ADDR, (unsigned char*)resetPumpMessage, 
-//     //                      sizeof(resetPumpMessage), sizeof(resetPumpMessage)+2, NULL);
-//     //         setBoolValue(false,regMapBomba);//Define o registrador da bomba como off
-//     //         gpio_ClearPin(Syspin_Pump);//Desliga a bomba
-//     //     }
-// }
-
-// /*******************************************************************************
-//  * Receive Function
-//  ******************************************************************************/
-// /**
-//  * Inicia a fila de mensagens
-// */
-// void initQueue()
-// {
-//     // ptrPriorityMessage = &priorityMessage;
-//     // ptrPriorityMessage->ptrNext = ptrPriorityMessage;
-//     // ptrPriorityMessage->addr = 0;
-//     // ptrPriorityMessage->len = 0;
-//     // ptrPriorityMessage->replyLen = 0;
-//     // ptrPriorityMessage->ptrFunc = NULL;
-
-//     // for (int i = 0; i < LengthMessageQueue; i++)
-//     // {
-//     //     messageQueue[i].ptrNext = &messageQueue[(i+1)%LengthMessageQueue];
-//     //     messageQueue[i].addr = 0;
-//     //     messageQueue[i].len = 0;
-//     //     messageQueue[i].ptrFunc = NULL;
-//     //     messageQueue[i].replyLen = 0;
-//     // }
-//     // ptrMessage = &messageQueue[0];
-// }
-// /**
-//  * @brief Faz a gestão das mensagens enviadas
-//  * 
-//  * @param ptr ponteiro para objeto com as informações da mensagem que será enviada
-//  * @param ptrRX ponteiro para buffer que irá receber a resposta
-//  * @param MessageStateControl flag de auxilio para saber em que etapa de processamento ela esta
-//  * @param ptrTime tempo para auxílio no controle da mensagem
-//  * 
-//  * Alguns parametros não foram acrescentados no objeto para impedir de alocar muita memoria visto que o microcontrolador não aceitou muito bem esse processo
-//  */
-// void ControlMessageFunc(myMessage **ptr, unsigned char *ptrRX, unsigned char *MessageStateControl, unsigned int *ptrTime)
-// {   
-//     // if (*MessageStateControl & 0b1000)//Falhou 8 vezes, então exclui a mensagem
-//     // {
-//     //     //blink = !blink; -> utilizado para auxilio de debug no passado
-//     //     deleteMessage(ptr);//Deleta a mensagem
-//     //     *MessageStateControl = 0b100000;//Coloca em estado de espera
-//     // }
-//     // if (*MessageStateControl & 0b10000000)//estado de enviar mensagem
-//     // {
-//     //     if((*ptr)->len == 0)
-//     //         return;
-//     //     if (i2cSend_master((*ptr)->addr, (*ptr)->message, (*ptr)->len) == i2cStat_OK)
-//     //     {
-//     //         *ptrTime = SysTickGetTime_ms();
-//     //         *MessageStateControl |= 0b1000000;//entra no estado de espera para leitura
-//     //         *MessageStateControl &= 0b1001111;//filtra para a contagem de mensagens
-//     //     }else
-//     //         *MessageStateControl = *MessageStateControl+1;
-//     // }else if (*MessageStateControl & 0b1000000)//estado de espera para leitura
-//     //     {
-//     //         if ((SysTickGetTime_ms()-*ptrTime)<50)//ainda em estado de espera até passar 50 ms
-//     //             return;
-//     //         i2cReadLenght_master((*ptr)->addr, ptrRX, (*ptr)->replyLen);
-//     //         if (CHECK_CRC16(ptrRX, (*ptr)->replyLen))
-//     //         {
-//     //             *ptrTime = SysTickGetTime_ms();
-//     //             *MessageStateControl = 0b100000; //espera mais 5ms para enviar a proxima mensagem
-//     //             if((*ptr)->ptrFunc != NULL)
-//     //                 (*ptr)->ptrFunc(ptrRX);
-//     //             //blink = !blink;
-//     //             deleteMessage(ptr);
-//     //             return;
-//     //         }
-//     //         i2cReadLenght_master((*ptr)->addr, ptrRX,  0xFF);//limpa o buffer de leitura
-//     //         (*MessageStateControl)++;//add erro
-//     //         *MessageStateControl |= 0b10000000;//reenvia a mensagem
-//     //         *MessageStateControl &= 0b10001111;//filtra para a contagem de mensagens
-//     //     }else if (*MessageStateControl & 0b100000)//
-//     //         {
-//     //             if ((SysTickGetTime_ms()-*ptrTime)<5)//ainda em estado de espera até passar 5 ms
-//     //                 return;
-//     //             *MessageStateControl = 0b10000000;//preparado para enviar uma nova mensagem
-//     //         }else if (*MessageStateControl & 0b10000)//não utilizado
-//     //             {
-//     //                 *MessageStateControl = 0b10000000;
-//     //             }
-// }
-// /**
-//  * @brief processa a resposta de 'getType'
-//  * 
-//  * @param data 
-//  */
-// void receiveType(unsigned char *data)
-// {
-//     //blink = !blink;
-//     // memcpy((void*)LastShortRegisters, (void*)&data[3], sizeof(ShortRegisters));
-//     // unsigned char dataAux[sizeof(ShortRegisters)+8];
-//     // unsigned char sizeAux = compareShortRegister(dataAux);
-//     // if(sizeAux)
-//     //     addNewMessage(ptrMessage, WIFI_ADDR, dataAux, sizeAux, sizeAux+2, NULL);
-// }
-// /**
-//  * @brief trata o pacote de mensagens que se refere a variaveis booleanas
-//  * 
-//  * @param data 
-//  */
-// void checkBoolReg(unsigned char *data)
-// {
-//     /*blink = !blink;*/
-//     // for (int i = 0; i < sizeof(BoolRegisters); i++)
-//     //     LastBoolRegisters[i] = data[3+(i/8)] & (0b10000000 >> (i%8));
-//     // unsigned char dataAux[9+(sizeof(BoolRegisters)/8)];
-//     // unsigned char sizeAux = compareBoolRegister(dataAux);
-//     // if(sizeAux)
-//     //     addNewMessage(ptrMessage, WIFI_ADDR, dataAux, sizeAux, sizeAux+2, NULL);
-// }
-// /**
-//  * @brief Trata o pacote de mensagens que se refere as variaveis short -> não utilizado
-//  * 
-//  * @param data 
-//  */
-// void checkShortReg(unsigned char *data){}
-// /**
-//  * @brief Trata a mensagem que se refere ao pacote de registradores int
-//  * 
-//  * @param data 
-//  */
-// void checkIntReg(unsigned char *data)
-// {
-//     //blink = !blink;
-//     // memcpy((void*)LastIntRegisters, (void*)&data[3], sizeof(IntRegisters));
-//     // unsigned char dataAux[sizeof(IntRegisters)+8];
-//     // unsigned char sizeAux = compareIntRegister(dataAux);
-//     // if(sizeAux)
-//     //     addNewMessage(ptrMessage, WIFI_ADDR, dataAux, sizeAux, sizeAux+2, NULL);
-// }
-// /**
-//  * @brief Trata a mensagem que se refere ao pacote de registradores float
-//  * 
-//  * @param data 
-//  */
-// void checkFloatReg(unsigned char *data)
-// {
-//     // memcpy((void*)LastFloatRegisters, (void*)&data[2], sizeof(FloatRegisters));
-//     // unsigned char dataAux[sizeof(FloatRegisters)+8];
-//     // unsigned char sizeAux = compareFloatRegister(dataAux);
-//     // if(sizeAux)
-//     //     addNewMessage(ptrMessage, WIFI_ADDR, dataAux, sizeAux, sizeAux+2, NULL);
-// }
-// /**
-//  * @brief Faz o calculo de log de 2 do valor enviado
-//  * 
-//  * @param value valor a ser calculado o log
-//  * @return int retorno
-//  */
-// int myLog2(unsigned int value)
-// {
-//     int i = 0;
-//     while (value)
-//     {
-//         value/=2;
-//         i++;
-//     }
-//     return i;
-// }
+void rec_get_status(void *arg)
+{
+    /* Cria mensagem que atualiza o status dos outros dispositivos*/
+    i2c_modbus_s message;
+    message.code = Sys_Modbus_Report_Slave_ID;
+    message.addr = SysI2C_ADDR_ALL;
+    message.size_head = 1;
+    message.size_message = 0;
+    message_New(message);
+    return;
+}

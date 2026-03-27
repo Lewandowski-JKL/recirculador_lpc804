@@ -42,8 +42,8 @@ void isrScheduler(volatile void *arg)
 {
     if (pause)
         return;
-    unsigned long time_us_aux = 0;
-    unsigned long time_dt = 0;
+    unsigned long long time_us_aux = 0;
+    unsigned long long time_dt = 0;
     for (int i = 0; i < Sys_task_max; i++)
     {
         if (task_vet[i].ptrFunc != NULL)
@@ -114,12 +114,12 @@ void task_new(task_func_t *ptrFunc, char *taskName, unsigned int frequency, unsi
 
 void task_delay_ms(unsigned long time_ms)
 {
-    unsigned long time_end = SysTickGetTime_ms()+time_ms; 
+    unsigned long long time_end = SysTickGetTime_ms()+time_ms; 
     while (SysTickGetTime_ms() < time_end);
 }
-void task_delay_ms_until(unsigned int *ptr, unsigned long time_ms)
+void task_delay_ms_until(unsigned long long *ptr, unsigned long time_ms)
 {
-    unsigned long time_end = *ptr+time_ms; 
+    unsigned long long time_end = *ptr+time_ms; 
     *ptr = time_end;
     while (SysTickGetTime_ms() < time_end);
 
@@ -129,9 +129,9 @@ void task_delay_ticks(unsigned long ticks)
     unsigned long ticks_end = SysTickGetTicks()+ticks; 
     while (SysTickGetTicks() <= ticks_end);
 }
-void task_delay_ticks_until(unsigned int *ptr, unsigned long ticks)
+void task_delay_ticks_until(unsigned long long *ptr, unsigned long ticks)
 {
-    unsigned long time_end = *ptr+ticks; 
+    unsigned long long time_end = *ptr+ticks; 
     *ptr = time_end;
     while (SysTickGetTime_ms() < time_end);
 }

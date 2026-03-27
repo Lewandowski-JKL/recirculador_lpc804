@@ -173,3 +173,11 @@ void gpio_TogglePort(unsigned char port, unsigned int mask)
 {
     GPIO->NOT[port] = mask;//0xFFFF
 }
+void gpio_resetDisable()
+{
+    SWM0->PINENABLE0 |= (1<<6);
+}
+void gpio_resetEnable()
+{
+    SWM0->PINENABLE0 &= ~(1<<6);
+}

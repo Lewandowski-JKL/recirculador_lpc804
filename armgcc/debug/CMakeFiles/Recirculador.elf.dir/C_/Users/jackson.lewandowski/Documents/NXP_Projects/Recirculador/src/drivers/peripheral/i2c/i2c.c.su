@@ -11,5 +11,6 @@ C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/per
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c:235:5:WaitI2cMasterRXRDY	24	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c:250:5:i2cReadLenght_master	40	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c:282:5:i2cRead_master	24	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c:301:5:i2cSend_master	32	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c:326:5:i2cSend_master_modbus	40	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c:301:5:i2cReadClearBuffer_master	32	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c:322:5:i2cSend_master	32	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/drivers/peripheral/i2c/i2c.c:347:5:i2cSend_master_modbus	40	static

@@ -11,5 +11,6 @@ unsigned short getYear();
 unsigned char getWeekDay();
 
 void setTimestamp(unsigned int setTimestamp);
-void tickTimestamp();
+void calendar_tickTimestamp(void *arg);
+void pontingTimestamp(unsigned int *ptr);
 #endif

@@ -1,4 +1,4 @@
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:41:6:isrScheduler	40	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:41:6:isrScheduler	48	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:64:6:task_schedulerInit	8	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:72:6:task_vet_init	16	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/task/task.c:79:6:task_new	40	static

@@ -116,6 +116,7 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PRIVATE
     ${APP_SRC_DIR}/services/registers_manager
     ${APP_SRC_DIR}/services/task
     ${APP_SRC_DIR}/services/fota
+    ${APP_SRC_DIR}/services/rtc
     ${APP_SRC_DIR}/stubs
     ${ProjDirPath}/../include
     ${LIB_DIR}/repo/core/boards/lpcxpresso804

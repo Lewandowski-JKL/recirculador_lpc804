@@ -420,7 +420,7 @@ void SysTick_Handler(void)
  */
 unsigned long long SysTickGetTime_us()
 {
-    return (dT_us*SysTickCount);
+    return ((unsigned long long)dT_us*SysTickCount);
 }
 /**
  * @brief Retorna o tempo em mili segundos
@@ -429,7 +429,7 @@ unsigned long long SysTickGetTime_us()
  */
 unsigned long long SysTickGetTime_ms()
 {
-    return ((dT_us * SysTickCount)/1000);
+    return (unsigned long long)((dT_us * SysTickCount)/1000);
 }
 /**
  * @brief Retorna o tempo em segundos

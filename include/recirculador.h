@@ -22,14 +22,18 @@ adc_t adc_Current;
 /*******************************************************************************
  * Tasks
  ******************************************************************************/
-void rec_get_Temp1(void *arg);
-void rec_get_Temp2(void *arg);
+void rec_get_Temp(void *arg);
 void rec_isr_Botoeira(volatile void *arg);
 void rec_isr_Flow(volatile void *arg);
 void rec_system(void *arg);
 void rec_error_process(void *arg);
 void rec_measure(void *arg);
 void rec_change_verify(void *arg);
+void rec_ref_measure(void* arg);
+void rec_current_measure(void* arg);
+void rec_create_messages(void *arg);
+void rec_eeprom_test(void *arg);
+void rec_get_status(void *arg);
 
 // void isrTimer0(volatile void *arg);
 // void isrSysTick(volatile void *arg);

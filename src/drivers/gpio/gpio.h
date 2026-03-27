@@ -20,6 +20,7 @@ void gpio_WritePort(unsigned char port, unsigned int value);
 void gpio_SetPort(unsigned char port, unsigned int mask);
 void gpio_ClearPort(unsigned char port, unsigned int mask);
 void gpio_TogglePort(unsigned char port, unsigned int mask);
-
+void gpio_resetDisable();
+void gpio_resetEnable();
 
 #endif

@@ -91,4 +91,3 @@ void adc_Config(adc_t *adc, unsigned char channel, unsigned short measureLength)
 }
 
 
-

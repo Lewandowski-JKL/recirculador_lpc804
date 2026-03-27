@@ -46,8 +46,22 @@
  *****************************************************************************/
 #define SysI2CBaudRate          (400000)//400 KHz
 #define SysI2CBufferSize        (255)
-#define SysI2CADDR_WiFi         (0x01)
-#define SysI2CADDR_Recirculador (0x02)
+#define SysI2C_ADDR_ALL          (0x00)
+//Endereço de Placas Mestres                    (0x10 <-> 0x1F)
+#define SysI2C_ADDR_Recirculador (0x10)
+//Endereço de extensores IO e adaptadores LCD   (0x20 <-> 0x27)
+//Disponível                                    (0x28 <-> 0x2F)
+//Endereço de equipamentos de conectividade     (0x30 <-> 0x3D)
+#define SysI2C_ADDR_WiFi         (0x30)
+//Endereço de extensores IO e adaptadores LCD   (0x3E <-> 0x3F)
+//Endereço de equipamentos de interface         (0x40 <-> 0x4F)
+#define SysI2C_ADDR_Rec_Display  (0x40)
+//Endereço de equipamentos de interface         (0x50 <-> 0x57)
+//Endereço de periféricos                       (0x60 <-> 0x6F)
+#define SysI2C_ADDR_RTC_BQ32000  (0x68)
+//Endereço de Multiplexadore I2C                (0x70 <-> 0x77)
+
+char SysI2C_ADDR_Slave_Vet[] = {SysI2C_ADDR_WiFi, SysI2C_ADDR_Rec_Display};
 
 /*******************************************************************************
  * EEPROM Definitions (Flash)
@@ -71,7 +85,7 @@ extern unsigned char __app1_end;
 #define SysADCMeasureLenght (5U)
 #define SysADC_TempS1       (3)// pin 16 adc channel 3
 #define SysADC_TempS2       (10)// pin 13 adc channel 10
-#define SysADC_VRef         (1)// pin 1 adc channel 1
+#define SysADC_VRef         (0)// pin 1 adc channel 0
 #define SysADC_Current      (8)// pin 15 adc channel 8
 
 /*******************************************************************************
@@ -90,7 +104,7 @@ extern unsigned char __app1_end;
 #define Syspin_Botoeira        (9)
 #define Syspin_SensorDeFluxo   (8)
 #define Syspin_Pump            (17)
-#define Syspin_VRef            (1)// pin 1 adc channel 1
+#define Syspin_VRef            (1)// pin 1 adc channel 0
 #define Syspin_Current         (15)// pin 15 adc channel 8
 
 /*******************************************************************************
@@ -106,20 +120,34 @@ extern unsigned char __app1_end;
  /*******************************************************************************
  * Tasks Definitions
  *****************************************************************************/
-#define Sys_task_max            (20)
+#define Sys_task_max            (12)
 #define Sys_task_name_length    (20)
 
  /*******************************************************************************
  * Modbus
  *****************************************************************************/
 #define Sys_Modbus_Get_Bool_Reg         (0x01)
+#define Sys_Modbus_Get_Discrete_Input   (0x02)
 #define Sys_Modbus_Get_Num_Reg          (0x03)
+#define Sys_Modbus_Read_Input_Reg       (0x04)
 #define Sys_Modbus_Set_Bool_Reg         (0x05)
 #define Sys_Modbus_Set_Single_Reg       (0x06)
+#define Sys_Modbus_Read_Exception       (0x07)
+#define Sys_Modbus_Diagnostics          (0x08)
+#define Sys_Modbus_Get_Event_Counter    (0x0B)
+#define Sys_Modbus_Get_Event_Log        (0x0C)
 #define Sys_Modbus_Set_Mult_Bool_Reg    (0x0F)
 #define Sys_Modbus_Set_Mult_Num_Reg     (0x10)
-#define Sys_Modbus_Message_Queue_Size   (10)    //Quantidade de mensagens que podem esparar pelo envio
-#define Sys_Modbus_Time_Reply           (50)    //Tempo de espera por uma resposta
+#define Sys_Modbus_Report_Slave_ID      (0x11)
+#define Sys_Modbus_Read_File_Record     (0x14)
+#define Sys_Modbus_Write_File_Record    (0x15)
+#define Sys_Modbus_Mask_Write_Register  (0x16)
+#define Sys_Modbus_RW_Mult_Registers    (0x17)
+#define Sys_Modbus_Read_FIFO_Queue      (0x18)
+#define Sys_Modbus_Read_Device_ID       (0x2B)
+#define Sys_Modbus_Error                (0x80)
+#define Sys_Modbus_Message_Queue_Size   (15)    //Quantidade de mensagens que podem esparar pelo envio
+#define Sys_Modbus_Time_Reply           (5)    //Tempo de espera por uma resposta
 #define Sys_Modbus_Send_Fail            (5)     //Quantidade de vezes que tenta enviar uma mesma mensagem
 
  /*******************************************************************************
@@ -162,6 +190,22 @@ extern unsigned char __app1_end;
     -1 )
 #endif
 
+// Retorna o tamanho do registrador em bytes
+#ifndef __NO_FLOAT__
+    #define Sys_RegMap_GetRegBytes(addr) ( \
+    ((addr) >= Sys_RegMap_Offset_Bool  && (addr) <  Sys_RegMap_Offset_Short) ? 0             : \
+    ((addr) >= Sys_RegMap_Offset_Short && (addr) <  Sys_RegMap_Offset_Int)   ? sizeof(short) : \
+    ((addr) >= Sys_RegMap_Offset_Int   && (addr) <  Sys_RegMap_Offset_Float) ? sizeof(int)   : \
+    ((addr) >= Sys_RegMap_Offset_Float && (addr) <= Sys_RegMap_End)    ? sizeof(float)       : \
+    -1 )
+#else
+    #define Sys_RegMap_GetRegBytes(addr) ( \
+    (((addr) >= Sys_RegMap_Offset_Bool ) && ((addr) <  Sys_RegMap_Offset_Short)) ? 0             : \
+    (((addr) >= Sys_RegMap_Offset_Short) && ((addr) <  Sys_RegMap_Offset_Int)  ) ? sizeof(short) : \
+    (((addr) >= Sys_RegMap_Offset_Int  ) && ((addr) <  Sys_RegMap_End)         ) ? sizeof(int)   : \
+    -1 )
+#endif
+
 
 #ifndef __NO_FLOAT__
     #define Sys_RegMap_Total_Bytes  ((Sys_RegMap_Nreg_Bool_tot / 8) + \
@@ -201,7 +245,65 @@ enum
     Sys_RegMap_priority_reg_float_0 = (Sys_RegMap_priority_reg_int_0+8),
     ////////////////////////////////////////////////////////////////////////////////////
 //Defines dos endereços utilizados nos registradores int
-    Sys_RegMap_Timestamp = Sys_RegMap_Offset_Int,      
+//Primeiro vem os registradores que vao se alterar, como medidas e afins
+	//Timestamp
+    Sys_RegMap_Timestamp = Sys_RegMap_Offset_Int, 
+	//Leituras de fluxo
+    Sys_RegMap_Flux_Counter,
+    Sys_RegMap_Flux_Liters,
+    Sys_RegMap_Flux_Total_Liters,
+	//Leituras S1
+    Sys_RegMap_S1_Adc,
+    Sys_RegMap_S1_mV,
+    Sys_RegMap_S1_Temp,
+	//Leituras S2
+    Sys_RegMap_S2_Adc,
+    Sys_RegMap_S2_mV,
+    Sys_RegMap_S2_Temp,
+	//Leituras Corrente
+    Sys_RegMap_Current_Adc,
+    Sys_RegMap_Current_mV,
+    Sys_RegMap_Current,
+    //Alarmes e erros
+    Sys_RegMap_Errors,
+	//Valores estaticos
+    //Registradores paramétricas da leitura de fluxo
+    Sys_RegMap_Flux_Calib,
+    Sys_RegMap_Flux_Error_Max,
+    Sys_RegMap_Flux_Error_Min,
+    //Registradores paramétricas do S1
+    Sys_RegMap_S1_Temp_Ref,
+    Sys_RegMap_S1_Temp_Hysteresis,
+    Sys_RegMap_S1_Calib_1,
+    Sys_RegMap_S1_Calib_2,
+    Sys_RegMap_S1_Calib_3,
+    Sys_RegMap_S1_Error_High,
+    Sys_RegMap_S1_Error_Low,
+    Sys_RegMap_S1_Error_Desconnect,
+    Sys_RegMap_S1_Error_Short_Circuit,
+    //Registradores paramétricas do S2
+    Sys_RegMap_S2_Temp_Ref,
+    Sys_RegMap_S2_Temp_Hysteresis,
+    Sys_RegMap_S2_Calib_1,
+    Sys_RegMap_S2_Calib_2,
+    Sys_RegMap_S2_Calib_3,
+    Sys_RegMap_S2_Error_High,
+    Sys_RegMap_S2_Error_Low,
+    Sys_RegMap_S2_Error_Desconnect,
+    Sys_RegMap_S2_Error_Short_Circuit,
+    //Registradores paramétricas do Corrente
+    Sys_RegMap_Current_Resistor,
+    Sys_RegMap_Current_Calib,
+    Sys_RegMap_Current_Error_Desconnect,
+    Sys_RegMap_Current_Error_Short_Circuit,
+    //Tempos
+    Sys_RegMap_Time_Recirculation,
+    Sys_RegMap_Temp_Ref_Recirculation,
+	//Agendamentos
+    Sys_RegMap_Schedules_0, Sys_RegMap_Schedules_1, Sys_RegMap_Schedules_2, Sys_RegMap_Schedules_3, Sys_RegMap_Schedules_4,
+    Sys_RegMap_Schedules_5, Sys_RegMap_Schedules_6, Sys_RegMap_Schedules_7, Sys_RegMap_Schedules_8, Sys_RegMap_Schedules_9
+};
+/*    Sys_RegMap_Timestamp = Sys_RegMap_Offset_Int,      
     Sys_RegMap_Schedules_0, Sys_RegMap_Schedules_1, Sys_RegMap_Schedules_2, Sys_RegMap_Schedules_3, Sys_RegMap_Schedules_4,
     Sys_RegMap_Schedules_5, Sys_RegMap_Schedules_6, Sys_RegMap_Schedules_7, Sys_RegMap_Schedules_8, Sys_RegMap_Schedules_9,
     //Registradores de leitura de fluxo
@@ -250,7 +352,7 @@ enum
     Sys_RegMap_Temp_Ref_Recirculation,
     //Alarmes e erros
     Sys_RegMap_Errors
-};
+};*/
 #define Sys_RegMap_Nreg_Bool    (Sys_RegMap_Reset_Button + 1             -Sys_RegMap_Offset_Bool)    //2 ->   1Byte
 #define Sys_RegMap_Nreg_Short   ((Sys_RegMap_priority_reg_float_0+8) + 1 -Sys_RegMap_Offset_Short)   //104 -> 208 Bytes
 #define Sys_RegMap_Nreg_Int     (Sys_RegMap_Errors + 1                   -Sys_RegMap_Offset_Int)     //51 -> 204 Bytes (11)

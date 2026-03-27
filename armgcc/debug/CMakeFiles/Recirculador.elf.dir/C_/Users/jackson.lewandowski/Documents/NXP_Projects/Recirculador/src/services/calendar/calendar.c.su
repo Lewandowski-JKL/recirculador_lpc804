@@ -8,4 +8,5 @@ C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/ca
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/calendar/calendar.c:155:15:getWeekDay	16	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/calendar/calendar.c:165:6:_attTime	16	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/calendar/calendar.c:214:6:setTimestamp	16	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/calendar/calendar.c:227:6:tickTimestamp	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/calendar/calendar.c:227:6:calendar_tickTimestamp	24	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/services/calendar/calendar.c:232:6:pontingTimestamp	16	static

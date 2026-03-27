@@ -23,12 +23,6 @@ registers_manager reg_vet;
 
 char change_flag = 0;
 
-/*************************** */
-bool reg_eeprom_test(unsigned int addr)
-{
-    return false;
-}
-/************************** */
 void reg_Begin()
 {
 #ifdef __IAP_MEM__
@@ -45,10 +39,10 @@ void reg_Begin()
 #else
 #ifdef __EEPROM_MEM__
     eeprom_Begin();
-    eeprom_ReadVet((unsigned char*)reg_ptr(), reg_mem_size(), 0);
+    eeprom_ReadVet(reg_ptr(), reg_mem_size(), 0);
     //verifica se a eeprom ja foi iniciada alguma vez
-    // if (reg_vet._short_reg_vet[Sys_RegMap_GetIndex(Sys_RegMap_Model)] == Sys_equip_code)
-    //     return;
+    //if (reg_vet._short_reg_vet[Sys_RegMap_GetIndex(Sys_RegMap_Model)] == Sys_equip_code)
+    //    return;
     //Caso não foi deve buscar o sistema de arquivos de backup
     memcpy((void*)reg_ptr(), (unsigned char*)&nv_defaults.data , reg_mem_size());
     //agora deve salvar toda a memória
@@ -348,18 +342,31 @@ unsigned char *reg_ptr_bool()
 {
     return (unsigned char*)reg_vet._bool_reg_vet;
 }
-unsigned char *reg_ptr_short()
+unsigned char *reg_ptr_short(int index)
 {
-    return (unsigned char*)&reg_vet._short_reg_vet;
+    if (index)
+        index = Sys_RegMap_GetIndex(index); 
+    if (index < 0)
+        return NULL;   
+    return (unsigned char*) &(reg_vet._short_reg_vet[index]) ;
 }
-unsigned char *reg_ptr_int()
+unsigned char *reg_ptr_int(int index)
 {
-    return (unsigned char*)&reg_vet._int_reg_vet;
+    if (index)
+        index = Sys_RegMap_GetIndex(index);
+    if (index < 0)
+        return NULL;
+    return (unsigned char*) &(reg_vet._int_reg_vet[index]);
 }
 #ifndef __NO_FLOAT__
-unsigned char *reg_ptr_float()
+unsigned char *reg_ptr_float(int index)
 {
-    return (unsigned char*)&reg_vet._float_reg_vet;
+    if (index)
+        index = Sys_RegMap_GetIndex(index);
+    if (index < 0)
+        return;
+    
+    return (unsigned char*)&reg_vet._float_reg_vet[index];
 }
 #endif
 unsigned int reg_mem_size()
@@ -397,4 +404,8 @@ void reg_clear_change_flag(char flag)
         return;
     }
     change_flag = change_flag & ~flag;
+}
+void reg_set_change_flag(char flag)
+{
+    change_flag = flag;
 }

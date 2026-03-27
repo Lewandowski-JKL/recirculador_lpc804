@@ -26,6 +26,7 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/message_manager/message_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/rtc/rtc.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -56,6 +57,7 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/message_manager/message_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/rtc/rtc.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -79,6 +81,7 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/message_manager/message_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/rtc/rtc.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

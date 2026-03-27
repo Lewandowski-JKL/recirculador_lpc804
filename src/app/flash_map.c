@@ -95,55 +95,62 @@ const nv_image_t nv_defaults = {
         //0b0111 1100 0000 0111
         //0b0000 1110 0000 0000
         .ints = {
-            Sys_timestamp_min,
-            Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 
-            Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 
-            //Registradores de leitura de fluxo
+            Sys_timestamp_min,// Sys_RegMap_Timestamp 
+            //Leituras de fluxo
             0,// Sys_RegMap_Flux_Counter,
             0,// Sys_RegMap_Flux_Liters,
             0,// Sys_RegMap_Flux_Total_Liters,
-            133,// Sys_RegMap_Flux_Calib,
-            100000,// Sys_RegMap_Flux_Error_Max,
-            0,// Sys_RegMap_Flux_Error_Min,
-            //Registradores de leitura de temperatura s1
+            //Leituras S1
             0,// Sys_RegMap_S1_Adc,
             0,// Sys_RegMap_S1_mV,
             0,// Sys_RegMap_S1_Temp,
-            3500,// Sys_RegMap_S1_Temp_Ref,
+            //Leituras S2
+            0,// Sys_RegMap_S2_Adc,
+            0,// Sys_RegMap_S2_mV,
+            0,// Sys_RegMap_S2_Temp,
+            //Leituras Corrente
+            0,// Sys_RegMap_Current_Adc,
+            0,// Sys_RegMap_Current_mV,
+            0,// Sys_RegMap_Current,
+            //Alarmes e erros
+            0u,// Sys_RegMap_Errors
+            //Valores estaticos
+            //Registradores paramétricas da leitura de fluxo
+            2,// Sys_RegMap_Flux_Calib,
+            100000,// Sys_RegMap_Flux_Error_Max,
+            0,// Sys_RegMap_Flux_Error_Min,
+            //Registradores paramétricas do S1
+            9000,// Sys_RegMap_S1_Temp_Ref,----------->40
             200,//Sys_RegMap_S1_Temp_Hysteresis,
             1,// Sys_RegMap_S1_Calib_1,
             1,// Sys_RegMap_S1_Calib_2,
             1,// Sys_RegMap_S1_Calib_3,
-            4500,// Sys_RegMap_S1_Error_High,
+            11000,// Sys_RegMap_S1_Error_High,-------------->50
             0,// Sys_RegMap_S1_Error_Low,
             20000,// Sys_RegMap_S1_Error_Desconnect,
             0,// Sys_RegMap_S1_Error_Short_Circuit,
-            //Registradores de leitura de temperatura s2
-            0,// Sys_RegMap_S2_Adc,
-            0,// Sys_RegMap_S2_mV,
-            0,// Sys_RegMap_S2_Temp,
-            3500,// Sys_RegMap_S2_Temp_Ref,
+            //Registradores paramétricas do S2
+            4000,// Sys_RegMap_S2_Temp_Ref,
             200,//Sys_RegMap_S2_Temp_Hysteresis,
             1,// Sys_RegMap_S2_Calib_1,
             1,// Sys_RegMap_S2_Calib_2,
             1,// Sys_RegMap_S2_Calib_3,
-            4500,// Sys_RegMap_S2_Error_High,
+            5000,// Sys_RegMap_S2_Error_High,
             0,// Sys_RegMap_S2_Error_Low,
             20000,// Sys_RegMap_S2_Error_Desconnect,
             0,// Sys_RegMap_S2_Error_Short_Circuit,
-            //Registradores de leitura de corrente
-            0,// Sys_RegMap_Current_Adc,
-            0,// Sys_RegMap_Current_mV,
-            0,// Sys_RegMap_Current,
+            //Registradores paramétricas do Corrente
             34,// Sys_RegMap_Current_Resistor,
             10000,// Sys_RegMap_Current_Calib,
             0,// Sys_RegMap_Current_Error_Desconnect,
             4000,// Sys_RegMap_Current_Error_Short_Circuit,
-            //Configurações
-            30000,// Sys_RegMap_Time_Recirculation,
+            //Tempos
+            600000,// Sys_RegMap_Time_Recirculation,----------------30000
             0,// Sys_RegMap_Temp_Ref_Recirculation,
-            //Alarmes e erros
-            0u// Sys_RegMap_Errors
+            //Agendamentos
+            Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 
+            Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default    
+            
 #ifndef __NO_FLOAT__
         },
         /* floats[]: float (32 bits) */
