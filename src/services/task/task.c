@@ -82,8 +82,8 @@ void task_new(task_func_t *ptrFunc, char *taskName, unsigned int frequency, unsi
     if (tasks_on == 0)
         task_vet_init();
     //verifica se estourou o numero de tasks
-    if ((tasks_on >> 1u) == Sys_task_max)
-        return;
+    /*if ((tasks_on >> 1u) == Sys_task_max)
+        return;*/
 
     task_s *ptrAux;
     for (int i = 0; i < Sys_task_max; i++)

@@ -6,6 +6,7 @@
 #include "checksum.h"
 #include "registers_manager.h"
 #include "interrupt.h"
+#include "rtc.h"
 
 #ifndef Sys_Modbus_Message_Queue_Size
     #define Sys_Modbus_Message_Queue_Size 5
@@ -80,7 +81,6 @@ void message_Init()
     _ptrQueue = _Queue;
     _message_init = 1;
 }
-
 void message_Delete()
 {
     if (!_message_init)
@@ -117,7 +117,51 @@ int message_New(i2c_modbus_s newMessage)
     //task_scheduler_continue();
     return Message_Ok;
 }
-
+void _Reg_chage(char addr, char flag)
+{
+    if (!flag)
+        return;
+    i2c_modbus_s message;
+    if (flag & 0b001)//Precisa atualizar os registradores bool
+    {
+        /* Cria mensagem com os registradores booleanos */
+        message.code = Sys_Modbus_Set_Mult_Num_Reg;
+        message.RegAddr = Sys_RegMap_Offset_Bool;
+        message.nReg = Sys_RegMap_Nreg_Bool;
+        message.bytes = (Sys_RegMap_Nreg_Bool/8)+1;
+        message.ptrMessage = reg_ptr_bool();
+        message.addr = addr;
+        message.size_head = 6;
+        message.size_message = message.bytes;
+        message_New(message);
+    } 
+    if (flag & 0b010)//Precisa atualizar os registradores short
+    {
+        /* Cria mensagem com os registradores Short */
+        message.code = Sys_Modbus_Set_Mult_Num_Reg;
+        message.RegAddr = Sys_RegMap_Offset_Short;
+        message.nReg = Sys_RegMap_Nreg_Short;
+        message.bytes = (Sys_RegMap_Nreg_Short*sizeof(short));
+        message.ptrMessage = reg_ptr_short(Sys_RegMap_Model);
+        message.addr = addr;
+        message.size_head = 6;
+        message.size_message = message.bytes;
+        message_New(message);
+    }
+    if (flag & 0b100)//Precisa atualizar os registradores int
+    {
+        /* Cria mensagem com os registradores Int */
+        message.code = Sys_Modbus_Set_Mult_Num_Reg;
+        message.RegAddr = Sys_RegMap_Flux_Calib;
+        message.nReg = Sys_RegMap_Nreg_Int_static;
+        message.bytes = (Sys_RegMap_Nreg_Int_static*sizeof(int));
+        message.ptrMessage = reg_ptr_int(Sys_RegMap_Flux_Calib);
+        message.addr = addr;
+        message.size_head = 6;
+        message.size_message = message.bytes;
+        message_New(message);
+    } 
+}
 /*******************************************************************************
  * Loop de gestão das Mensagens
  *****************************************************************************/
@@ -313,7 +357,7 @@ int _Report_Slave_ID(message_s* ptrAux)
     switch (ptrAux->message.addr)
     {
     case SysI2C_ADDR_WiFi:
-        len = 15;
+        len = 16;
         break;
     case SysI2C_ADDR_Rec_Display:
         return _replyFail;
@@ -328,18 +372,27 @@ int _Report_Slave_ID(message_s* ptrAux)
     if(!CHECK_CRC16(ptrReply, len))//verifica se está ok
         return _replyFail;
 
-    int *ptrTimestamp_local = (int *)reg_ptr_int(0);
+    int *ptrTimestamp_local = (int *)reg_ptr_int(Sys_RegMap_Timestamp);
     int timestamp_ref;
     switch (ptrAux->message.addr)
     {
     case SysI2C_ADDR_WiFi:
         memcpy(&timestamp_ref, &ptrReply[9], sizeof(int));
-        if ((*ptrTimestamp_local) < timestamp_ref)
+        if (timestamp_ref != 0)
+        {
             *ptrTimestamp_local = timestamp_ref;
+            RTC_setValue((*ptrTimestamp_local));
+        }
+        _Reg_chage(SysI2C_ADDR_WiFi, ptrReply[13]);
         return _replyOK;
         break;
     case SysI2C_ADDR_Rec_Display:
         return _replyFail;
+        memcpy(&timestamp_ref, &ptrReply[9], sizeof(int));
+        if (timestamp_ref != 0)
+            *ptrTimestamp_local = timestamp_ref;
+        _Reg_chage(SysI2C_ADDR_Rec_Display, ptrReply[13]);
+        return _replyOK;
         break;
     default:
         return _replyFail;

@@ -18,7 +18,6 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/interrupt/interrupt.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/adc/adc.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/i2c/i2c.c"
-  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/calendar/calendar.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/checksum/checksum.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/fota/fota.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/led_control/led_control.c"
@@ -27,6 +26,7 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/rtc/rtc.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/scheduling/scheduling.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -49,7 +49,6 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/interrupt/interrupt.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/adc/adc.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/i2c/i2c.c"
-  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/calendar/calendar.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/checksum/checksum.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/fota/fota.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/led_control/led_control.c"
@@ -58,6 +57,7 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/rtc/rtc.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/scheduling/scheduling.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -73,7 +73,6 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/interrupt/interrupt.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/adc/adc.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/drivers/peripheral/i2c/i2c.c"
-  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/calendar/calendar.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/checksum/checksum.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/fota/fota.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/led_control/led_control.c"
@@ -82,6 +81,7 @@ set(OLD_GLOB
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/ntc_thermistor/ntc_thermistor.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/registers_manager/registers_manager.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/rtc/rtc.c"
+  "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/scheduling/scheduling.c"
   "C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/armgcc/../src/services/task/task.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

@@ -7,6 +7,7 @@
 void SysConfigClock18M();
 void SysConfigClock24M();
 void SysConfigClock30M();
-
+void watchdog_init(int time);
+void watchdog_feed(void);
 
 #endif

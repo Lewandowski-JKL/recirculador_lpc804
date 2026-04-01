@@ -11,10 +11,10 @@ C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recircu
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:246:6:rec_create_messages	56	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:405:6:_rec_change	8	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:436:6:rec_change_verify	56	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:488:6:rec_pump_control	40	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:556:6:rec_system	16	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:574:5:_rec_S1_error_test	16	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:587:5:_rec_S2_error_test	16	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:600:5:_rec_Current_error_test	8	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:622:6:rec_error_process	24	static
-C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:630:6:rec_get_status	48	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:488:6:rec_pump_control	48	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:557:6:rec_system	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:575:5:_rec_S1_error_test	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:588:5:_rec_S2_error_test	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:601:5:_rec_Current_error_test	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:623:6:rec_error_process	24	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/recirculador.c:631:6:rec_get_status	48	static

@@ -9,7 +9,7 @@
 #define __SHRT_MIN__    (0xFFFF-__SHRT_MAX__)
 #define __INT_MIN__     (0xFFFFFFFF-__INT_MAX__)
 
-typedef struct registers_manager
+typedef struct __attribute__((packed)) registers_manager
 {
     uint8_t _bool_reg_vet[Sys_RegMap_Nreg_Bool_tot/8];
     short _short_reg_vet[Sys_RegMap_Nreg_Short_tot];
@@ -41,8 +41,8 @@ void reg_Begin()
     eeprom_Begin();
     eeprom_ReadVet(reg_ptr(), reg_mem_size(), 0);
     //verifica se a eeprom ja foi iniciada alguma vez
-    //if (reg_vet._short_reg_vet[Sys_RegMap_GetIndex(Sys_RegMap_Model)] == Sys_equip_code)
-    //    return;
+    if (reg_vet._short_reg_vet[Sys_RegMap_GetIndex(Sys_RegMap_Model)] == Sys_equip_code)
+        return;
     //Caso não foi deve buscar o sistema de arquivos de backup
     memcpy((void*)reg_ptr(), (unsigned char*)&nv_defaults.data , reg_mem_size());
     //agora deve salvar toda a memória

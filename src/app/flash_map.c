@@ -85,10 +85,8 @@ const nv_image_t nv_defaults = {
             0b0111110000000111, 
             0b0000111000000000, 
             0x0, 0x0, 0x0, 0x0, 0x0,   
-            //float
-            //Não utiliza registradores float
-            0x0, 0x0, 0x0, 0x0,         // Sys_RegMap_priority_reg_float_0
-            0x0, 0x0, 0x0, 0x0         //Não salva nenhum booleano    
+            //GTM
+            0x03  
         },
         /* ints[]: int32_t */
         //0b1111 1111 1111 1110
@@ -120,12 +118,12 @@ const nv_image_t nv_defaults = {
             100000,// Sys_RegMap_Flux_Error_Max,
             0,// Sys_RegMap_Flux_Error_Min,
             //Registradores paramétricas do S1
-            9000,// Sys_RegMap_S1_Temp_Ref,----------->40
+            4500,// Sys_RegMap_S1_Temp_Ref, ---------->4000
             200,//Sys_RegMap_S1_Temp_Hysteresis,
             1,// Sys_RegMap_S1_Calib_1,
             1,// Sys_RegMap_S1_Calib_2,
             1,// Sys_RegMap_S1_Calib_3,
-            11000,// Sys_RegMap_S1_Error_High,-------------->50
+            5000,// Sys_RegMap_S1_Error_High, ----------->5000
             0,// Sys_RegMap_S1_Error_Low,
             20000,// Sys_RegMap_S1_Error_Desconnect,
             0,// Sys_RegMap_S1_Error_Short_Circuit,
@@ -145,7 +143,7 @@ const nv_image_t nv_defaults = {
             0,// Sys_RegMap_Current_Error_Desconnect,
             4000,// Sys_RegMap_Current_Error_Short_Circuit,
             //Tempos
-            600000,// Sys_RegMap_Time_Recirculation,----------------30000
+            30000,// Sys_RegMap_Time_Recirculation,----------------30000
             0,// Sys_RegMap_Temp_Ref_Recirculation,
             //Agendamentos
             Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, Sys_schedulers_default, 

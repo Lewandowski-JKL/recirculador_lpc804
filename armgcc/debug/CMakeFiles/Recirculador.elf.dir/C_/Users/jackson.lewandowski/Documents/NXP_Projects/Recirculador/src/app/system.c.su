@@ -1,3 +1,5 @@
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/system.c:24:6:SysConfigClock30M	8	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/system.c:49:6:SysConfigClock24M	8	static
 C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/system.c:74:6:SysConfigClock18M	8	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/system.c:100:6:watchdog_init	16	static
+C:/Users/jackson.lewandowski/Documents/NXP Projects/Recirculador/src/app/system.c:122:6:watchdog_feed	8	static

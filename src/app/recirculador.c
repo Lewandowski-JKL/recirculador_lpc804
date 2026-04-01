@@ -5,7 +5,7 @@
 #include "app_config.h"
 #include "message_manager.h"
 #include "registers_manager.h"
-#include "calendar.h"
+#include "scheduling.h"
 
 /*************************** */
 __attribute__((weak)) bool reg_eeprom_test(unsigned int addr)
@@ -58,7 +58,7 @@ typedef struct reg_eeprom_test_s
     int counter;
     int flag;
 }reg_eeprom_test_s;
-reg_eeprom_test_s reg_eeprom_test_var = 
+reg_eeprom_test_s reg_eeprom_test_var =
 {
     .counter = 0,
     .flag = 0
@@ -124,7 +124,7 @@ typedef struct isr_Botoeira_s
     bool pump_on;
     unsigned int debouce_time;
 }isr_Botoeira_s;
-isr_Botoeira_s isr_botoeira_var = 
+isr_Botoeira_s isr_botoeira_var =
 {
     .last_time_click = 0,
     .pump_on = false,
@@ -135,7 +135,7 @@ void rec_isr_Botoeira(volatile void *arg)
     //faz o teste de debounce para evitar ruido 100ms
     if ((isr_botoeira_var.last_time_click+isr_botoeira_var.debouce_time) > SysTickGetTime_ms())
         return;
-    if(gpio_ReadPin(Syspin_Botoeira))//verifica se o botão continua pressionado 
+    if(gpio_ReadPin(Syspin_Botoeira))//verifica se o botão continua pressionado
         return;
     //Salva tempo atual para uso no proximo teste de debounce
     isr_botoeira_var.last_time_click = SysTickGetTime_ms();
@@ -152,14 +152,14 @@ void rec_isr_Botoeira(volatile void *arg)
 
 /**
  * @brief Tratamento da interrupção da entrada de sensor de fluxo
- * 
- * @param arg 
+ *
+ * @param arg
  */
 typedef struct isr_flow_s
 {
     int counter;
 }isr_flow_s;
-isr_flow_s isr_flow_var = 
+isr_flow_s isr_flow_var =
 {
     .counter = 0
 };
@@ -176,7 +176,7 @@ typedef struct rec_current_s
 {
     int offset;
 }rec_current_s;
-rec_current_s rec_current_var = 
+rec_current_s rec_current_var =
 {
     .offset = 0,
 };
@@ -184,7 +184,7 @@ void rec_current_measure(void* arg)
 {
     int *ptrAux = (int*)reg_ptr_int(0);
     ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_Adc)] = adc_Read(&adc_Current);
-    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_mV)] = adc_ConvertToMiliVolts(&adc_Current, 
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_mV)] = adc_ConvertToMiliVolts(&adc_Current,
                                                         ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_Adc)]);
     //se a bomba estiver desligada isso é o offset
     int vAux = (1000*ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_Current_mV)]) /
@@ -206,15 +206,15 @@ void rec_measure(void *arg)
     int size_vet = (sizeof(rec_get_temp1_var.measure_adc_vet)/sizeof(int));
     int temp_aux = rec_average(rec_get_temp1_var.measure_temp_vet, size_vet);
     // //Medidas de temperatura do sensor 1
-    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_Adc)] = rec_average(rec_get_temp1_var.measure_adc_vet, size_vet); 
-    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_mV)]= rec_average(rec_get_temp1_var.measure_mv_vet, size_vet); 
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_Adc)] = rec_average(rec_get_temp1_var.measure_adc_vet, size_vet);
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_mV)]= rec_average(rec_get_temp1_var.measure_mv_vet, size_vet);
     ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S1_Temp)] = temp_aux;
 
     //Medidas de temperatura do sensor 2
     temp_aux = rec_average(rec_get_temp2_var.measure_temp_vet, size_vet);
     // //Medidas de temperatura do sensor 2
-    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_Adc)] = rec_average(rec_get_temp2_var.measure_adc_vet, size_vet); 
-    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_mV)]= rec_average(rec_get_temp2_var.measure_mv_vet, size_vet); 
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_Adc)] = rec_average(rec_get_temp2_var.measure_adc_vet, size_vet);
+    ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_mV)]= rec_average(rec_get_temp2_var.measure_mv_vet, size_vet);
     ptrAux[Sys_RegMap_GetIndex(Sys_RegMap_S2_Temp)] = temp_aux;
 
     //Medidas de temperatura do sensor de Fluxo
@@ -234,7 +234,7 @@ typedef struct rec_create_messages_s
     int Timestamp;
     unsigned char Message_counter;
 }rec_create_messages_s;
-rec_create_messages_s rec_create_messages_var = 
+rec_create_messages_s rec_create_messages_var =
 {
     .S1 = 0,
     .S2 = 0,
@@ -325,12 +325,12 @@ void rec_change_verify(void *arg)
 {
     if (!req_verify_send_var.var_on)
         _rec_chage_begin_var();
-    
+
     // char *ptr = reg_ptr();
     short bit = 0b1000000000000000;
     int addr_aux = Sys_RegMap_priority_reg_bool_0;
     short bit_ref;
-    //Primeiro verifica os bool 
+    //Primeiro verifica os bool
     for (int i = 0; i < 8; i++)
     {
         bit_ref = reg_read_short(Sys_RegMap_priority_reg_bool_0+i);
@@ -417,14 +417,14 @@ void _rec_change()
         _rec_change_var.flag = _rec_change_var.flag << 1;
         return;
     }
-    
+
     if (_rec_change_var.flag & 0b1000)
     {
         reg_set_change_flag(Reg_Change_Short_Register);
         _rec_change_var.flag = _rec_change_var.flag << 1;
         return;
     }
-    
+
     if (_rec_change_var.flag & 0b100000)
     {
         reg_set_change_flag(Reg_Change_Int_Register);
@@ -497,13 +497,13 @@ void rec_pump_control()
     //Caso a bomba não esteja (nivél logico alto na saída) liga a bomba
     if (reg_read_bool(Sys_RegMap_Pump) && gpio_ReadPin(Syspin_Pump))
         PUMP_ON;
-        
-    int temp_measure = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
+
+    int temp_measure = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ?
                         reg_read_int(Sys_RegMap_S1_Temp) : reg_read_int(Sys_RegMap_S2_Temp);
-    int temp_ref_sup = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
+    int temp_ref_sup = (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ?
                         reg_read_int(Sys_RegMap_S1_Temp_Ref) : reg_read_int(Sys_RegMap_S2_Temp_Ref);
     int temp_ref_inf = temp_ref_sup;
-    temp_ref_sup += (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
+    temp_ref_sup += (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ?
                         reg_read_int(Sys_RegMap_S1_Temp_Hysteresis) : reg_read_int(Sys_RegMap_S2_Temp_Hysteresis);
 
     //Se atingiu a temperatura ele desliga a bomba
@@ -528,21 +528,22 @@ void rec_pump_control()
             isr_botoeira_var.pump_on = false;
         }
     }
-    temp_ref_inf -= (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ? 
+    temp_ref_inf -= (reg_read_int(Sys_RegMap_Temp_Ref_Recirculation) == 0) ?
                         reg_read_int(Sys_RegMap_S1_Temp_Hysteresis) : reg_read_int(Sys_RegMap_S2_Temp_Hysteresis);
-    
+
     // //Verifica se está com um agendamento ativado
-    if (schedulingTest())
+    unsigned int *ptrTimestamp = (unsigned int*)reg_ptr_int(Sys_RegMap_Timestamp);
+    if (schedulingTest((*ptrTimestamp)))
     {
-        if (temp_measure > temp_ref_sup)
+        if (temp_measure < temp_ref_inf)
         {
             PUMP_ON;
             return;
-        }else if (temp_measure < temp_ref_inf)
+        }else if (temp_measure > temp_ref_sup)
         {
             PUMP_OFF;
             return;
-        }   
+        } 
     }
 }
 /*typedef struct _rec_ResePin_s
@@ -569,7 +570,7 @@ void rec_system(void *arg)
                 gpio_resetEnable();
         }*/
     //Faz a gestão do controle da bomba
-    rec_pump_control();   
+    rec_pump_control();
 }
 int _rec_S1_error_test()
 {
@@ -600,7 +601,7 @@ int _rec_S2_error_test()
 int _rec_Current_error_test()
 {
     /*
-    
+
     int measure = reg_read_int(Sys_RegMap_S1_Temp);
     if (measure > reg_read_int(Sys_RegMap_S1_Error_Desconnect))
         return Sys_ERROR_S1_OPEN_CIRCUIT;

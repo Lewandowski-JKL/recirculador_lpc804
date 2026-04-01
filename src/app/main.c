@@ -31,6 +31,12 @@
  * Prototypes
  ******************************************************************************/
 void setup()   __attribute__ ((constructor));
+void tickTimestamp(void *arg)
+{
+    unsigned int *ptrTimestamp = (unsigned int*)reg_ptr_int(Sys_RegMap_Timestamp);
+    (*ptrTimestamp)++;
+}
+
 void setup()
 {
     //Defin e o CLock do microcontrolador para 30Mhz
@@ -82,10 +88,7 @@ void setup()
     task_new(rec_system, "System", 20, 0, NULL);   //Processa mudanças e, caso perceba alguma,
                                                     // cria a mensagem para ser enviada para o modulo wifi e o display
     task_new(rec_error_process, "Error_Process", 1, 0, NULL);//identifica erros e cria a mensagem de erro
-    /////// -> le o valor no RTC
-    pontingTimestamp((unsigned int *)reg_ptr_int(Sys_RegMap_Timestamp));
-    task_new(calendar_tickTimestamp, "tickTimestamp", 1, 0, NULL);//Contador do timestamp a cada 1s
-    ////////////////
+    task_new(tickTimestamp, "tickTimestamp", 1, 0, NULL);//Contador do timestamp a cada 1s
     task_delay_ms(4000); //Espera 4 segundos antes de começar a criar as mensagens
     task_new(rec_change_verify, "reg_change", 5, 0, NULL);
     task_new(rec_create_messages, "create_messages", 4,0, NULL);
@@ -95,12 +98,16 @@ void setup()
     // Remove a opção de reset do botão
     //gpio_resetDisable();
     //gpio_ConfigPinInput(Syspin_RESET);//Define o pino como entrada para leitura do sensor de fluxo
+    RTC_begin((unsigned int *)reg_ptr_int(Sys_RegMap_Timestamp));
+    task_new(RTC_loop, "RTC_loops", 1,0, NULL);
+    watchdog_init(5000);
 }
 
 int main(void)
 {
     while (1)
     {
+        watchdog_feed();
         message_loop();
     }
 }

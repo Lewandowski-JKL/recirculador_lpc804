@@ -92,3 +92,35 @@ void SysConfigClock18M()
     );
     SystemCoreClock = 9000000;
 }
+/**
+ * @brief 
+ * 
+ * @param time in ms
+ */
+void watchdog_init(int time)
+{
+    
+    // Fonte do clock (LFRO recomendado)
+    // Ativa o clock de do LFRO como 1Mhz como referencia
+    // No watchdog tem um preescaler de 1/4 então o clock do contador é 250Khz
+    SYSCON->PDRUNCFG &=	~(SYSCON_PDRUNCFG_LPOSC_PD_MASK);
+    // Clock para o WDT
+    SYSCON->SYSAHBCLKCTRL0 |= (SYSCON_SYSAHBCLKCTRL0_WWDT_MASK);
+    // Timeout
+    // Primeiro deve-se definir o valor de estouro
+    // 1ms = 250
+    WWDT->TC = 250*time;
+    //WWDT->WINDOW = 0xFFFFFF;
+    //WWDT->WARNINT = 0x00;
+    // Enable + Reset mode
+    WWDT->MOD = (1 << 0) | (1 << 1); // WDEN + WDRESET
+
+    // Feed inicial
+    WWDT->FEED = 0xAA;
+    WWDT->FEED = 0x55;
+}
+void watchdog_feed(void)
+{
+    WWDT->FEED = 0xAA;
+    WWDT->FEED = 0x55;
+}

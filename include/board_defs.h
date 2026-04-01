@@ -116,6 +116,7 @@ extern unsigned char __app1_end;
 #define Sys_timestamp_min       (1704067200)
 #define Sys_equip_code          (0x10)
 #define Sys_schedulers_default  (0b11111110010110100010010110000000)
+#define Sys_schedulers_total    (0xA)
 
  /*******************************************************************************
  * Tasks Definitions
@@ -242,7 +243,7 @@ enum
     Sys_RegMap_priority_reg_bool_0  = (Sys_RegMap_eeprom_reg_float_0+8),
     Sys_RegMap_priority_reg_short_0 = (Sys_RegMap_priority_reg_bool_0+8),
     Sys_RegMap_priority_reg_int_0   = (Sys_RegMap_priority_reg_short_0+8),
-    Sys_RegMap_priority_reg_float_0 = (Sys_RegMap_priority_reg_int_0+8),
+    Sys_RegMap_GTM = (Sys_RegMap_priority_reg_int_0+8),
     ////////////////////////////////////////////////////////////////////////////////////
 //Defines dos endereços utilizados nos registradores int
 //Primeiro vem os registradores que vao se alterar, como medidas e afins
@@ -303,59 +304,12 @@ enum
     Sys_RegMap_Schedules_0, Sys_RegMap_Schedules_1, Sys_RegMap_Schedules_2, Sys_RegMap_Schedules_3, Sys_RegMap_Schedules_4,
     Sys_RegMap_Schedules_5, Sys_RegMap_Schedules_6, Sys_RegMap_Schedules_7, Sys_RegMap_Schedules_8, Sys_RegMap_Schedules_9
 };
-/*    Sys_RegMap_Timestamp = Sys_RegMap_Offset_Int,      
-    Sys_RegMap_Schedules_0, Sys_RegMap_Schedules_1, Sys_RegMap_Schedules_2, Sys_RegMap_Schedules_3, Sys_RegMap_Schedules_4,
-    Sys_RegMap_Schedules_5, Sys_RegMap_Schedules_6, Sys_RegMap_Schedules_7, Sys_RegMap_Schedules_8, Sys_RegMap_Schedules_9,
-    //Registradores de leitura de fluxo
-    Sys_RegMap_Flux_Counter,
-    Sys_RegMap_Flux_Liters,
-    Sys_RegMap_Flux_Total_Liters,
-    Sys_RegMap_Flux_Calib,
-    Sys_RegMap_Flux_Error_Max,
-    Sys_RegMap_Flux_Error_Min,
-    //Registradores de leitura de temperatura s1
-    Sys_RegMap_S1_Adc,
-    Sys_RegMap_S1_mV,
-    Sys_RegMap_S1_Temp,
-    Sys_RegMap_S1_Temp_Ref,
-    Sys_RegMap_S1_Temp_Hysteresis,
-    Sys_RegMap_S1_Calib_1,
-    Sys_RegMap_S1_Calib_2,
-    Sys_RegMap_S1_Calib_3,
-    Sys_RegMap_S1_Error_High,
-    Sys_RegMap_S1_Error_Low,
-    Sys_RegMap_S1_Error_Desconnect,
-    Sys_RegMap_S1_Error_Short_Circuit,
-    //Registradores de leitura de temperatura s2
-    Sys_RegMap_S2_Adc,
-    Sys_RegMap_S2_mV,
-    Sys_RegMap_S2_Temp,
-    Sys_RegMap_S2_Temp_Ref,
-    Sys_RegMap_S2_Temp_Hysteresis,
-    Sys_RegMap_S2_Calib_1,
-    Sys_RegMap_S2_Calib_2,
-    Sys_RegMap_S2_Calib_3,
-    Sys_RegMap_S2_Error_High,
-    Sys_RegMap_S2_Error_Low,
-    Sys_RegMap_S2_Error_Desconnect,
-    Sys_RegMap_S2_Error_Short_Circuit,
-    //Registradores de leitura de corrente
-    Sys_RegMap_Current_Adc,
-    Sys_RegMap_Current_mV,
-    Sys_RegMap_Current,
-    Sys_RegMap_Current_Resistor,
-    Sys_RegMap_Current_Calib,
-    Sys_RegMap_Current_Error_Desconnect,
-    Sys_RegMap_Current_Error_Short_Circuit,
-    //Configurações
-    Sys_RegMap_Time_Recirculation,
-    Sys_RegMap_Temp_Ref_Recirculation,
-    //Alarmes e erros
-    Sys_RegMap_Errors
-};*/
-#define Sys_RegMap_Nreg_Bool    (Sys_RegMap_Reset_Button + 1             -Sys_RegMap_Offset_Bool)    //2 ->   1Byte
-#define Sys_RegMap_Nreg_Short   ((Sys_RegMap_priority_reg_float_0+8) + 1 -Sys_RegMap_Offset_Short)   //104 -> 208 Bytes
-#define Sys_RegMap_Nreg_Int     (Sys_RegMap_Errors + 1                   -Sys_RegMap_Offset_Int)     //51 -> 204 Bytes (11)
+
+#define Sys_RegMap_Nreg_Bool            (Sys_RegMap_Reset_Button + 1 -Sys_RegMap_Offset_Bool)    //2 ->   1Byte
+#define Sys_RegMap_Nreg_Short           (Sys_RegMap_GTM + 1          -Sys_RegMap_Offset_Short)   //104 -> 208 Bytes
+#define Sys_RegMap_Nreg_Int_variable    (Sys_RegMap_Errors + 1       -Sys_RegMap_Offset_Int)     //51 -> 204 Bytes (11)
+#define Sys_RegMap_Nreg_Int_static      (Sys_RegMap_Schedules_9      -Sys_RegMap_Errors)     //51 -> 204 Bytes (11)
+#define Sys_RegMap_Nreg_Int             (Sys_RegMap_Schedules_9 + 1  -Sys_RegMap_Offset_Int)     //51 -> 204 Bytes (11)
 
 #ifndef __NO_FLOAT__
     #define Sys_RegMap_Nreg_Float   (0)

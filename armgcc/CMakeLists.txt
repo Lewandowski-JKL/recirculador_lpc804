@@ -107,7 +107,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PRIVATE
     ${APP_SRC_DIR}/drivers/peripheral/i2c
     ${APP_SRC_DIR}/drivers/pin_mux
     ${APP_SRC_DIR}/services
-    ${APP_SRC_DIR}/services/calendar
     ${APP_SRC_DIR}/services/checksum
     ${APP_SRC_DIR}/services/led_control
     ${APP_SRC_DIR}/services/log_lpc804
@@ -117,6 +116,7 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PRIVATE
     ${APP_SRC_DIR}/services/task
     ${APP_SRC_DIR}/services/fota
     ${APP_SRC_DIR}/services/rtc
+    ${APP_SRC_DIR}/services/scheduling
     ${APP_SRC_DIR}/stubs
     ${ProjDirPath}/../include
     ${LIB_DIR}/repo/core/boards/lpcxpresso804
