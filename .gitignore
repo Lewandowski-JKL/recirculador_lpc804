@@ -1,0 +1,11 @@
+# VS Code
+.vscode/
+
+# MCUXpresso / NXP
+armgcc/mcux_include.json
+*.mex
+
+# Build
+build/
+*.o
+*.exe
